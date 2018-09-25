@@ -1,10 +1,10 @@
-var express = require("express");
+var express = require('express');
+
 var app = express();
 
-app.use(express.logger());
-
-app.get('/',function (req,res) {
-    res.send('Hello wolrd!!');
+app.get('/', function(req, res) {
+    res.setHeader('Content-Type', 'text/plain');
+    res.send('Vous êtes à l\'accueil');
 });
 
-app.listen(process.env.PORT);
+app.listen(8080);
