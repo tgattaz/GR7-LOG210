@@ -7,6 +7,4 @@ app.get('/',function (req,res) {
     res.send('Hello wolrd!!');
 });
 
-var port = process.env.PORT || 8000;
-
-app.listen(port);
+app.listen(process.env.PORT);
