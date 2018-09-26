@@ -31,4 +31,9 @@ let port = process.env.PORT;
 if(port==null || port==""){
     port=8000;
 }
+/*pour tester localement decomenter la ligne suivante et commente la ligne d'apres
+ *ouvree un navigateur écrive localhost:8080
+ *p.s. n'oublie pas de executer le fichier avant de tester dans le navegateur
+ */
+//app.listen(8080);
 app.listen(port);
