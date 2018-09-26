@@ -9,10 +9,23 @@ var connection = mysql.createConnection({
     database:'heroku_56876da023ab330'
 });
 connection.connect();
+var connection = mysql.createConnection({
+    host:'us-cdbr-iron-east-01.cleardb.net',
+    user:'b2af54710141cb',
+    password:'f361883b',
+    database:'heroku_56876da023ab330'
+});
+connection.connect();
+
 app.get('/', function(req, res) {
-    
-    res.setHeader('Content-Type', 'text/plain');
-    res.send('Vous êtes à l\'accueil');
+    connection.query('SELECT * FROM equipe',function(err,rows,fields){
+        if(err){
+            console.log('error: ',err);
+            throw err;
+        }
+        res.send(['Vous êtes à l\'accueil',rows]);
+    });
+   
 });
 let port = process.env.PORT;
 if(port==null || port==""){
