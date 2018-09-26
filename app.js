@@ -8,7 +8,7 @@ var connection = mysql.createConnection({
     password:'f361883b',
     database:'heroku_56876da023ab330'
 });
-
+connection.connect();
 app.get('/', function(req, res) {
     
     res.setHeader('Content-Type', 'text/plain');
