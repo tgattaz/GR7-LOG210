@@ -1,7 +1,7 @@
 var express = require('express');
 var mysql = require('mysql');
 var app = express();
-app.use(express.logger());
+
 
 var connection = mysql.createConnection({
     host:'us-cdbr-iron-east-01.cleardb.net',
