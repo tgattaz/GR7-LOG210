@@ -6,14 +6,14 @@ var aws= require('aws-sdk');
 var app = express();
 
 //connection à la bd mysql heroku
-var connection = mysql.createConnection({
+/*var connection = mysql.createConnection({
     host:'us-cdbr-iron-east-01.cleardb.net',
     user:'b2af54710141cb',
     password:'f361883b',
     database:'heroku_56876da023ab330'
 });
 connection.connect();
-
+*/
 
 
 app.get('/', function(req, res) {
