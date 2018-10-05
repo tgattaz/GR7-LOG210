@@ -1,0 +1,25 @@
+{
+  "name": "gr7-log210",
+  "version": "1.0.0",
+  "description": "Lab cours log210 automne2018 avec node.js et mysql",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tgattaz/GR7-LOG210.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tgattaz/GR7-LOG210/issues"
+  },
+  "homepage": "https://github.com/tgattaz/GR7-LOG210#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mysql": "^2.16.0",
+    "ejs": "2.x",
+    "aws-sdk": "2.x"
+  }
+}
