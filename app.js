@@ -6,27 +6,27 @@ var aws= require('aws-sdk');
 var app = express();
 
 //connection à la bd mysql heroku
-/*var connection = mysql.createConnection({
+var connection = mysql.createConnection({
     host:'us-cdbr-iron-east-01.cleardb.net',
     user:'b2af54710141cb',
     password:'f361883b',
     database:'heroku_56876da023ab330'
 });
 connection.connect();
-*/
+
 
 
 app.get('/', function(req, res) {
-    /*code pour afficher table de la base de donnée
-    connection.query('SELECT * FROM equipe',function(err,rows,fields){
+    //code pour afficher table de la base de donnée
+    connection.query('SELECT * FROM catalogue_role',function(err,rows,fields){
         if(err){
             console.log('error: ',err);
             throw err;
         }
         res.send(['Vous êtes à l\'accueil ',rows]);
     });
-    */
-    res.send('Vous êtes à l\'accueil ');
+    
+   // res.send('Vous êtes à l\'accueil ');
 });
 
 
