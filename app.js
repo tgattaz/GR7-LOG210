@@ -17,16 +17,16 @@ connection.connect();
 
 
 app.get('/', function(req, res) {
-    /*code pour afficher table de la base de donnée
-    connection.query('SELECT * FROM equipe',function(err,rows,fields){
+    //code pour afficher table de la base de donnée
+    connection.query('SELECT * FROM catalogue_role',function(err,rows,fields){
         if(err){
             console.log('error: ',err);
             throw err;
         }
         res.send(['Vous êtes à l\'accueil ',rows]);
     });
-    */
-    res.send('Vous êtes à l\'accueil ');
+    
+   // res.send('Vous êtes à l\'accueil ');
 });
 
 
