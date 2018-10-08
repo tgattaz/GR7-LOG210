@@ -18,9 +18,6 @@
   "bugs": {
     "url": "https://github.com/tgattaz/GR7-LOG210/issues"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "dependencies": {
     "aws-sdk": "2.x",
     "body-parser": "^1.18.3",
