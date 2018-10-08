@@ -2,7 +2,7 @@
   "name": "gr7-log210",
   "version": "1.0.0",
   "description": "Lab cours log210 automne2018 avec node.js et mysql",
-  "main": "app.js",
+  "main": "serveur.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -21,7 +21,6 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "homepage": "https://github.com/tgattaz/GR7-LOG210#readme",
   "dependencies": {
     "aws-sdk": "2.x",
     "body-parser": "^1.18.3",
