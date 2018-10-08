@@ -4,7 +4,10 @@
   "description": "Lab cours log210 automne2018 avec node.js et mysql",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "repository": {
     "type": "git",
@@ -15,11 +18,26 @@
   "bugs": {
     "url": "https://github.com/tgattaz/GR7-LOG210/issues"
   },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
   "homepage": "https://github.com/tgattaz/GR7-LOG210#readme",
   "dependencies": {
-    "express": "^4.16.3",
-    "mysql": "^2.16.0",
+    "aws-sdk": "2.x",
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
     "ejs": "2.x",
-    "aws-sdk": "2.x"
-  }
+    "express": "^4.16.3",
+    "morgan": "^1.9.1",
+    "mysql": "^2.16.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-scripts": "2.0.4"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
