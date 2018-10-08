@@ -176,6 +176,9 @@ export default class Login extends React.Component {
     this.setState({
       [name]: value
     });
+
+    //TODO: il faut se concentrer ici afin d'envoyer le data au back end
+    /*
     event.preventDefault();
   var url = 'http://localhost:8080/data';
   axios.post(url, {
@@ -190,6 +193,7 @@ export default class Login extends React.Component {
   });
   this.uname.value = '';
   this.pass.value = '';
+  */
   }
   
   handleSubmit(event) {
