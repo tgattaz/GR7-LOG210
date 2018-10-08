@@ -56,17 +56,17 @@ app.get('/posts', function(req, res) {
    // res.send('Vous êtes à l\'accueil ');
 });
 
-*/
+
 let port = process.env.PORT;
 if(port==null || port==""){
     port=8000;
-}
+}*/
 /*pour tester localement decomenter la ligne suivante et commente la ligne d'apres
  *ouvree un navigateur écrive localhost:8080
  *p.s. n'oublie pas de executer le fichier avant de tester dans le navegateur
  */
-/*app.listen(PORT, err => {
+app.listen(PORT, err => {
     if(err) throw err;
     console.log('Server start!');
-});*/
-app.listen(port);
+});
+//app.listen(port);
