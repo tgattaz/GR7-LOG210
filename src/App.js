@@ -19,7 +19,9 @@ class App extends Component {
           >
             Learn React
           </a>
-          <div className="container">
+          
+        </header>
+        <div className="container">
               <div className="card"/>
               <div className="card">
                   <h1 className="title">Login</h1>
@@ -44,7 +46,6 @@ class App extends Component {
                   </form>
               </div>
           </div>
-        </header>
       </div>
     );
   }
