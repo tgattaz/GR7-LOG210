@@ -20,6 +20,20 @@ app.get('/', (req, res) =>{
     
     
    res.send('Vous êtes à l\'accueil ');
+
+//code pour afficher table de la base de donnée
+connection.query('SELECT * FROM catalogue_role',(err,results) => {
+    if(err){
+        console.log('error: ',err);
+        throw err;
+    }
+    else{
+        return res.json({
+            data: rows
+        });
+    }
+    
+});
 });
 
 app.get('/roles',(req,res) => {
