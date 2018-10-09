@@ -4,21 +4,9 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import Pusher from 'pusher-js';
+//react router tuto ici 
 
-Pusher.logToConsole = true;
-
-var pusher = new Pusher('3813cd18ee179b1959fb', {
-  cluster: 'us2',
-  forceTLS: true
-});
-
-var channel = pusher.subscribe('my-channel');
-channel.bind('my-event', function(data) {
-  alert(data.message);
-});
-
-ReactDOM.render(<App uname="Commencer" password="marvin"  />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
