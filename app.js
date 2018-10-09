@@ -1,12 +1,14 @@
-var express = require('express');
-var mysql = require('mysql');
-var aws= require('aws-sdk');
+const express = require('express');
+const cors = require('cors');
+const mysql = require('mysql');
+const aws= require('aws-sdk');
 
 
-var app = express();
+const app = express();
+
 
 //connection à la bd mysql heroku
-var connection = mysql.createConnection({
+const connection = mysql.createConnection({
     host:'us-cdbr-iron-east-01.cleardb.net',
     user:'b2af54710141cb',
     password:'f361883b',
@@ -14,42 +16,27 @@ var connection = mysql.createConnection({
 });
 connection.connect();
 
+app.use(cors());
 
-
-app.get('/', (req, res) =>{
+app.get('/', function(req, res) {
     
     
-   res.send('Vous êtes à l\'accueil ');
-
-//code pour afficher table de la base de donnée
-connection.query('SELECT * FROM catalogue_role',(err,results) => {
-    if(err){
-        console.log('error: ',err);
-        throw err;
-    }
-    else{
-        return res.json({
-            data: rows
-        });
-    }
-    
-});
+   res.send('Vous êtes à l\'accueil aller sur /roles');
 });
 
-app.get('/roles',(req,res) => {
+app.get('/roles',function(req,res) {
     //code pour afficher table de la base de donnée
-    connection.query('SELECT * FROM catalogue_role',(err,results) => {
+    connection.query('SELECT * FROM catalogue_role',(err,results)=>{
         if(err){
             console.log('error: ',err);
-            throw err;
+            return err;
         }
         else{
             return res.json({
-                data: rows
+                data: results
             });
         }
-        
-    });
+    })
 });
 
 
@@ -62,5 +49,5 @@ if(port==null || port==""){
  *ouvree un navigateur écrive localhost:8080
  *p.s. n'oublie pas de executer le fichier avant de tester dans le navegateur
  */
-//app.listen(8080);
-app.listen(port);
+app.listen(8080);
+//app.listen(port);
