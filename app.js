@@ -18,18 +18,17 @@ connection.connect();
 
 app.use(cors());
 
-app.get('/', function(req, res) {
+app.get('/', (req, res) =>{
     
     
    res.send('Vous êtes à l\'accueil aller sur /roles');
 });
 
-app.get('/roles',function(req,res) {
+app.get('/roles',(req,res)=> {
     //code pour afficher table de la base de donnée
     connection.query('SELECT * FROM catalogue_role',(err,results)=>{
         if(err){
-            console.log('error: ',err);
-            return err;
+            return res.send(err);
         }
         else{
             return res.json({
