@@ -14,12 +14,16 @@ const connection = mysql.createConnection({
     password:'f361883b',
     database:'heroku_56876da023ab330'
 });
-connection.connect();
+connection.connect(err =>{
+    if(err){
+        return err;
+    }
+});
 
 app.use(cors());
 
 app.get('/', (req, res) =>{
-    
+    console.log(req.body)
     
    res.send('Vous êtes à l\'accueil aller sur /roles');
 });
@@ -32,8 +36,8 @@ app.get('/roles',(req,res)=> {
         }
         else{
             return res.json({
-                data: results
-            });
+                data:results
+            })
         }
     })
 });
@@ -48,5 +52,5 @@ if(port==null || port==""){
  *ouvree un navigateur écrive localhost:8080
  *p.s. n'oublie pas de executer le fichier avant de tester dans le navegateur
  */
-//app.listen(8080);
-app.listen(port);
+app.listen(8080);
+//app.listen(port);
