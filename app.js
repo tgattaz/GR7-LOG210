@@ -22,7 +22,7 @@ app.get('/', (req, res) =>{
    res.send('Vous êtes à l\'accueil ');
 });
 
-app.get('/roles',(req,res) => {
+app.get('https://gr7-log210.herokuapp.com/roles',(req,res) => {
     //code pour afficher table de la base de donnée
     connection.query('SELECT * FROM catalogue_role',(err,results) => {
         if(err){
