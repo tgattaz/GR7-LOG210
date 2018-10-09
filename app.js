@@ -16,17 +16,26 @@ connection.connect();
 
 
 
-app.get('/', function(req, res) {
+app.get('/', (req, res) =>{
+    
+    
+   res.send('Vous êtes à l\'accueil ');
+});
+
+app.get('/roles',(req,res) => {
     //code pour afficher table de la base de donnée
-    connection.query('SELECT * FROM catalogue_role',function(err,rows,fields){
+    connection.query('SELECT * FROM catalogue_role',(err,results) => {
         if(err){
             console.log('error: ',err);
             throw err;
         }
-        res.send(['Vous êtes à l\'accueil ',rows]);
+        else{
+            return res.json({
+                data: rows
+            });
+        }
+        
     });
-    
-   // res.send('Vous êtes à l\'accueil ');
 });
 
 
@@ -34,6 +43,7 @@ let port = process.env.PORT;
 if(port==null || port==""){
     port=8000;
 }
+
 /*pour tester localement decomenter la ligne suivante et commente la ligne d'apres
  *ouvree un navigateur écrive localhost:8080
  *p.s. n'oublie pas de executer le fichier avant de tester dans le navegateur

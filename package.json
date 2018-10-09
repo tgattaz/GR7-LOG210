@@ -17,9 +17,10 @@
   },
   "homepage": "https://github.com/tgattaz/GR7-LOG210#readme",
   "dependencies": {
-    "express": "^4.16.3",
-    "mysql": "^2.16.0",
+    "aws-sdk": "2.x",
+    "cors": "^2.8.4",
     "ejs": "2.x",
-    "aws-sdk": "2.x"
+    "express": "^4.16.3",
+    "mysql": "^2.16.0"
   }
 }
