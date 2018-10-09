@@ -139,6 +139,7 @@ export default App;
 */
 
 import React, { Component } from 'react';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 //import { AppRegistry, Text, StyleSheet } from 'react-native';
 //import logo from './logo.svg';
 import './App.css';
@@ -147,17 +148,6 @@ import axios from 'axios';
 
 Pusher.logToConsole = true;
 
-var pusher = new Pusher('3813cd18ee179b1959fb', {
-  cluster: 'us2',
-  forceTLS: true
-});
-
-
-
-var channel = pusher.subscribe('my-channel');
-channel.bind('my-event', function(data) {
-  alert(data.message);
-});
 export default class Login extends React.Component {
 
   constructor(props) {
@@ -200,7 +190,7 @@ export default class Login extends React.Component {
       alert('A username and password  was submitted: ' + this.state.uname + this.state.password);
       event.preventDefault();
   
-      fetch('https://localhost:8080/login', {
+      fetch('https://localhost:3000/', {
           method: 'POST',
           headers: {
               'Accept': 'application/json',
