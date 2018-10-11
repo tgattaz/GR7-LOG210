@@ -11,7 +11,7 @@ const normalizePort = port => parseInt(port, 10);
 const PORT = normalizePort(process.env.PORT || 8000);
 
 const app = express();
-const dev = app.get('env')!=='production';
+/*const dev = app.get('env')!=='production';
 
 if(!dev){
     app.disable('x-powered-by');
@@ -30,7 +30,7 @@ if(dev){
 }
 
 const server = createServer(app);
-
+*/
 //connection à la bd mysql heroku
 const connection = mysql.createConnection({
     host:'us-cdbr-iron-east-01.cleardb.net',
@@ -39,7 +39,7 @@ const connection = mysql.createConnection({
     database:'heroku_56876da023ab330'
 });
 
-app.use(cors());
+//app.use(cors());
 
 app.get('/', (req, res) =>{
     console.log(req.body)
