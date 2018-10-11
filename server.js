@@ -60,6 +60,20 @@ app.get('/posts', function(req, res) {
    // res.send('Vous êtes à l\'accueil ');
 });
 
+app.get('/roles',(req,res)=> {
+    //code pour afficher table de la base de donnée
+    connection.query('SELECT * FROM catalogue_role',(err,results)=>{
+        if(err){
+            return res.send(err);
+        }
+        else{
+            return res.json({
+                data:results
+            })
+        }
+    })
+});
+
 app.listen(PORT, err => {
     if(err) throw err;
     console.log('Server start!');
