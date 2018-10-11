@@ -28,9 +28,9 @@ if(!dev){
 if(dev){
     app.use(morgan('dev'));
 }
-
-const server = createServer(app);
 */
+const server = createServer(app);
+
 //connection à la bd mysql heroku
 const connection = mysql.createConnection({
     host:'us-cdbr-iron-east-01.cleardb.net',
