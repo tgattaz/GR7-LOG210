@@ -11,6 +11,23 @@ const normalizePort = port => parseInt(port, 10);
 const PORT = normalizePort(process.env.PORT || 8000);
 
 const app = express();
+const dev = app.get('env')!=='production';
+
+if(!dev){
+    app.disable('x-powered-by');
+    app.use(compression());
+    app.use(morgan('common'));
+
+    app.use(express.static(path.resolve(__dirname,'build')));
+
+    app.get('*',(req,res) => {
+        res.sendFile(path.resolve(__dirname,'build','index.html'));
+    });
+}
+
+if(dev){
+    app.use(morgan('dev'));
+}
 
 const server = createServer(app);
 
@@ -40,7 +57,7 @@ app.get('/posts', function(req, res) {
     connection.connect();
 
     //code pour afficher table de la base de donnée
-    connection.query('SELECT * FROM catalogue_role',function(err,rows,fields){
+    connection.query('SELECT * FROM catalogue_role',function(err,results){
         if(err){
             console.log('error: ',err);
             throw err;
@@ -51,7 +68,21 @@ app.get('/posts', function(req, res) {
    // res.send('Vous êtes à l\'accueil ');
 });
 
-
+app.get('/roles',(req,res)=> {
+    connection.connect();
+    //code pour afficher table de la base de donnée
+    connection.query('SELECT * FROM catalogue_role',(err,results)=>{
+        if(err){
+            return res.send(err);
+        }
+        else{
+            return res.json({
+                data:results
+            })
+        }
+    })
+    connection.end();
+});
 app.listen(PORT, err => {
     if(err) throw err;
     console.log('Server start!');
