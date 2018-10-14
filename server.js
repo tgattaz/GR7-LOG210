@@ -73,9 +73,7 @@ app.get('/roles',(req,res)=> {
             return res.send(err);
         }
         else{
-            return res.json({
-                data:results
-            })
+            return res.send(results);
         }
     })
 });

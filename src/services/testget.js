@@ -10,6 +10,7 @@ export default class Testget extends React.Component{
         axios.get('/roles').then(res => {
             console.log(res);
             this.setState({roles:res.data});
+            console.log(this.state);
         });
     }
 
