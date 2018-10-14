@@ -3,7 +3,22 @@ import React, { Component } from 'react';
 
 import './App.css';
 import { auth } from "./services/login"
+import Testget from './services/testget'
+export default class App extends Component{
+    render(){
+        return(
+            <div className="App">
+                <header titleName={"test"}>
+                    <h1>Test ajouter et afficher</h1>
+                </header>
+                <Testget/>
 
+            </div>
+        );
+    }
+    
+}
+/*
 export default class Login extends React.Component {
 
   constructor(props) {
@@ -65,4 +80,4 @@ export default class Login extends React.Component {
           </div>
       );
   }
-  }
+  }*/

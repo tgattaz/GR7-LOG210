@@ -2,6 +2,7 @@ const {createServer}=require('http');
 const express = require('express');
 const compression = require('compression');
 const morgan = require('morgan');
+const bodyparser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
 const mysql = require('mysql');
@@ -44,9 +45,13 @@ app.use(cors());
 
 app.get('/', (req, res) =>{
     console.log(req.body)
-    
+
    res.send('Vous êtes à l\'accueil aller sur /roles');
 });
+app.post('/login', function (req, res) {
+    console.log(req)
+    res.send('test connection post');
+  });
 
 app.get('/posts', function(req, res) {
 
