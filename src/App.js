@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 import './App.css';
 import { auth } from "./services/login"
 import Testget from './services/Testget'
+import Employe from './services/employe'
+import AddEmploye from './services/addEmploye'
 export default class App extends Component{
     render(){
         return(
@@ -11,7 +13,8 @@ export default class App extends Component{
                 <header >
                     <h1>Test ajouter et afficher</h1>
                 </header>
-                <Testget/>
+                <AddEmploye/>
+                <Employe/>
 
             </div>
         );

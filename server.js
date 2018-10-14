@@ -77,7 +77,20 @@ app.get('/roles',(req,res)=> {
         }
     })
 });
-
+app.post('/addEmploye',(req,res)=>{
+    console.log(req.params);
+});
+app.get('/employes',(req,res)=> {
+    //code pour afficher table de la base de donnée
+    connection.query('SELECT * FROM employe',(err,results)=>{
+        if(err){
+            return res.send(err);
+        }
+        else{
+            return res.send(results);
+        }
+    })
+});
 app.listen(PORT, err => {
     if(err) throw err;
     console.log('Server start!');
