@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 import './App.css';
 import { auth } from "./services/login"
-import Testget from './services/Testget'
+import Testget from './services/testget'
 import Employe from './services/employe'
 import AddEmploye from './services/addEmploye'
 export default class App extends Component{
