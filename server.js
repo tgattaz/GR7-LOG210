@@ -84,11 +84,17 @@ app.post('/addEmploye',(req,res)=>{
     const {nom, prenom, telephone, motDePasse, role} = req.body.employe;
     const values = [nom, prenom, telephone, motDePasse, role];
 
-   /* INSERT INTO user (nom, prenom ....)
-    values(?, ? , ?)
-    connection.query("votre SQL query", values, (err,res) => {
+    console.log(nom);
    
-    }); */
+    
+    connection.query("INSERT INTO employe (nom, prenom,telephone,motDePasse,role) VALUES (?,?,?,?,?);" , values, (err,results) => {
+        if(err){
+            return res.send(err);
+        }
+        else{
+            return res.send('Employe ajouté');
+        }
+    }); 
 
     //test sur le retour de Tung
     // {email, password} prend les données dans req.body
