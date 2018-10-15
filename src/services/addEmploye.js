@@ -37,10 +37,11 @@ export default class AddEmploye extends React.Component{
             motDePasse: this.state.motDePasse,
             role: this.state.role,
         }
-
-        axios.post('/addEmploye',{ employe })
+        
+        // console.log(employe)
+        return axios.post('/addEmploye',{ employe })
         .then(res=>{
-            console.log(res);
+            // console.log(res);
             console.log(res.data);
         });
     };
