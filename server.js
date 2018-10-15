@@ -12,6 +12,7 @@ const normalizePort = port => parseInt(port, 10);
 const PORT = normalizePort(process.env.PORT || 8000);
 
 const app = express();
+app.use(bodyparser.json());
 /*const dev = app.get('env')!=='production';
 
 if(!dev){
@@ -79,7 +80,35 @@ app.get('/roles',(req,res)=> {
 });
 app.post('/addEmploye',(req,res)=>{
     console.log(req.body);
+
+    const {nom, prenom, telephone, motDePasse, role} = req.body.employe;
+    const values = [nom, prenom, telephone, motDePasse, role];
+
+   /* INSERT INTO user (nom, prenom ....)
+    values(?, ? , ?)
+    connection.query("votre SQL query", values, (err,res) => {
+   
+    }); */
+
+    //test sur le retour de Tung
+    // {email, password} prend les données dans req.body
+    // const { email, password } = req.body;
+     //const values = [email, password];
+    // // J'assume que vous avez une table pour les user dans votre BD
+    // connection.query('SELECT email FROM user WHERE email = $1 && password = $2', values) {
+    //     // Return if exist or not en comptant les rows
+    // });
+    // connection.query('SELECT * FROM employe', (err, results) => {
+    //     if (err) {
+    //         return res.send(err);
+    //     }
+    //     else {
+    //         return res.send(results);
+    //     }
+    // })
 });
+
+
 
 app.get('/employes',(req,res)=> {
     //code pour afficher table de la base de donnée
