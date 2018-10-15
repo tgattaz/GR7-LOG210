@@ -78,8 +78,11 @@ app.get('/roles',(req,res)=> {
     })
 });
 app.post('/addEmploye',(req,res)=>{
-    console.log(req.params);
+    console.log(req.body);
 });
+
+
+
 app.get('/employes',(req,res)=> {
     //code pour afficher table de la base de donnée
     connection.query('SELECT * FROM employe',(err,results)=>{
