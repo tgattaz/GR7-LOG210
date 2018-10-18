@@ -1,14 +1,20 @@
 import React from 'react';
 import axios from 'axios';
 
-export default class AddEmploye extends React.Component{
+export default class addOrgaRef extends React.Component{
     state ={
-        //noEmploye:'',
+        //noOrganismeReferent:'',
         nom:'',
-        prenom:'',
-        telephone:'',
-        motDePasse:'',
-        role:'',
+        noCivique:'',
+        rue:'',
+        ville:'',
+        province:'',
+        codePostal:'',
+        telephoneBureau:'',
+        fax:'',
+        courriel:'',
+        siteWeb:'',
+        etat:'',
     };
 
     handleChangeNom = event =>{
