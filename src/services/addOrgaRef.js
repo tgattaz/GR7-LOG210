@@ -54,7 +54,7 @@ export default class addOrgaRef extends React.Component{
         event.preventDefault();
 
         const organisme_referent ={
-            //noEmploye: this.state.noEmploye,
+            //noOrganismeReferent: this.state.noOrganismeReferent,
             nom: this.state.nom,
             noCivique: this.state.noCivique,
             rue: this.state.rue,
