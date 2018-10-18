@@ -132,6 +132,33 @@ app.get('/organismes',(req,res)=> {
     })
 });
 
+/** Requette pour la class Organisme Réferent */
+app.post('/addOrgaRef',(req,res)=>{
+
+    const {nom,noCivique,rue,ville,province,codePostal,telephoneBureau,fax,courriel,siteWeb,etat} = req.body.organisme;
+    const values = [nom,noCivique,rue,ville,province,codePostal,telephoneBureau,fax,courriel,siteWeb,etat];
+    
+    connection.query("INSERT INTO organisme_referent (nom,noCivique,rue,ville,province,codePostal,telephoneBureau,fax,courriel,siteWeb,etat) VALUES (?,?,?,?,?,?,?,?,?,?,?);" , values, (err,results) => {
+        if(err){
+            return res.send(err);
+        }
+        else{
+            return res.send('Organisme référent ajouté');
+        }
+    })
+});
+app.get('/organismes_referents',(req,res)=> {
+    //code pour afficher table de la base de donnée
+    connection.query('SELECT * FROM organisme_referent',(err,results)=>{
+        if(err){
+            return res.send(err);
+        }
+        else{
+            return res.send(results);
+        }
+    })
+});
+
 app.listen(PORT, err => {
     if(err) throw err;
     console.log('Server start!');
