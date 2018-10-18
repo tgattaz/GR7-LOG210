@@ -78,34 +78,61 @@ export default class addOrgaRef extends React.Component{
     render(){
         return(
             <form onSubmit={this.handleSumit}>
-                <h2>Ajouter employe</h2>
+                <h2>Ajouter organisation réferent</h2>
                 <label>
-                    Nom de l'employe:
+                    Nom de l'organisation:
                     <input type="text" name="nom" onChange={this.handleChangeNom}/>
                 </label>
                 <br/>
                 <label>
-                    Prenom l'employe:
-                    <input type="text" name="prenom" onChange={this.handleChangePrenom}/>
+                    Numéro Civique:
+                    <input type="text" name="noCivique" onChange={this.handleChangeNoCivique}/>
                 </label>
                 <br/>
                 <label>
-                    Telephone de l'employe:
-                    <input type="text" name="telephone" onChange={this.handleChangeTelephone}/>
+                    Rue:
+                    <input type="text" name="rue" onChange={this.handleChangeRue}/>
                 </label>
                 <br/>
                 <label>
-                    Mot de passe de l'employe:
-                    <input type="text" name="motDePasse" onChange={this.handleChangeMotDePasse}/>
+                    Ville:
+                    <input type="text" name="ville" onChange={this.handleChangeVille}/>
                 </label>
                 <br/>
-                <select name='role' onChange={this.handleChangeRole}>
-                    <option>Choisir un role</option>
-                    <option value='1'>Directeur</option>
-                    <option value='2'>Coordennateur</option>
-                    <option value='3'>Adjoint-Coordennateur</option>
-                    <option value='4'>Intervenant</option>
-                </select>
+                <label>
+                    Province:
+                    <input type="text" name="province" onChange={this.handleChangeProvince}/>
+                </label>
+                <br/>
+                <label>
+                    Code Postal:
+                    <input type="text" name="codePostal" onChange={this.handleChangeCodePostal}/>
+                </label>
+                <br/>
+                <label>
+                    Télephone Bureau:
+                    <input type="text" name="telephoneBureau" onChange={this.handleChangeTelephoneBureau}/>
+                </label>
+                <br/>
+                <label>
+                    Fax:
+                    <input type="text" name="fax" onChange={this.handleChangeFax}/>
+                </label>
+                <br/>
+                <label>
+                    Courriel:
+                    <input type="text" name="courriel" onChange={this.handleChangeCourriel}/>
+                </label>
+                <br/>
+                <label>
+                    Site Internet:
+                    <input type="text" name="siteWeb" onChange={this.handleChangeSiteWeb}/>
+                </label>
+                <br/>
+                <label>
+                    Etat:
+                    <input type="text" name="etat" onChange={this.handleChangeEtat}/>
+                </label>
                 <br/>
                 <button type='submit'>Save</button>
             </form>
