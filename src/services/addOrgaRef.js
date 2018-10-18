@@ -20,31 +20,55 @@ export default class addOrgaRef extends React.Component{
     handleChangeNom = event =>{
         this.setState({nom:event.target.value});
     };
-    handleChangePrenom = event =>{
-        this.setState({prenom:event.target.value});
+    handleChangeNoCivique = event =>{
+        this.setState({noCivique:event.target.value});
     };
-    handleChangeTelephone = event =>{
-        this.setState({telephone:event.target.value});
+    handleChangeRue = event =>{
+        this.setState({rue:event.target.value});
     };
-    handleChangeMotDePasse = event =>{
-        this.setState({motDePasse:event.target.value});
+    handleChangeVille = event =>{
+        this.setState({ville:event.target.value});
     };
-    handleChangeRole = event =>{
-        this.setState({role:event.target.value});
+    handleChangeProvince = event =>{
+        this.setState({province:event.target.value});
+    };
+    handleChangeCodePostal = event =>{
+        this.setState({codePostal:event.target.value});
+    };
+    handleChangeTelephoneBureau = event =>{
+        this.setState({telephoneBureau:event.target.value});
+    };
+    handleChangeFax = event =>{
+        this.setState({fax:event.target.value});
+    };
+    handleChangeCourriel = event =>{
+        this.setState({courriel:event.target.value});
+    };
+    handleChangeSiteWeb = event =>{
+        this.setState({siteWeb:event.target.value});
+    };
+    handleChangeEtat = event =>{
+        this.setState({etat:event.target.value});
     };
     handleSumit = event=>{
         event.preventDefault();
 
-        const employe ={
+        const organisme_referent ={
             //noEmploye: this.state.noEmploye,
             nom: this.state.nom,
-            prenom: this.state.prenom,
-            telephone: this.state.telephone,
-            motDePasse: this.state.motDePasse,
-            role: this.state.role,
+            noCivique: this.state.noCivique,
+            rue: this.state.rue,
+            ville: this.state.ville,
+            province: this.state.province,
+            codePostal: this.state.codePostal,
+            telephoneBureau: this.state.telephoneBureau,
+            fax: this.state.fax,
+            courriel: this.state.courriel,
+            siteWeb: this.state.siteWeb,
+            etat: this.state.etat,
         }
 
-        axios.post('/addEmploye',{ employe })
+        axios.post('/addOrgaRef',{ organisme_referent })
         .then(res=>{
             console.log(res);
             console.log(res.data);
