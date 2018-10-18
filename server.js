@@ -78,14 +78,11 @@ app.get('/roles',(req,res)=> {
         }
     })
 });
+/** Requette pour la class employe */
 app.post('/addEmploye',(req,res)=>{
-    console.log(req.body);
 
     const {nom, prenom, telephone, motDePasse, role} = req.body.employe;
     const values = [nom, prenom, telephone, motDePasse, role];
-
-    console.log(nom);
-   
     
     connection.query("INSERT INTO employe (nom, prenom,telephone,motDePasse,role) VALUES (?,?,?,?,?);" , values, (err,results) => {
         if(err){
@@ -94,28 +91,8 @@ app.post('/addEmploye',(req,res)=>{
         else{
             return res.send('Employe ajouté');
         }
-    }); 
-
-    //test sur le retour de Tung
-    // {email, password} prend les données dans req.body
-    // const { email, password } = req.body;
-     //const values = [email, password];
-    // // J'assume que vous avez une table pour les user dans votre BD
-    // connection.query('SELECT email FROM user WHERE email = $1 && password = $2', values) {
-    //     // Return if exist or not en comptant les rows
-    // });
-    // connection.query('SELECT * FROM employe', (err, results) => {
-    //     if (err) {
-    //         return res.send(err);
-    //     }
-    //     else {
-    //         return res.send(results);
-    //     }
-    // })
+    })
 });
-
-
-
 app.get('/employes',(req,res)=> {
     //code pour afficher table de la base de donnée
     connection.query('SELECT * FROM employe',(err,results)=>{
@@ -127,6 +104,34 @@ app.get('/employes',(req,res)=> {
         }
     })
 });
+
+/** Requette pour la class Organisme */
+app.post('/addOrganisme',(req,res)=>{
+
+    const {nom, noCivique,rue,ville,province,codePostal,telephone,fax,courriel} = req.body.organisme;
+    const values = [nom,noCivique,rue,ville,province,codePostal,telephone,fax,courriel];
+    
+    connection.query("INSERT INTO organisme (nom, noCivique,rue,ville,province,codePostal,telephone,fax,courriel) VALUES (?,?,?,?,?,?,?,?,?);" , values, (err,results) => {
+        if(err){
+            return res.send(err);
+        }
+        else{
+            return res.send('Organisme ajouté');
+        }
+    })
+});
+app.get('/organismes',(req,res)=> {
+    //code pour afficher table de la base de donnée
+    connection.query('SELECT * FROM Organisme',(err,results)=>{
+        if(err){
+            return res.send(err);
+        }
+        else{
+            return res.send(results);
+        }
+    })
+});
+
 app.listen(PORT, err => {
     if(err) throw err;
     console.log('Server start!');

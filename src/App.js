@@ -6,6 +6,8 @@ import { auth } from "./services/login"
 import Testget from './services/testget'
 import Employe from './services/employe'
 import AddEmploye from './services/addEmploye'
+import AddOrganisme from './services/addOrganisme'
+import Organisme from './services/organisme'
 export default class App extends Component{
     render(){
         return(
@@ -13,7 +15,13 @@ export default class App extends Component{
                 <header >
                     <h1>Test ajouter et afficher</h1>
                 </header>
+                <br/>
+                <AddOrganisme/>
+                <br/>
+                <Organisme/>
+                <br/>
                 <AddEmploye/>
+                <br/>
                 <Employe/>
 
             </div>
