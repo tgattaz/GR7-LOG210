@@ -8,6 +8,10 @@ import Employe from './services/employe'
 import AddEmploye from './services/addEmploye'
 import AddOrganisme from './services/addOrganisme'
 import Organisme from './services/organisme'
+import AddOrganisme from './services/addOrganisme'
+import Organisme from './services/organisme'
+import addOrgaRef from './services/addOrgaRef'
+import OrgaRef from './services/OrgaRef'
 export default class App extends Component{
     render(){
         return(
@@ -15,6 +19,10 @@ export default class App extends Component{
                 <header >
                     <h1>Test ajouter et afficher</h1>
                 </header>
+                <br/>
+                <AddOrgaRef/>
+                <br/>
+                <OrgaRef/>
                 <br/>
                 <AddOrganisme/>
                 <br/>
