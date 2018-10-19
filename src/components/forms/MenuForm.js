@@ -1,10 +1,10 @@
 import React from "react";
-import { Menu } from 'semantic-ui-react';
+import { Menu, Dropdown} from 'semantic-ui-react';
 import { Link } from "react-router-dom";
 
 class MenuForm extends React.Component{
 
-    state = { activeItem: 'home' }
+    state = { activeItem: "" }
 
     handleItemClick = (e, { name }) => this.setState({ activeItem: name });
     
@@ -27,6 +27,20 @@ class MenuForm extends React.Component{
                   active={activeItem === 'login'}
                   onClick={this.handleItemClick}
                 />
+                <Dropdown item text='employe'>
+                  <Dropdown.Menu>
+                    <Dropdown.Item as={Link}
+                      name='employe'
+                      to="/employes"
+                      active={activeItem === 'employe'}
+                      onClick={this.handleItemClick}>Liste des employes</Dropdown.Item>
+                    <Dropdown.Item as={Link}
+                      name='addEmploye'
+                      to="/addEmploye"
+                      active={activeItem === 'addEmploye'}
+                      onClick={this.handleItemClick}>Ajouter un employe</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
               </Menu>
            </div>
         );

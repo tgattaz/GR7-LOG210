@@ -1,19 +1,20 @@
 import React from "react";
-import EmployeForm from "../forms/EmployeForm";
+import AddEmployeForm from "../forms/AddEmployeForm";
 import MenuForm from "../forms/MenuForm";
 
-class EmployePage extends React.Component{
+class AddEmployePage extends React.Component{
     //submit = (data) => this.props.login(data).then(() => this.props.history.push("/"));
     
     render(){
         return(
             <div>
-                <h1>Liste des employés</h1>
+                <h2>Ajouter un employé</h2>
                 <MenuForm/>
-                <EmployeForm/>
+                <br/>
+                <AddEmployeForm/>
             </div>
         );
     }
 }
 
-export default EmployePage;
+export default AddEmployePage;
