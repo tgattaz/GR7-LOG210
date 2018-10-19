@@ -1,10 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import MenuForm from "../forms/MenuForm";
 
 const HomePage = () => (
     <div>
         <h1>Home Page</h1>
-        <Link to="/login">Login</Link>
+        <MenuForm/>
     </div>
 );
 export default HomePage;
+
+/*
+<Link to="/login">Login</Link>
+        <Link to="/employes">Liste des employes</Link>
+*/
