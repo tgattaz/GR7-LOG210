@@ -8,9 +8,7 @@ import Employe from './services/employe'
 import AddEmploye from './services/addEmploye'
 import AddOrganisme from './services/addOrganisme'
 import Organisme from './services/organisme'
-import AddOrganisme from './services/addOrganisme'
-import Organisme from './services/organisme'
-import addOrgaRef from './services/addOrgaRef'
+import AddOrgaRef from './services/addOrgaRef'
 import OrgaRef from './services/OrgaRef'
 export default class App extends Component{
     render(){
