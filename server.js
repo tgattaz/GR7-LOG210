@@ -8,6 +8,11 @@ const cors = require('cors');
 const mysql = require('mysql');
 const aws= require('aws-sdk');
 
+//connection à la bd mysql heroku
+const db= require('./BD/database');
+
+
+import auth from "./routes/auth";
 const normalizePort = port => parseInt(port, 10);
 const PORT = normalizePort(process.env.PORT || 8000);
 
@@ -34,13 +39,7 @@ app.use(morgan('dev'));
 
 const server = createServer(app);
 
-//connection à la bd mysql heroku
-const connection = mysql.createConnection({
-    host:'us-cdbr-iron-east-01.cleardb.net',
-    user:'b2af54710141cb',
-    password:'f361883b',
-    database:'heroku_56876da023ab330'
-});
+
 
 app.use(cors());
 
@@ -54,13 +53,11 @@ app.post('/login', function (req, res) {
     res.send('test connection post');
   });
 
-app.post('/api/auth', (req, res) => {
-    res.status(400).json({ errors:{global: "Invalid credentials"}});
-});
+app.post('/api/auth',auth);
 
 app.get('/roles',(req,res)=> {
     //code pour afficher table de la base de donnée
-    connection.query('SELECT * FROM catalogue_role',(err,results)=>{
+    db.query('SELECT * FROM catalogue_role',(err,results)=>{
         if(err){
             return res.send(err);
         }
@@ -75,7 +72,7 @@ app.post('/addEmploye',(req,res)=>{
     const {nom, prenom, telephone, motDePasse, role} = req.body.employe;
     const values = [nom, prenom, telephone, motDePasse, role];
     
-    connection.query("INSERT INTO employe (nom, prenom,telephone,motDePasse,role) VALUES (?,?,?,?,?);" , values, (err,results) => {
+    db.query("INSERT INTO employe (nom, prenom,telephone,motDePasse,role) VALUES (?,?,?,?,?);" , values, (err,results) => {
         if(err){
             return res.send(err);
         }
@@ -86,7 +83,7 @@ app.post('/addEmploye',(req,res)=>{
 });
 app.get('/employes',(req,res)=> {
     //code pour afficher table de la base de donnée
-    connection.query('SELECT * FROM employe',(err,results)=>{
+    db.query('SELECT * FROM employe',(err,results)=>{
         if(err){
             return res.send(err);
         }
@@ -102,7 +99,7 @@ app.post('/addOrganisme',(req,res)=>{
     const {nom, noCivique,rue,ville,province,codePostal,telephone,fax,courriel} = req.body.organisme;
     const values = [nom,noCivique,rue,ville,province,codePostal,telephone,fax,courriel];
     
-    connection.query("INSERT INTO organisme (nom, noCivique,rue,ville,province,codePostal,telephone,fax,courriel) VALUES (?,?,?,?,?,?,?,?,?);" , values, (err,results) => {
+    db.query("INSERT INTO organisme (nom, noCivique,rue,ville,province,codePostal,telephone,fax,courriel) VALUES (?,?,?,?,?,?,?,?,?);" , values, (err,results) => {
         if(err){
             return res.send(err);
         }
@@ -113,7 +110,7 @@ app.post('/addOrganisme',(req,res)=>{
 });
 app.get('/organismes',(req,res)=> {
     //code pour afficher table de la base de donnée
-    connection.query('SELECT * FROM Organisme',(err,results)=>{
+    db.query('SELECT * FROM Organisme',(err,results)=>{
         if(err){
             return res.send(err);
         }
@@ -129,7 +126,7 @@ app.post('/addOrgaRef',(req,res)=>{
     const {nom,noCivique,rue,ville,province,codePostal,telephoneBureau,fax,courriel,siteWeb,etat} = req.body.organisme_referent;
     const values = [nom,noCivique,rue,ville,province,codePostal,telephoneBureau,fax,courriel,siteWeb,etat];
     
-    connection.query("INSERT INTO organisme_referent (nom,noCivique,rue,ville,province,codePostal,telephoneBureau,fax,courriel,siteWeb,etat) VALUES (?,?,?,?,?,?,?,?,?,?,?);" , values, (err,results) => {
+    db.query("INSERT INTO organisme_referent (nom,noCivique,rue,ville,province,codePostal,telephoneBureau,fax,courriel,siteWeb,etat) VALUES (?,?,?,?,?,?,?,?,?,?,?);" , values, (err,results) => {
         if(err){
             return res.send(err);
         }
@@ -140,7 +137,7 @@ app.post('/addOrgaRef',(req,res)=>{
 });
 app.get('/organismes_referents',(req,res)=> {
     //code pour afficher table de la base de donnée
-    connection.query('SELECT * FROM organisme_referent',(err,results)=>{
+    db.query('SELECT * FROM organisme_referent',(err,results)=>{
         if(err){
             return res.send(err);
         }
