@@ -11,7 +11,6 @@ const aws= require('aws-sdk');
 //connection à la bd mysql heroku
 const db= require('./BD/database');
 
-
 import auth from "./routes/auth";
 const normalizePort = port => parseInt(port, 10);
 const PORT = normalizePort(process.env.PORT || 8000);
@@ -33,7 +32,7 @@ if(!dev){
 }
 
 if(dev){
-    
+
 }*/
 app.use(morgan('dev'));
 
@@ -71,7 +70,7 @@ app.post('/addEmploye',(req,res)=>{
 
     const {nom, prenom, telephone, motDePasse, role} = req.body.employe;
     const values = [nom, prenom, telephone, motDePasse, role];
-    
+
     db.query("INSERT INTO employe (nom, prenom,telephone,motDePasse,role) VALUES (?,?,?,?,?);" , values, (err,results) => {
         if(err){
             return res.send(err);
@@ -98,7 +97,7 @@ app.post('/addOrganisme',(req,res)=>{
 
     const {nom, noCivique,rue,ville,province,codePostal,telephone,fax,courriel} = req.body.organisme;
     const values = [nom,noCivique,rue,ville,province,codePostal,telephone,fax,courriel];
-    
+
     db.query("INSERT INTO organisme (nom, noCivique,rue,ville,province,codePostal,telephone,fax,courriel) VALUES (?,?,?,?,?,?,?,?,?);" , values, (err,results) => {
         if(err){
             return res.send(err);
@@ -125,7 +124,7 @@ app.post('/addOrgaRef',(req,res)=>{
 
     const {nom,noCivique,rue,ville,province,codePostal,telephoneBureau,fax,courriel,siteWeb,etat} = req.body.organisme_referent;
     const values = [nom,noCivique,rue,ville,province,codePostal,telephoneBureau,fax,courriel,siteWeb,etat];
-    
+
     db.query("INSERT INTO organisme_referent (nom,noCivique,rue,ville,province,codePostal,telephoneBureau,fax,courriel,siteWeb,etat) VALUES (?,?,?,?,?,?,?,?,?,?,?);" , values, (err,results) => {
         if(err){
             return res.send(err);
