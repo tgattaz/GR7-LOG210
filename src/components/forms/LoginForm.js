@@ -7,7 +7,7 @@ import InlineError from "../messages/InlineError";
 class LoginForm extends React.Component{
     state = {
         data: {
-            email:"",
+            prenom:"",
             password:""
         },
         loading: false,
@@ -32,7 +32,8 @@ class LoginForm extends React.Component{
 
     validate = (data) => {
         const errors = {};
-        if(!Validator.isEmail(data.email)) errors.email = "invalid email";
+        console.log();
+        //if(!Validator.isEmpty(data.prenom)) errors.prenom = "Utilisateur invalide";
         if(!data.password) errors.password = "Can't be blank";
         return errors;
     }
@@ -45,13 +46,13 @@ class LoginForm extends React.Component{
             <Message.Header>Erreur</Message.Header>
             <p>{errors.global}</p>
             </Message>}
-                <Form.Field error={!!errors.email}>
-                    <label htmlFor="email">Email</label>
-                    <input type='email' id='email' name='email' placeholder="bob@bob.com" value={data.email} onChange={this.onChange} />
-                    {errors.email && <InlineError text={errors.email}/>}
+                <Form.Field error={!!errors.prenom}>
+                    <label htmlFor="prenom">Prenom</label>
+                    <input type='text' id='prenom' name='prenom' value={data.prenom} onChange={this.onChange} />
+                    {errors.prenom && <InlineError text={errors.prenom}/>}
                 </Form.Field>
                 <Form.Field error={!!errors.password}>
-                    <label htmlFor="password">Password</label>
+                    <label htmlFor="password">Mot de passe</label>
                     <input type='password' id='password' name='password' value={data.password} onChange={this.onChange} />
                     {errors.password && <InlineError text={errors.password}/>}
                 </Form.Field>

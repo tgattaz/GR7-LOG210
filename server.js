@@ -71,7 +71,7 @@ app.post('/addEmploye',(req,res)=>{
 
     const {nom, prenom, telephone, motDePasse, role} = req.body.employe;
     const values = [nom, prenom, telephone, motDePasse, role];
-    
+    console.log(req.body.employe);
     db.query("INSERT INTO employe (nom, prenom,telephone,motDePasse,role) VALUES (?,?,?,?,?);" , values, (err,results) => {
         if(err){
             return res.send(err);

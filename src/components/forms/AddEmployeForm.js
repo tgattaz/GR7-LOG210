@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Button } from "semantic-ui-react";
+import { Form, Button ,Dropdown} from "semantic-ui-react";
 import axios from 'axios';
 
 export default class AddEmployeForm extends React.Component{
@@ -79,6 +79,7 @@ export default class AddEmployeForm extends React.Component{
                 <br/>
                 <Form.Field>
                     <select name='role' placeholder="Choisir un role" onChange={this.handleChangeRole}>
+                        <option selected>Choisir</option>
                         <option value='1'>Directeur</option>
                         <option value='2'>Coordennateur</option>
                         <option value='3'>Adjoint-Coordennateur</option>
