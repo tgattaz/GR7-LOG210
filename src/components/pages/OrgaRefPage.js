@@ -1,20 +1,19 @@
 import React from "react";
-import EmployeForm from "../forms/EmployeForm";
+import OrgaRefForm from "../forms/EmployeForm";
 import MenuForm from "../forms/MenuForm";
 
-class EmployePage extends React.Component{
+class OrgaRefPage extends React.Component{
     //submit = (data) => this.props.login(data).then(() => this.props.history.push("/"));
 
     render(){
         return(
             <div>
-                <h1>Test</h1>
+                <h1>Liste des organismes référents</h1>
                 <MenuForm/>
-                <EmployeForm/>
-                <h1>Bonjour.</h1>
+                <OrgaRefForm/>
             </div>
         );
     }
 }
 
-export default EmployePage;
+export default OrgaRefPage;

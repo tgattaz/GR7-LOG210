@@ -4,7 +4,8 @@ import HomePage from "./components/pages/HomePage";
 import LoginPage from "./components/pages/LoginPage";
 import EmployePage from "./components/pages/EmployePage";
 import AddEmployePage from "./components/pages/AddEmployePage";
-import test from "./components/pages/test";
+import OrgaRefPage from "./components/pages/OrgaRefPage";
+import AddOrgaRefPage from "./components/pages/AddOrgaRefPage";
 
 const App = () =>
 <div className="ui container">
@@ -12,7 +13,8 @@ const App = () =>
     <Route path="/login" exact component={LoginPage}/>
     <Route path="/employes" exact component={EmployePage}/>
     <Route path="/addEmploye" exact component={AddEmployePage}/>
-    <Route path="/test" exact component={test}/>
+    <Route path="/OrgaRef" exact component={OrgaRefPage}/>
+    <Route path="/addOrgaRef" exact component={AddOrgaRefPage}/>
 </div>
 
 export default App;
