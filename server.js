@@ -54,17 +54,8 @@ app.post('/login', function (req, res) {
     res.send('test connection post');
   });
 
-app.get('/posts', function(req, res) {
-
-    //code pour afficher table de la base de donnée
-    connection.query('SELECT * FROM catalogue_role',function(err,results){
-        if(err){
-            console.log('error: ',err);
-            throw err;
-        }
-        res.send(results);
-    });
-   // res.send('Vous êtes à l\'accueil ');
+app.post('/api/auth', (req, res) => {
+    res.status(400).json({ errors:{global: "Invalid credentials"}});
 });
 
 app.get('/roles',(req,res)=> {
