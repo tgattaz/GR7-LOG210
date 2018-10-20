@@ -7,18 +7,18 @@ class MenuForm extends React.Component{
     state = { activeItem: "" }
 
     handleItemClick = (e, { name }) => this.setState({ activeItem: name });
-    
+
 
     render(){
         const { activeItem }=this.state;
         return (
             <div>
               <Menu pointing secondary>
-                <Menu.Item 
-                  as={Link} 
-                  name='home' 
-                  to="/" 
-                  active={activeItem === 'home'} 
+                <Menu.Item
+                  as={Link}
+                  name='home'
+                  to="/"
+                  active={activeItem === 'home'}
                   onClick={this.handleItemClick}/>
                 <Menu.Item
                   as={Link}
@@ -39,6 +39,20 @@ class MenuForm extends React.Component{
                       to="/addEmploye"
                       active={activeItem === 'addEmploye'}
                       onClick={this.handleItemClick}>Ajouter un employe</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+                <Dropdown item text='organismes référents'>
+                  <Dropdown.Menu>
+                    <Dropdown.Item as={Link}
+                      name='OrgaRef'
+                      to="/OrgaRef"
+                      active={activeItem === 'OrgaRef'}
+                      onClick={this.handleItemClick}>Liste des organismes référents</Dropdown.Item>
+                    <Dropdown.Item as={Link}
+                      name='addOrgaRef'
+                      to="/addOrgaRef"
+                      active={activeItem === 'addOrgaRef'}
+                      onClick={this.handleItemClick}>Ajouter un organisme référent</Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
               </Menu>
