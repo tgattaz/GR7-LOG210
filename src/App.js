@@ -1,102 +1,26 @@
-import React, { Component } from 'react';
-//import { AppRegistry, Text, StyleSheet } from 'react-native';
+import React from 'react';
+import { Route } from 'react-router-dom'
+import HomePage from "./components/pages/HomePage";
+import LoginPage from "./components/pages/LoginPage";
+import EmployePage from "./components/pages/EmployePage";
+import AddEmployePage from "./components/pages/AddEmployePage";
+import OrgaRefPage from "./components/pages/OrgaRefPage";
+import AddOrgaRefPage from "./components/pages/AddOrgaRefPage";
+import AddRefPage from "./components/pages/AddRefPage";
+import RefPage from "./components/pages/RefPage";
 
-import './App.css';
-import { auth } from "./services/login"
-import Testget from './services/testget'
-import Employe from './services/employe'
-import AddEmploye from './services/addEmploye'
-import AddOrganisme from './services/addOrganisme'
-import Organisme from './services/organisme'
-import AddOrgaRef from './services/addOrgaRef'
-import OrgaRef from './services/OrgaRef'
-import RechercheReferent from './services/RechercheReferent';
-export default class App extends Component {
-    render() {
-        return (
-            <div className="App">
-                <header >
-                    <h1>Test ajouter et afficher</h1>
-                </header>
-                <br />
-                <AddOrgaRef />
-                <br />
-                <OrgaRef />
-                <br />
-                <AddOrganisme />
-                <br />
-                <Organisme />
-                <br />
-                <AddEmploye />
-                <br />
-                <Employe />
-                <br />
-                <RechercheReferent />
-            </div>
-        );
-    }
 
-}
-/*
-export default class Login extends React.Component {
+const App = () => (
+  <div className="ui container">
+    <Route path="/" exact component={HomePage} />
+    <Route path="/login" exact component={LoginPage} />
+    <Route path="/employes" exact component={EmployePage} />
+    <Route path="/addEmploye" exact component={AddEmployePage} />
+    <Route path="/OrgaRef" exact component={OrgaRefPage} />
+    <Route path="/addOrgaRef" exact component={AddOrgaRefPage} />
+    <Route path="/addRef" exact component={AddRefPage} />
+    <Route path="/Ref" exact component={RefPage} />
+  </div>
+);
 
-  constructor(props) {
-      super(props);
-      this.state = {uname: '', password: ''};
-  
-  }
-  //higher order components (HOC)  factoriser code :erreur , page loading 
-  //faire les test avec jest render %
-  //alller par featcher 
-  handleChange = (event) => {
-    const target = event.target;
-    const value = target.value;
-    const name = target.name;
-
-    this.setState({
-      [name]: value
-    });
-
-  }
-  
-  handleSubmit = (event) => {
-    //   alert('A username and password  was submitted: ' + this.state.uname + this.state.password);
-      event.preventDefault();
-      auth(this.state);
-  }
-  
-  render() {
-  
-      return (
-          <div>
-              <header titleName={"Login"}>
-                  <div className="container">
-                      <div className="card"/>
-                      <div className="card">
-                          <h1 className="title">Login</h1>
-                          <form onSubmit={this.handleSubmit}>
-                              <div className="input-container">
-                                  <input name="uname" type="text" value={this.state.uname} id="#uname" required="required"
-                                          onChange={this.handleChange}/>
-                                  <label form="#unamelabel">Username</label>
-                                  <div className="bar"/>
-                              </div>
-                              <div className="input-container">
-                                  <input name="password" type="password" value={this.state.password} id="#pass" required="required"
-                                         onChange={this.handleChange}/>
-                                  <label form="#passlabel">Password</label>
-                                  <div className="bar"/>
-                              </div>
-                              <div className="button-container">
-                                  <button type="submit" value="Submit"><span>Go</span></button>
-                              </div>
-                              <div className="footer"><a href="#">Forgot your password?</a></div>
-                          </form>
-                      </div>
-                  </div>
-              </header>
-              <footer/>
-          </div>
-      );
-  }
-  }*/
+export default App;
