@@ -11,10 +11,12 @@ const aws= require('aws-sdk');
 //connection à la bd mysql heroku
 const db= require('./BD/database');
 
+import dotenv from "dotenv";
 import auth from "./routes/auth";
 const normalizePort = port => parseInt(port, 10);
 const PORT = normalizePort(process.env.PORT || 8000);
 
+dotenv.config();
 const app = express();
 app.use(bodyparser.json());
 /*const dev = app.get('env')!=='production';
@@ -52,7 +54,7 @@ app.post('/login', function (req, res) {
     res.send('test connection post');
   });
 
-app.post('/api/auth',auth);
+app.use('/api/auth',auth);
 
 app.get('/roles',(req,res)=> {
     //code pour afficher table de la base de donnée
