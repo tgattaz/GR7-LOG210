@@ -1,4 +1,4 @@
-const {createServer}=require('http');
+const { createServer } = require('http');
 const express = require('express');
 const compression = require('compression');
 const morgan = require('morgan');
@@ -6,7 +6,7 @@ const bodyparser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
 const mysql = require('mysql');
-const aws= require('aws-sdk');
+const aws = require('aws-sdk');
 
 const normalizePort = port => parseInt(port, 10);
 const PORT = normalizePort(process.env.PORT || 8000);
@@ -36,130 +36,154 @@ const server = createServer(app);
 
 //connection à la bd mysql heroku
 const connection = mysql.createConnection({
-    host:'us-cdbr-iron-east-01.cleardb.net',
-    user:'b2af54710141cb',
-    password:'f361883b',
-    database:'heroku_56876da023ab330'
+    host: 'us-cdbr-iron-east-01.cleardb.net',
+    user: 'b2af54710141cb',
+    password: 'f361883b',
+    database: 'heroku_56876da023ab330'
 });
 
 app.use(cors());
 
-app.get('/', (req, res) =>{
+app.get('/', (req, res) => {
     console.log(req.body)
 
-   res.send('Vous êtes à l\'accueil aller sur /roles');
+    res.send('Vous êtes à l\'accueil aller sur /roles');
 });
 app.post('/login', function (req, res) {
     console.log(req)
     res.send('test connection post');
-  });
+});
 
-app.get('/posts', function(req, res) {
+app.get('/posts', function (req, res) {
 
     //code pour afficher table de la base de donnée
-    connection.query('SELECT * FROM catalogue_role',function(err,results){
-        if(err){
-            console.log('error: ',err);
+    connection.query('SELECT * FROM catalogue_role', function (err, results) {
+        if (err) {
+            console.log('error: ', err);
             throw err;
         }
         res.send(results);
     });
-   // res.send('Vous êtes à l\'accueil ');
+    // res.send('Vous êtes à l\'accueil ');
 });
 
-app.get('/roles',(req,res)=> {
+app.get('/roles', (req, res) => {
     //code pour afficher table de la base de donnée
-    connection.query('SELECT * FROM catalogue_role',(err,results)=>{
-        if(err){
+    connection.query('SELECT * FROM catalogue_role', (err, results) => {
+        if (err) {
             return res.send(err);
         }
-        else{
+        else {
             return res.send(results);
         }
     })
 });
 /** Requette pour la class employe */
-app.post('/addEmploye',(req,res)=>{
+app.post('/addEmploye', (req, res) => {
 
-    const {nom, prenom, telephone, motDePasse, role} = req.body.employe;
+    const { nom, prenom, telephone, motDePasse, role } = req.body.employe;
     const values = [nom, prenom, telephone, motDePasse, role];
-    
-    connection.query("INSERT INTO employe (nom, prenom,telephone,motDePasse,role) VALUES (?,?,?,?,?);" , values, (err,results) => {
-        if(err){
+
+    connection.query("INSERT INTO employe (nom, prenom,telephone,motDePasse,role) VALUES (?,?,?,?,?);", values, (err, results) => {
+        if (err) {
             return res.send(err);
         }
-        else{
+        else {
             return res.send('Employe ajouté');
         }
     })
 });
-app.get('/employes',(req,res)=> {
+app.get('/employes', (req, res) => {
     //code pour afficher table de la base de donnée
-    connection.query('SELECT * FROM employe',(err,results)=>{
-        if(err){
+    connection.query('SELECT * FROM employe', (err, results) => {
+        if (err) {
             return res.send(err);
         }
-        else{
+        else {
             return res.send(results);
         }
     })
 });
 
 /** Requette pour la class Organisme */
-app.post('/addOrganisme',(req,res)=>{
+app.post('/addOrganisme', (req, res) => {
 
-    const {nom, noCivique,rue,ville,province,codePostal,telephone,fax,courriel} = req.body.organisme;
-    const values = [nom,noCivique,rue,ville,province,codePostal,telephone,fax,courriel];
-    
-    connection.query("INSERT INTO organisme (nom, noCivique,rue,ville,province,codePostal,telephone,fax,courriel) VALUES (?,?,?,?,?,?,?,?,?);" , values, (err,results) => {
-        if(err){
+    const { nom, noCivique, rue, ville, province, codePostal, telephone, fax, courriel } = req.body.organisme;
+    const values = [nom, noCivique, rue, ville, province, codePostal, telephone, fax, courriel];
+
+    connection.query("INSERT INTO organisme (nom, noCivique,rue,ville,province,codePostal,telephone,fax,courriel) VALUES (?,?,?,?,?,?,?,?,?);", values, (err, results) => {
+        if (err) {
             return res.send(err);
         }
-        else{
+        else {
             return res.send('Organisme ajouté');
         }
     })
 });
-app.get('/organismes',(req,res)=> {
+app.get('/organismes', (req, res) => {
     //code pour afficher table de la base de donnée
-    connection.query('SELECT * FROM Organisme',(err,results)=>{
-        if(err){
+    connection.query('SELECT * FROM Organisme', (err, results) => {
+        if (err) {
             return res.send(err);
         }
-        else{
+        else {
             return res.send(results);
         }
     })
 });
 
 /** Requette pour la class Organisme Réferent */
-app.post('/addOrgaRef',(req,res)=>{
+app.post('/addOrgaRef', (req, res) => {
 
-    const {nom,noCivique,rue,ville,province,codePostal,telephoneBureau,fax,courriel,siteWeb,etat} = req.body.organisme_referent;
-    const values = [nom,noCivique,rue,ville,province,codePostal,telephoneBureau,fax,courriel,siteWeb,etat];
-    
-    connection.query("INSERT INTO organisme_referent (nom,noCivique,rue,ville,province,codePostal,telephoneBureau,fax,courriel,siteWeb,etat) VALUES (?,?,?,?,?,?,?,?,?,?,?);" , values, (err,results) => {
-        if(err){
+    const { nom, noCivique, rue, ville, province, codePostal, telephoneBureau, fax, courriel, siteWeb, etat } = req.body.organisme_referent;
+    const values = [nom, noCivique, rue, ville, province, codePostal, telephoneBureau, fax, courriel, siteWeb, etat];
+
+    connection.query("INSERT INTO organisme_referent (nom,noCivique,rue,ville,province,codePostal,telephoneBureau,fax,courriel,siteWeb,etat) VALUES (?,?,?,?,?,?,?,?,?,?,?);", values, (err, results) => {
+        if (err) {
             return res.send(err);
         }
-        else{
+        else {
             return res.send('Organisme référent ajouté');
         }
     })
 });
-app.get('/organismes_referents',(req,res)=> {
+app.get('/organismes_referents', (req, res) => {
     //code pour afficher table de la base de donnée
-    connection.query('SELECT * FROM organisme_referent',(err,results)=>{
-        if(err){
+    connection.query('SELECT * FROM organisme_referent', (err, results) => {
+        if (err) {
             return res.send(err);
         }
-        else{
+        else {
             return res.send(results);
         }
     })
 });
 
+app.post('/recherche_referents', (req, res) => {
+
+    const { recherche } = req.body.recherche_referent;
+    const values = [recherche, recherche, recherche, recherche, recherche, recherche, recherche, recherche, recherche];
+    
+    connection.query(
+        'SELECT REF.* ' +
+        'FROM `referent` REF ' +
+        'LEFT JOIN `organisme_referent` OREF ON REF.noReferent = OREF.referent ' +
+        'LEFT JOIN `organisme` ORG ON ORG.noOrganisme = OREF.organisme ' +
+        'LEFT JOIN `dossier` D ON D.organisme = ORG.noOrganisme ' +
+        'WHERE REF.nom LIKE CONCAT(\'%\', ?, \'%\') OR REF.prenom LIKE CONCAT(\'%\', ?, \'%\') OR ORG.nom LIKE CONCAT(\'%\', ?, \'%\') ' + 
+        '  OR REF.titre LIKE CONCAT(\'%\', ?, \'%\') OR REF.telephoneCell LIKE CONCAT(\'%\', ?, \'%\') ' + 
+        '  OR REF.telephoneBureau LIKE CONCAT(\'%\', ?, \'%\') OR ORG.telephone LIKE CONCAT(\'%\', ?, \'%\') ' + 
+        '  OR OREF.telephoneBureau LIKE CONCAT(\'%\', ?, \'%\') OR D.noDossierFamille = ?', values, (err, results) => {
+            if (err) {
+                return res.send(err);
+            }
+            else {
+                return res.send(results);
+            }
+        })
+});
+
 app.listen(PORT, err => {
-    if(err) throw err;
+    if (err) throw err;
     console.log('Server start!');
 });
