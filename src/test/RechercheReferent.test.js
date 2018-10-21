@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import RechercheReferent from '../services/RechercheReferent';
+import TestUtils from 'react-addons-test-utils';
 
 it('Recherche Referent Renders without crashing', () => {
   const div = document.createElement('div');
@@ -10,12 +11,9 @@ it('Recherche Referent Renders without crashing', () => {
 
 it('Recherche rerent trouve', () => {
   const div = document.createElement('div');
-  var a = <RechercheReferent />;
-
-  expect(1 + 2).toBeEqualTo(3);
-
+  const a = <RechercheReferent />;  
+  
   ReactDOM.render(a, div, () => {
-    
   });
   ReactDOM.unmountComponentAtNode(div);
 });
