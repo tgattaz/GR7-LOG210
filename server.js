@@ -7,9 +7,11 @@ const path = require('path');
 const cors = require('cors');
 const mysql = require('mysql');
 const aws= require('aws-sdk');
-const auth = require("./routes/auth");
-//il y avait cela dans le code
+
+//il y avait cela dans le code ça faisait crash mon server 
 //import auth from "./routes/auth";
+//const auth = require("./routes/auth");
+
 
 //connection à la bd mysql heroku
 const db= require('./BD/database');
@@ -55,7 +57,8 @@ app.post('/login', function (req, res) {
     res.send('test connection post');
   });
 
-app.post('/api/auth',auth);
+//il y avait cela dans le code ça faisait crash mon server 
+//app.post('/api/auth',auth);
 
 app.get('/roles',(req,res)=> {
     //code pour afficher table de la base de donnée
@@ -138,7 +141,7 @@ app.post('/addOrgaRef',(req,res)=>{
 });
 app.get('/organismes_referents',(req,res)=> {
     //code pour afficher table de la base de donnée
-    db.query('SELECT * FROM organisme_referent',(err,results)=>{
+    db.query('SELECT * FROM Organisme_Referent',(err,results)=>{
         if(err){
             return res.send(err);
         }
@@ -147,23 +150,36 @@ app.get('/organismes_referents',(req,res)=> {
         }
     })
 });
-/** Requette pour la class Organisme Réferent */
+/** Requette pour la class Réferent */
 app.post('/addRef', (req, res) => {
 
-    const { nom, noCivique, rue, ville, province, codePostal, telephoneBureau, fax, courriel, siteWeb, etat } = req.body.organisme_referent;
-    const values = [nom, noCivique, rue, ville, province, codePostal, telephoneBureau, fax, courriel, siteWeb, etat];
+    const { nom, prenom, titre, telephoneCell, telephoneBureau, fax, courriel, preferenceReception  } = req.body.referent;
+    const values = [nom, prenom, titre, telephoneCell, telephoneBureau, fax, courriel, preferenceReception];
 
-    db.query("INSERT INTO organisme_referent (nom,noCivique,rue,ville,province,codePostal,telephoneBureau,fax,courriel,siteWeb,etat) VALUES (?,?,?,?,?,?,?,?,?,?,?);", values, (err, results) => {
+    db.query(
+      "INSERT INTO Referent  (nom,prenom,titre,telephoneCell,telephoneBureau,fax,courriel,preferenceReception) VALUES (?,?,?,?,?,?,?,?);",
+      values,
+      (err, results) => {
         if (err) {
-            return res.send(err);
+          return res.send(err);
+        } else {
+          return res.send("Référent ajouté");
         }
-        else {
-            return res.send('Organisme référent ajouté');
-        }
-    })
+      }
+    );
+});
+app.get('/referents', (req, res) => {
+    //code pour afficher table de la base de donnée
+    db.query("SELECT * FROM Referent", (err, results) => {
+      if (err) {
+        return res.send(err);
+      } else {
+        return res.send(results);
+      }
+    });
 });
 
 app.listen(PORT, err => {
     if(err) throw err;
-    console.log('Server start!');
+    console.log('Server start on port:' +PORT + '!');
 });
