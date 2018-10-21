@@ -2,29 +2,6 @@ import React from 'react';
 import axios from 'axios';
 
 export default class RechercheReferent extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.data = {
-            columnDefs: [
-                { headerName: "Make", field: "nom" },
-                { headerName: "Model", field: "prenom" },
-                { headerName: "Price", field: "titre" },
-                { headerName: "Model", field: "telephoneCell" },
-                { headerName: "Model", field: "telephoneBureau" },
-                { headerName: "Model", field: "fax" },
-                { headerName: "Model", field: "prenom" },
-                { headerName: "Model", field: "prenom" },
-
-            ],
-            rowData: [
-                { make: "Toyota", model: "Celica", price: 35000 },
-                { make: "Ford", model: "Mondeo", price: 32000 },
-                { make: "Porsche", model: "Boxter", price: 72000 }
-            ]
-        }
-    }
-
     state = {
         recherche: '',
         referents_trouves: []
