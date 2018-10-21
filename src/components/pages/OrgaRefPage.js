@@ -1,6 +1,6 @@
 import React from "react";
 import OrgaRefForm from "../forms/OrgaRefForm";
-import MenuForm from "../forms/MenuForm";
+import MenuAllForm from "../forms/MenuAllForm";
 
 class OrgaRefPage extends React.Component{
     //submit = (data) => this.props.login(data).then(() => this.props.history.push("/"));
@@ -9,7 +9,7 @@ class OrgaRefPage extends React.Component{
         return(
             <div>
                 <h1>Liste des organismes référents</h1>
-                <MenuForm/>
+                <MenuAllForm/>
                 <OrgaRefForm/>
             </div>
         );

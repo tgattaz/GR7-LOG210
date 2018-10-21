@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import LoginForm from "../forms/LoginForm";
 import { login } from "../../actions/auth";
-import MenuForm from "../forms/MenuForm";
+import MenuAllForm from "../forms/MenuAllForm";
 
 class LoginPage extends React.Component{
     submit = (data) => this.props.login(data).then(() => this.props.history.push("/"));
@@ -12,7 +12,7 @@ class LoginPage extends React.Component{
         return(
             <div>
                 <h1>Login Page</h1>
-                <MenuForm/>
+                <MenuAllForm/>
                 <LoginForm submit={this.submit}/>
             </div>
         );
