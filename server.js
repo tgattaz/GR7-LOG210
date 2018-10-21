@@ -7,11 +7,14 @@ const path = require('path');
 const cors = require('cors');
 const mysql = require('mysql');
 const aws= require('aws-sdk');
+const auth = require("./routes/auth");
+//il y avait cela dans le code
+//import auth from "./routes/auth";
 
 //connection à la bd mysql heroku
 const db= require('./BD/database');
 
-import auth from "./routes/auth";
+
 const normalizePort = port => parseInt(port, 10);
 const PORT = normalizePort(process.env.PORT || 8000);
 
@@ -141,6 +144,21 @@ app.get('/organismes_referents',(req,res)=> {
         }
         else{
             return res.send(results);
+        }
+    })
+});
+/** Requette pour la class Organisme Réferent */
+app.post('/addRef', (req, res) => {
+
+    const { nom, noCivique, rue, ville, province, codePostal, telephoneBureau, fax, courriel, siteWeb, etat } = req.body.organisme_referent;
+    const values = [nom, noCivique, rue, ville, province, codePostal, telephoneBureau, fax, courriel, siteWeb, etat];
+
+    db.query("INSERT INTO organisme_referent (nom,noCivique,rue,ville,province,codePostal,telephoneBureau,fax,courriel,siteWeb,etat) VALUES (?,?,?,?,?,?,?,?,?,?,?);", values, (err, results) => {
+        if (err) {
+            return res.send(err);
+        }
+        else {
+            return res.send('Organisme référent ajouté');
         }
     })
 });
