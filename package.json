@@ -41,11 +41,8 @@
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
     "express": "^4.16.3",
-<<<<<<< HEAD
     "jest": "^23.6.0",
-=======
     "js-alert": "^1.0.4",
->>>>>>> master
     "json": "^9.0.6",
     "morgan": "^1.9.1",
     "mysql": "^2.16.0",
