@@ -1,6 +1,6 @@
 import React from "react";
 import AddEmployeForm from "../forms/AddEmployeForm";
-import MenuForm from "../forms/MenuForm";
+import MenuAllForm from "../forms/MenuAllForm";
 
 class AddEmployePage extends React.Component{
     //submit = (data) => this.props.login(data).then(() => this.props.history.push("/"));
@@ -9,7 +9,7 @@ class AddEmployePage extends React.Component{
         return(
             <div>
                 <h2>Ajouter un employé</h2>
-                <MenuForm/>
+                <MenuAllForm/>
                 <br/>
                 <AddEmployeForm/>
             </div>

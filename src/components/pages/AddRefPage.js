@@ -9,7 +9,7 @@ class AddRefPage extends React.Component {
   render() {
     return <div>
         <h1>Liste des organismes référents</h1>
-        <MenuForm />
+      <MenuAllForm />
         <AddRefForm />
       </div>;
   }

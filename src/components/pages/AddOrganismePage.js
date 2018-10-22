@@ -6,14 +6,11 @@ class AddOrganismePage extends React.Component{
     //submit = (data) => this.props.login(data).then(() => this.props.history.push("/"));
 
     render(){
-        return(
-            <div>
-                <h2>Ajouter un organisme</h2>
-                <MenuForm/>
-                <br/>
-
-            </div>
-        );
+        return <div>
+            <h2>Ajouter un organisme</h2>
+            <MenuAllForm />
+            <br />
+          </div>;
     }
 }
 
