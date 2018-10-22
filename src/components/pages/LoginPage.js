@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import LoginForm from "../forms/LoginForm";
 import { login } from "../../actions/auth";
-import MenuAllForm from "../forms/MenuAllForm";
-
+import { Menu } from 'semantic-ui-react';
+import { Link } from "react-router-dom";
 class LoginPage extends React.Component{
     submit = (data) => this.props.login(data).then(() => this.props.history.push("/"));
     
@@ -12,7 +12,13 @@ class LoginPage extends React.Component{
         return(
             <div>
                 <h1>Login Page</h1>
-                <MenuAllForm/>
+                <Menu pointing secondary>
+                    <Menu.Item
+                        as={Link}
+                        name='home'
+                        to="/"/>
+                </Menu>
+                  
                 <LoginForm submit={this.submit}/>
             </div>
         );
