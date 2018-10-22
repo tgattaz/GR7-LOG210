@@ -4,7 +4,6 @@ import axios from 'axios';
 
 export default class AddOrgaRefForm extends React.Component{
     state ={
-        //noOrganismeReferent:'',
         nom:'',
         noCivique:'',
         rue:'',
@@ -54,6 +53,7 @@ export default class AddOrgaRefForm extends React.Component{
     handleSumit = event=>{
         event.preventDefault();
 
+        alert("allo");
         const organisme_referent ={
             //noOrganismeReferent: this.state.noOrganismeReferent,
             nom: this.state.nom,
@@ -69,10 +69,9 @@ export default class AddOrgaRefForm extends React.Component{
             etat: this.state.etat,
         }
 
-        axios.post('/addOrgaRef',{ organisme_referent })
-        .then(res=>{
-            console.log(res);
-            console.log(res.data);
+        axios.post('/addOrgaRef', { organisme_referent }).then(res => {
+          console.log(res);
+          console.log(res.data);
         });
     };
 
@@ -81,7 +80,7 @@ export default class AddOrgaRefForm extends React.Component{
             <Form onSubmit={this.handleSumit}>
                 <Form.Field>
                   <label>
-                      Nom de l'organisation:
+                      Nom de l organisation:
                       <input type="text" name="nom" onChange={this.handleChangeNom}/>
                   </label>
                 </Form.Field>
