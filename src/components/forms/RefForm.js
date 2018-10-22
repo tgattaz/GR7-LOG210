@@ -35,11 +35,8 @@ export default class RefForm extends React.Component {
               <Table.Cell>{referent.nom}</Table.Cell>
               <Table.Cell>{referent.prenom}</Table.Cell>
               <Table.Cell>{referent.titre}</Table.Cell>
-            <Table.Cell>{referent.telephoneCell}</Table.Cell>
-            <Table.Cell>{referent.telephoneBureau}</Table.Cell>
               <Table.Cell>{referent.fax}</Table.Cell>
               <Table.Cell>{referent.couriel}</Table.Cell>
-            <Table.Cell>{referent.preferenceReception}</Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>

@@ -6,8 +6,13 @@ const bodyparser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
 const mysql = require('mysql');
+<<<<<<< HEAD
 const aws = require('aws-sdk');
 
+=======
+const aws= require('aws-sdk');
+const JSAlert = require("js-alert");
+>>>>>>> master
 //il y avait cela dans le code ça faisait crash mon server 
 //import auth from "./routes/auth";
 //const auth = require("./routes/auth");
@@ -114,6 +119,7 @@ app.post('/addOrganisme', (req, res) => {
 app.get('/organismes', (req, res) => {
     //code pour afficher table de la base de donnée
     db.query('SELECT * FROM Organisme',(err,results)=>{
+    db.query('SELECT * FROM organisme',(err,results)=>{
         if(err){
             return res.send(err);
         }
@@ -124,6 +130,7 @@ app.get('/organismes', (req, res) => {
 });
 
 /** Requette pour la class Organisme Réferent */
+<<<<<<< HEAD
 app.post('/addOrgaRef', (req, res) => {
 
     const {nom,noCivique,rue,ville,province,codePostal,telephoneBureau,fax,courriel,siteWeb,etat} = req.body.organisme_referent;
@@ -135,12 +142,31 @@ app.post('/addOrgaRef', (req, res) => {
         }
         else {
             return res.send('Organisme référent ajouté');
+=======
+app.post('/addOrgaRef',(req,res)=>{
+    const {nom,noCivique,rue,ville,province,codePostal,telephoneBureau,fax,courriel,siteWeb,etat} = req.body.organisme_referent;
+    const values = [nom,noCivique,rue,ville,province,codePostal,telephoneBureau,fax,courriel,siteWeb,etat];
+
+
+    JSAlert.alert(values);
+    db.query(
+      "INSERT INTO Organisme_Referent (nom,noCivique,rue,ville,province,codePostal,telephoneBureau,fax,courriel,siteWeb,etat) VALUES (?,?,?,?,?,?,?,?,?,?,?);",
+      values,
+      (err, results) => {
+        if (err) {
+          JSAlert.alert("Organisme référent pas ajouté erreur");
+          return res.send(err);
+        } else {
+          JSAlert.alert("Organisme référent ajouté");
+          return res.send("Organisme référent ajouté");
+>>>>>>> master
         }
-    })
+      }
+    );
 });
 app.get('/organismes_referents', (req, res) => {
     //code pour afficher table de la base de donnée
-    db.query('SELECT * FROM Organisme_Referent',(err,results)=>{
+    db.query('SELECT * FROM organisme_referent',(err,results)=>{
         if(err){
             return res.send(err);
         }
@@ -152,16 +178,17 @@ app.get('/organismes_referents', (req, res) => {
 /** Requette pour la class Réferent */
 app.post('/addRef', (req, res) => {
 
+   
     const { nom, prenom, titre, telephoneCell, telephoneBureau, fax, courriel, preferenceReception  } = req.body.referent;
     const values = [nom, prenom, titre, telephoneCell, telephoneBureau, fax, courriel, preferenceReception];
 
     db.query(
-      "INSERT INTO Referent  (nom,prenom,titre,telephoneCell,telephoneBureau,fax,courriel,preferenceReception) VALUES (?,?,?,?,?,?,?,?);",
       values,
       (err, results) => {
         if (err) {
           return res.send(err);
         } else {
+            
           return res.send("Référent ajouté");
         }
       }
@@ -170,6 +197,7 @@ app.post('/addRef', (req, res) => {
 app.get('/referents', (req, res) => {
     //code pour afficher table de la base de donnée
     db.query("SELECT * FROM Referent", (err, results) => {
+    db.query("SELECT * FROM referent", (err, results) => {
       if (err) {
         return res.send(err);
       } else {

@@ -4,7 +4,6 @@ import axios from 'axios';
 
 export default class AddEmployeForm extends React.Component{
     state ={
-        //noEmploye:'',
         nom:'',
         prenom:'',
         telephone:'',
