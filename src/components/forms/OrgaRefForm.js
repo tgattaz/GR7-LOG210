@@ -8,7 +8,7 @@ export default class OrgaRefForm extends React.Component{
     };
 
     componentDidMount(){
-        axios.get('/OrgaRef').then(res => {
+        axios.get('/organismes_referents').then(res => {
             console.log(res);
             this.setState({organismes_referents:res.data});
         });

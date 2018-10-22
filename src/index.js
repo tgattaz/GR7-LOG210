@@ -9,10 +9,15 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import rootReducer from "./rootReducer"
+import { userLoggedIn } from './actions/auth';
 // react router tuto ici 
 
 const store = createStore(rootReducer,composeWithDevTools(applyMiddleware(thunk)));
 
+if(localStorage.loginToken){
+    const user = { token: localStorage.loginToken};
+    store.dispatch(userLoggedIn(user));
+}
 ReactDOM.render(
     <BrowserRouter>
         <Provider store={store}>
