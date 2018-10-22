@@ -8,6 +8,8 @@ import OrgaRefPage from "./components/pages/OrgaRefPage";
 import AddOrgaRefPage from "./components/pages/AddOrgaRefPage";
 import AddRefPage from "./components/pages/AddRefPage";
 import RefPage from "./components/pages/RefPage";
+import OrganismePage from "./components/pages/OrganismePage";
+import AddOrganismePage from "./components/pages/AddOrganismePage";
 
 
 const App = () => (
@@ -19,7 +21,8 @@ const App = () => (
     <Route path="/OrgaRef" exact component={OrgaRefPage} />
     <Route path="/addOrgaRef" exact component={AddOrgaRefPage} />
     <Route path="/addRef" exact component={AddRefPage} />
-    <Route path="/Ref" exact component={RefPage} />
+    <Route path="/Organisme" exact component={OrganismePage} />
+    <Route path="/addOrganisme" exact component={AddOrganismePage} />
   </div>
 );
 
