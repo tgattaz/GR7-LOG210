@@ -53,7 +53,6 @@ export default class AddOrgaRefForm extends React.Component{
     handleSumit = event=>{
         event.preventDefault();
 
-        alert("allo");
         const organisme_referent ={
             //noOrganismeReferent: this.state.noOrganismeReferent,
             nom: this.state.nom,
