@@ -8,6 +8,7 @@ import OrgaRefPage from "./components/pages/OrgaRefPage";
 import AddOrgaRefPage from "./components/pages/AddOrgaRefPage";
 import AddRefPage from "./components/pages/AddRefPage";
 import RefPage from "./components/pages/RefPage";
+import RechercheReferentPage from './components/pages/RechercheReferentPage'
 
 
 const App = () => (
@@ -20,6 +21,7 @@ const App = () => (
     <Route path="/addOrgaRef" exact component={AddOrgaRefPage} />
     <Route path="/addRef" exact component={AddRefPage} />
     <Route path="/Ref" exact component={RefPage} />
+    <Route path="/rechercheReferent" exact component={RechercheReferentPage} />
   </div>
 );
 
