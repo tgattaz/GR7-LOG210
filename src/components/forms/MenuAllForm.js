@@ -25,14 +25,10 @@ class MenuAllForm extends React.Component {
             <Dropdown.Menu>
               <Dropdown.Item as={Link}
                 name='Organisme'
-                to="/Organisme"
-                active={activeItem === 'Organisme'}
-                onClick={this.handleItemClick}>Liste des organismes </Dropdown.Item>
+                to="/Organisme">Liste des organismes </Dropdown.Item>
               <Dropdown.Item as={Link}
                 name='addOrganisme'
-                to="/addOrganisme"
-                active={activeItem === 'addOrganisme'}
-                onClick={this.handleItemClick}>Ajouter un organisme </Dropdown.Item>
+                to="/addOrganisme">Ajouter un organisme </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
           <Dropdown item text='organismes référents'>

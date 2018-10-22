@@ -21,6 +21,7 @@ export default class RechercheReferent extends React.Component {
 
         axios.post('/recherche_referents', { recherche_referent })
             .then(res => {
+                console.log(res.data);
                 this.setState({ referents_trouves: res.data })
                 console.log(res);
                 console.log(res.data);
