@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
+export default class AddOrgaRef extends React.Component{
     state ={
         //noOrganismeReferent:'',
         nom:'',
