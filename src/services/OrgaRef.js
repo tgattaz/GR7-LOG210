@@ -34,19 +34,6 @@ export default class OrgaRef extends React.Component{
               </thead>
               <tbody>
                 {this.state.organismes_referents.map(organisme_referent =>
-                    <tr key={organisme.noOrganismeReferent}>
-                        <td>{organisme.noOrganismeReferent}</td>
-                        <td>{organisme.nom}</td>
-                        <td>{organisme.noCivique}</td>
-                        <td>{organisme.rue}</td>
-                        <td>{organisme.ville}</td>
-                        <td>{organisme.province}</td>
-                        <td>{organisme.codePostal}</td>
-                        <td>{organisme.telephoneBureau}</td>
-                        <td>{organisme.fax}</td>
-                        <td>{organisme.courriel}</td>
-                        <td>{organisme.siteWeb}</td>
-                        <td>{organisme.etat}</td>
                     </tr>
                 )}
               </tbody>

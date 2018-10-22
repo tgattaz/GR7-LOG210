@@ -1,4 +1,3 @@
-const {createServer}=require('http');
 const express = require('express');
 const compression = require('compression');
 const morgan = require('morgan');
@@ -44,61 +43,51 @@ app.use(morgan('dev'));
 const server = createServer(app);
 
 
-
 app.use(cors());
 
-app.get('/', (req, res) =>{
     console.log(req.body)
 
-   res.send('Vous êtes à l\'accueil aller sur /roles');
 });
 app.post('/login', function (req, res) {
     console.log(req)
     res.send('test connection post');
-  });
 
 //il y avait cela dans le code ça faisait crash mon server 
 //app.post('/api/auth',auth);
 
 app.get('/roles',(req,res)=> {
+app.get('/roles', (req, res) => {
     //code pour afficher table de la base de donnée
     db.query('SELECT * FROM catalogue_role',(err,results)=>{
         if(err){
             return res.send(err);
         }
-        else{
             return res.send(results);
         }
     })
 });
 /** Requette pour la class employe */
-app.post('/addEmploye',(req,res)=>{
 
-    const {nom, prenom, telephone, motDePasse, role} = req.body.employe;
     const values = [nom, prenom, telephone, motDePasse, role];
     db.query("INSERT INTO employe (nom, prenom,telephone,motDePasse,role) VALUES (?,?,?,?,?);" , values, (err,results) => {
         if(err){
             return res.send(err);
         }
-        else{
             return res.send('Employe ajouté');
         }
     })
 });
-app.get('/employes',(req,res)=> {
     //code pour afficher table de la base de donnée
     db.query('SELECT * FROM employe',(err,results)=>{
         if(err){
             return res.send(err);
         }
-        else{
             return res.send(results);
         }
     })
 });
 
 /** Requette pour la class Organisme */
-app.post('/addOrganisme',(req,res)=>{
 
     const {nom, noCivique,rue,ville,province,codePostal,telephone,fax,courriel} = req.body.organisme;
     const values = [nom,noCivique,rue,ville,province,codePostal,telephone,fax,courriel];
@@ -107,18 +96,15 @@ app.post('/addOrganisme',(req,res)=>{
         if(err){
             return res.send(err);
         }
-        else{
             return res.send('Organisme ajouté');
         }
     })
 });
-app.get('/organismes',(req,res)=> {
     //code pour afficher table de la base de donnée
     db.query('SELECT * FROM organisme',(err,results)=>{
         if(err){
             return res.send(err);
         }
-        else{
             return res.send(results);
         }
     })
@@ -145,13 +131,11 @@ app.post('/addOrgaRef',(req,res)=>{
       }
     );
 });
-app.get('/organismes_referents',(req,res)=> {
     //code pour afficher table de la base de donnée
     db.query('SELECT * FROM organisme_referent',(err,results)=>{
         if(err){
             return res.send(err);
         }
-        else{
             return res.send(results);
         }
     })
