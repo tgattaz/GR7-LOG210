@@ -196,7 +196,7 @@ app.post('/recherche_referents', (req, res) => {
         'FROM `referent` REF ' +
         'LEFT JOIN `referent_organisme_referent` REF_OREF ON REF_OREF.noReferent = REF.noReferent ' + 
         'LEFT JOIN `organisme_referent` OREF ON REF_OREF.noOrganismeReferent = OREF.noOrganismeReferent ' +
-        'LEFT JOIN `organisme_organisme_referent` ORG_OREF ON ORG_OREF.noOrganismeReferent = OREF.noOrganismeReferent' +
+        'LEFT JOIN `organisme_organisme_referent` ORG_OREF ON ORG_OREF.noOrganismeReferent = OREF.noOrganismeReferent ' +
         'LEFT JOIN `organisme` ORG ON ORG.noOrganisme = ORG_OREF.noOrganisme ' + 
         'LEFT JOIN `dossier` D ON D.organisme = ORG.noOrganisme ' +
         'WHERE REF.nom LIKE CONCAT(\'%\', ?, \'%\') OR REF.prenom LIKE CONCAT(\'%\', ?, \'%\') OR ORG.nom LIKE CONCAT(\'%\', ?, \'%\') ' + 
