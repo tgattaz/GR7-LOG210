@@ -1,12 +1,12 @@
 const mysql = require("mysql");
 const settings = require('./settings.json');
-var db;
+var dbPool;
 
-function connectDatabase(){
-    if(!db){
-        db = mysql.createConnection(settings);
+function createPoolDatabase(){
+    if(!dbPool){
+        dbPool = mysql.createPool(settings);
     }
-    return db;
+    return dbPool;
 }
 
-module.exports = connectDatabase();
+module.exports = createPoolDatabase();
