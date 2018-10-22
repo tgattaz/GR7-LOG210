@@ -8,9 +8,11 @@ export default class RefForm extends React.Component {
   };
 
   componentDidMount() {
-    axios.get('/referent').then(res => {
-      console.log(res);
+    axios.get('/referents').then(res => {
+      res.send(res);
       this.setState({ referent: res.data });
+    }).catch(e=>{
+      console.log(e);
     });
   }
 
