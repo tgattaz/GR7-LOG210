@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Form, Button } from "semantic-ui-react";
+import { Form, Button, Table } from "semantic-ui-react";
 
 export default class RechercheReferent extends React.Component {
     state = {
@@ -43,34 +43,34 @@ export default class RechercheReferent extends React.Component {
                     </Form.Field>
                     <Button primary>Rechercher</Button>
                 </Form>
-                <table className="tabRechercheReferents">
-                    <thead>
-                        <tr>
-                            <th>Numéro de référent</th>
-                            <th>Nom</th>
-                            <th>Prénom</th>
-                            <th>Titre</th>
-                            <th>Téléphone cellulaire</th>
-                            <th>Téléphone bureau</th>
-                            <th>Fax</th>
-                            <th>Préférence réception</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                <Table celled padded>
+                    <Table.Header>
+                        <Table.Row>
+                            <Table.HeaderCell>Numéro de référent</Table.HeaderCell>
+                            <Table.HeaderCell>Nom</Table.HeaderCell>
+                            <Table.HeaderCell>Prénom</Table.HeaderCell>
+                            <Table.HeaderCell>Titre</Table.HeaderCell>
+                            <Table.HeaderCell>Téléphone cellulaire</Table.HeaderCell>
+                            <Table.HeaderCell>Téléphone bureau</Table.HeaderCell>
+                            <Table.HeaderCell>Fax</Table.HeaderCell>
+                            <Table.HeaderCell>Préférence réception</Table.HeaderCell>
+                        </Table.Row>
+                    </Table.Header>
+                    <Table.Body>
                         {this.state.referents_trouves.map(referent =>
-                            <tr key={referent.noReferent}>
-                                <td>{referent.noReferent}</td>
-                                <td>{referent.nom}</td>
-                                <td>{referent.prenom}</td>
-                                <td>{referent.titre}</td>
-                                <td>{referent.telephoneCell}</td>
-                                <td>{referent.telephoneBureau}</td>
-                                <td>{referent.fax}</td>
-                                <td>{referent.preferenceReception}</td>
-                            </tr>
+                            <Table.Row key={referent.noReferent}>
+                                <Table.Cell>{referent.noReferent}</Table.Cell>
+                                <Table.Cell>{referent.nom}</Table.Cell>
+                                <Table.Cell>{referent.prenom}</Table.Cell>
+                                <Table.Cell>{referent.titre}</Table.Cell>
+                                <Table.Cell>{referent.telephoneCell}</Table.Cell>
+                                <Table.Cell>{referent.telephoneBureau}</Table.Cell>
+                                <Table.Cell>{referent.fax}</Table.Cell>
+                                <Table.Cell>{referent.preferenceReception}</Table.Cell>
+                            </Table.Row>
                         )}
-                    </tbody>
-                </table>
+                    </Table.Body>
+                </Table>
             </div>
         );
     }
