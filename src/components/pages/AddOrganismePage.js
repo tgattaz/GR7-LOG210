@@ -1,5 +1,4 @@
 import React from "react";
-//import AddOrganismeForm from "../forms/AddOrganismeForm";
 import MenuAllForm from "../forms/MenuAllForm";
 
 class AddOrganismePage extends React.Component{
