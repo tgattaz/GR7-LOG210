@@ -1,5 +1,5 @@
 import React from "react";
-import OrgaRefForm from "../forms/OrganismeForm";
+//import OrganismeForm from "../forms/OrganismeForm";
 import MenuForm from "../forms/MenuForm";
 
 class OrgaPage extends React.Component{
@@ -10,7 +10,7 @@ class OrgaPage extends React.Component{
             <div>
                 <h1>Liste des organismes</h1>
                 <MenuForm/>
-                <OrganismeForm/>
+              //  <OrganismeForm/>
             </div>
         );
     }
