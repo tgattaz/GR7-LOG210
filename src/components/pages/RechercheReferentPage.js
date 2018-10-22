@@ -1,18 +1,16 @@
 import React from "react";
-import MenuForm from "../forms/MenuForm";
+import MenuAllForm from "../forms/MenuAllForm";
 import RechercheReferentForm from "../forms/RechercheReferentForm";
 
 class RechercheReferentPage extends React.Component {
   //submit = (data) => this.props.login(data).then(() => this.props.history.push("/"));
 
   render() {
-    return (
-      <div>
+    return <div>
         <h1>Recherche des référents</h1>
-        <MenuForm />
+        <MenuAllForm />
         <RechercheReferentForm />
-      </div>
-    );
+      </div>;
   }
 }
 

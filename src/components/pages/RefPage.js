@@ -1,16 +1,18 @@
 import React from "react";
 import RefForm from "../forms/RefForm";
-import MenuForm from "../forms/MenuForm";
+import MenuAllForm from "../forms/MenuAllForm";
 
 class RefPage extends React.Component {
   //submit = (data) => this.props.login(data).then(() => this.props.history.push("/"));
 
   render() {
-    return <div>
+    return (
+      <div>
         <h1>Liste des référents</h1>
-        <MenuForm />
+        <MenuAllForm />
         <RefForm />
-      </div>;
+      </div>
+    );
   }
 }
 
