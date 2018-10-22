@@ -1,5 +1,5 @@
 import React from "react";
-//import AddOrganismeForm from "../forms/AddOrganismeForm";
+import AddOrganismeForm from "../forms/AddOrganismeForm";
 import MenuAllForm from "../forms/MenuAllForm";
 
 class AddOrganismePage extends React.Component{
@@ -9,6 +9,7 @@ class AddOrganismePage extends React.Component{
         return <div>
             <h2>Ajouter un organisme</h2>
             <MenuAllForm />
+            <AddOrganismeForm/>
             <br />
           </div>;
     }
