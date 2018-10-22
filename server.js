@@ -6,13 +6,8 @@ const bodyparser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
 const mysql = require('mysql');
-<<<<<<< HEAD
-const aws = require('aws-sdk');
-
-=======
 const aws= require('aws-sdk');
 const JSAlert = require("js-alert");
->>>>>>> master
 //il y avait cela dans le code ça faisait crash mon server 
 //import auth from "./routes/auth";
 //const auth = require("./routes/auth");
@@ -129,19 +124,6 @@ app.get('/organismes', (req, res) => {
 });
 
 /** Requette pour la class Organisme Réferent */
-<<<<<<< HEAD
-app.post('/addOrgaRef', (req, res) => {
-
-    const {nom,noCivique,rue,ville,province,codePostal,telephoneBureau,fax,courriel,siteWeb,etat} = req.body.organisme_referent;
-    const values = [nom,noCivique,rue,ville,province,codePostal,telephoneBureau,fax,courriel,siteWeb,etat];
-
-    db.query("INSERT INTO organisme_referent (nom,noCivique,rue,ville,province,codePostal,telephoneBureau,fax,courriel,siteWeb,etat) VALUES (?,?,?,?,?,?,?,?,?,?,?);" , values, (err,results) => {
-        if(err){
-            return res.send(err);
-        }
-        else {
-            return res.send('Organisme référent ajouté');
-=======
 app.post('/addOrgaRef',(req,res)=>{
     const {nom,noCivique,rue,ville,province,codePostal,telephoneBureau,fax,courriel,siteWeb,etat} = req.body.organisme_referent;
     const values = [nom,noCivique,rue,ville,province,codePostal,telephoneBureau,fax,courriel,siteWeb,etat];
@@ -158,7 +140,6 @@ app.post('/addOrgaRef',(req,res)=>{
         } else {
           JSAlert.alert("Organisme référent ajouté");
           return res.send("Organisme référent ajouté");
->>>>>>> master
         }
       }
     );
