@@ -118,7 +118,6 @@ app.post('/addOrganisme', (req, res) => {
 });
 app.get('/organismes', (req, res) => {
     //code pour afficher table de la base de donnée
-    db.query('SELECT * FROM Organisme',(err,results)=>{
     db.query('SELECT * FROM organisme',(err,results)=>{
         if(err){
             return res.send(err);
@@ -177,12 +176,12 @@ app.get('/organismes_referents', (req, res) => {
 });
 /** Requette pour la class Réferent */
 app.post('/addRef', (req, res) => {
-
    
     const { nom, prenom, titre, telephoneCell, telephoneBureau, fax, courriel, preferenceReception  } = req.body.referent;
     const values = [nom, prenom, titre, telephoneCell, telephoneBureau, fax, courriel, preferenceReception];
-
+    JSAlert.alert(values);
     db.query(
+      "INSERT INTO referent  (nom,prenom,titre,telephoneCell,telephoneBureau,fax,courriel,preferenceReception) VALUES (?,?,?,?,?,?,?,?);",
       values,
       (err, results) => {
         if (err) {
@@ -196,7 +195,6 @@ app.post('/addRef', (req, res) => {
 });
 app.get('/referents', (req, res) => {
     //code pour afficher table de la base de donnée
-    db.query("SELECT * FROM Referent", (err, results) => {
     db.query("SELECT * FROM referent", (err, results) => {
       if (err) {
         return res.send(err);

@@ -35,6 +35,20 @@ export default class OrgaRefForm extends React.Component{
               </Table.Header>
 
               <Table.Body>
+                    {this.state.organismes_referents.map(organismes_referents =>
+                        <Table.Row key={organismes_referents.noOrganismeReferent}>
+                            <Table.Cell>{organismes_referents.noOrganismeReferent}</Table.Cell>
+                            <Table.Cell>{organismes_referents.nom}</Table.Cell>
+                            <Table.Cell>{organismes_referents.noCivique}</Table.Cell>
+                            <Table.Cell>{organismes_referents.rue}</Table.Cell>
+                            <Table.Cell>{organismes_referents.ville}</Table.Cell>
+                            <Table.Cell>{organismes_referents.province}</Table.Cell>
+                            <Table.Cell>{organismes_referents.codePostal}</Table.Cell>
+                            <Table.Cell>{organismes_referents.telephoneBureau}</Table.Cell>
+                            <Table.Cell>{organismes_referents.fax}</Table.Cell>
+                            <Table.Cell>{organismes_referents.curriel}</Table.Cell>
+                            <Table.Cell>{organismes_referents.siteWeb}</Table.Cell>
+                            <Table.Cell>{organismes_referents.etat}</Table.Cell>
                 </Table.Row>
                 )}
                 </Table.Body>

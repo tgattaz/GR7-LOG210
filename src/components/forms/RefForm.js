@@ -18,6 +18,7 @@ export default class RefForm extends React.Component {
     return <Table celled padded>
         <Table.Header>
           <Table.Row>
+            <Table.HeaderCell singleLine>Numéro referent</Table.HeaderCell>
             <Table.HeaderCell>Nom</Table.HeaderCell>
             <Table.HeaderCell>Prénom</Table.HeaderCell>
             <Table.HeaderCell>Titre</Table.HeaderCell>
@@ -32,11 +33,15 @@ export default class RefForm extends React.Component {
         <Table.Body>
           {this.state.referent.map(referent => (
             <Table.Row key={referent.noReferent}>
+              <Table.Cell>{referent.noReferent}</Table.Cell>
               <Table.Cell>{referent.nom}</Table.Cell>
               <Table.Cell>{referent.prenom}</Table.Cell>
               <Table.Cell>{referent.titre}</Table.Cell>
+              <Table.Cell>{referent.telephoneCell}</Table.Cell>
+              <Table.Cell>{referent.telephoneBureau}</Table.Cell>
               <Table.Cell>{referent.fax}</Table.Cell>
               <Table.Cell>{referent.couriel}</Table.Cell>
+              <Table.Cell>{referent.preferenceReception}</Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>

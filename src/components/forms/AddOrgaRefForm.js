@@ -69,10 +69,6 @@ export default class AddOrgaRefForm extends React.Component{
             etat: this.state.etat,
         }
 
-        axios.post('/addOrgaRef',{ organisme_referent })
-        .then(res=>{
-            console.log(res);
-            console.log(res.data);
         axios.post('/addOrgaRef', { organisme_referent }).then(res => {
           console.log(res);
           console.log(res.data);
@@ -84,7 +80,6 @@ export default class AddOrgaRefForm extends React.Component{
             <Form onSubmit={this.handleSumit}>
                 <Form.Field>
                   <label>
-                      Nom de l'organisation:
                       Nom de l organisation:
                       <input type="text" name="nom" onChange={this.handleChangeNom}/>
                   </label>
