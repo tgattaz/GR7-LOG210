@@ -1,7 +1,6 @@
 import React from "react";
 import { Menu , Dropdown } from 'semantic-ui-react';
 import { Link } from "react-router-dom";
-import { logout } from '../../actions/auth';
 class MenuAllForm extends React.Component{
 
     render(){

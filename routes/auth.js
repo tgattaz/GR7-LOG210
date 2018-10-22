@@ -14,6 +14,7 @@ router.post('/',(req,res)=>{
         if(results.length>0){
             res.json({user: {
                         prenom:credentials.prenom,
+                        role: results[0].role,
                         token:jwt.sign({
                             prenom:credentials.prenom
                         },process.env.JWT_SECRET)

@@ -1,37 +1,54 @@
 import React from "react";
 import PropTypes from "prop-types";
 import MenuHomeForm from "../forms/MenuHomeForm";
-import MenuAllForm from "../forms/MenuAllForm";
 import { connect } from "react-redux";
 import * as actions from '../../actions/auth';
 import { Menu , Dropdown } from 'semantic-ui-react';
-const HomePage = ({isAuthenticated,logout}) => (
+import { Link } from "react-router-dom";
+import MenuAllForm from "../forms/MenuAllForm";
+const HomePage = ({isAuthenticated,role,logout}) => (
     <div>
         <h1>Home Page</h1>
         {!isAuthenticated?
             <MenuHomeForm/>
               :
-            <Menu pointing secondary>  
-                <MenuAllForm/>
-            
-                <Menu.Menu position='right'>
-                    <Menu.Item
-                    name='logout'
-                    onClick={()=> logout()}
-                    />
-                </Menu.Menu>
-            </Menu>
+              <div>
+                  {role===1?
+                <Menu pointing secondary> 
+                    <MenuAllForm/>
+                        
+                    <Menu.Menu position='right'>
+                        <Menu.Item
+                        name='logout'
+                        onClick={()=> logout()}
+                        />
+                    </Menu.Menu>
+
+                </Menu>
+                :
+                <Menu pointing secondary>
+                    <Menu.Menu position='right'>
+                        <Menu.Item
+                        name='logout'
+                        onClick={()=> logout()}
+                        />
+                    </Menu.Menu>
+                </Menu>
+                }
+            </div>
         }
     </div>
 );
 
 HomePage.protoTypes ={
     isAuthenticated:PropTypes.bool.isRequired,
-    logout: PropTypes.func.isRequired
+    logout: PropTypes.func.isRequired,
+    role:PropTypes.number.isRequired
 }
 function mapStateToProps(state){
     return {
-        isAuthenticated:!!state.user.token
+        isAuthenticated:!!state.user.token,
+        role:state.user.role
     }
 }
 export default connect(mapStateToProps,{ logout: actions.logout })(HomePage);
