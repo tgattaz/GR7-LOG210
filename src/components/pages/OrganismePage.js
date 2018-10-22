@@ -10,10 +10,9 @@ class OrgaPage extends React.Component{
             <div>
                 <h1>Liste des organismes</h1>
                 <MenuForm/>
-              //  <OrganismeForm/>
             </div>
         );
     }
 }
 
-export default OrgaRefPage;
+export default OrgaPage;

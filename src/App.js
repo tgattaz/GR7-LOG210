@@ -21,6 +21,7 @@ const App = () => (
     <Route path="/OrgaRef" exact component={OrgaRefPage} />
     <Route path="/addOrgaRef" exact component={AddOrgaRefPage} />
     <Route path="/addRef" exact component={AddRefPage} />
+    <Route path="/Ref" exact component={RefPage} />
     <Route path="/Organisme" exact component={OrganismePage} />
     <Route path="/addOrganisme" exact component={AddOrganismePage} />
   </div>
