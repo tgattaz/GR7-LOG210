@@ -10,6 +10,7 @@ class OrgaPage extends React.Component{
             <div>
                 <h1>Liste des organismes</h1>
                 <MenuForm/>
+                
             </div>
         );
     }

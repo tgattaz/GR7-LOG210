@@ -10,7 +10,7 @@ import AddRefPage from "./components/pages/AddRefPage";
 import RefPage from "./components/pages/RefPage";
 import OrganismePage from "./components/pages/OrganismePage";
 import AddOrganismePage from "./components/pages/AddOrganismePage";
-
+import RechercheReferentPage from "./components/pages/RechercheReferentPage";
 
 const App = () => (
   <div className="ui container">

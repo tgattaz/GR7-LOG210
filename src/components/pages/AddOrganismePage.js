@@ -2,7 +2,7 @@ import React from "react";
 //import AddOrganismeForm from "../forms/AddOrganismeForm";
 import MenuForm from "../forms/MenuForm";
 
-class AddOrganismeForm extends React.Component{
+class AddOrganismePage extends React.Component{
     //submit = (data) => this.props.login(data).then(() => this.props.history.push("/"));
 
     render(){
@@ -17,4 +17,4 @@ class AddOrganismeForm extends React.Component{
     }
 }
 
-export default AddOrganismeForm;
+export default AddOrganismePage;
