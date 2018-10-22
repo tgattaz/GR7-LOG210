@@ -47,12 +47,12 @@ class MenuForm extends React.Component{
                       name='Organisme'
                       to="/Organisme"
                       active={activeItem === 'Organisme'}
-                      onClick={this.handleItemClick}>Liste des organismes référents</Dropdown.Item>
+                      onClick={this.handleItemClick}>Liste des organismes </Dropdown.Item>
                     <Dropdown.Item as={Link}
                       name='addOrganisme'
                       to="/addOrganisme"
                       active={activeItem === 'addOrganisme'}
-                      onClick={this.handleItemClick}>Ajouter un organisme référent</Dropdown.Item>
+                      onClick={this.handleItemClick}>Ajouter un organisme </Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
               <Dropdown item text='organismes référents'>
