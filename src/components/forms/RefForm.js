@@ -4,13 +4,12 @@ import axios from 'axios';
 
 export default class RefForm extends React.Component {
   state = {
-    referent: [],
+    referents: [],
   };
 
   componentDidMount() {
     axios.get('/referents').then(res => {
-      res.send(res);
-      this.setState({ referent: res.data });
+      this.setState({ referents: res.data });
     }).catch(e=>{
       console.log(e);
     });
@@ -33,7 +32,7 @@ export default class RefForm extends React.Component {
         </Table.Header>
 
         <Table.Body>
-          {this.state.referent.map(referent => (
+          {this.state.referents.map(referent => (
             <Table.Row key={referent.noReferent}>
               <Table.Cell>{referent.noReferent}</Table.Cell>
               <Table.Cell>{referent.nom}</Table.Cell>
