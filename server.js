@@ -174,8 +174,17 @@ app.get('/organismes_referents', (req, res) => {
 });
 /** Requette pour la class Réferent */
 app.post('/addRef', (req, res) => {
-    
-    const { nom,prenom,titre,telephoneCell,telephoneBureau,fax,preferenceReception,email  } = req.body.referent;
+
+    const {
+        nom,
+        prenom,
+        titre,
+        telephoneCell,
+        telephoneBureau,
+        fax,
+        preferenceReception,
+        email
+    } = req.body.referent;
     const values = [nom, prenom, titre, telephoneCell, telephoneBureau, fax, preferenceReception, email];
     JSAlert.alert(values);
     db.query(
@@ -187,8 +196,31 @@ app.post('/addRef', (req, res) => {
                 return res.send(err);
             } else {
                 JSAlert.alert("référent ajouté");
-                
+
                 return res.send("Référent ajouté");
+            }
+        }
+    );
+});
+
+/** Requette pour la class Réferent */
+app.post('/delRef', (req, res) => {
+    
+    const {
+        noReferentEffacer
+    } = req.body.selection;
+    const value = [noReferentEffacer];
+    JSAlert.alert(value);
+    db.query("DELETE FROM referent WHERE noReferent = '"+noReferentEffacer
+            +"'",
+        (err, results) => {
+            if (err) {
+                JSAlert.alert("référent n'a pas été sup erreur");
+                return res.send(err);
+            } else {
+                JSAlert.alert("référent sup");
+                
+                return res.send("Référent sup");
         }
       }
     );
