@@ -10,7 +10,7 @@ export default class AddRefForm extends React.Component {
     fax: '',
     telephoneCell: '',
     telephoneBureau: '',
-    couriel: '',
+    email: '',
     preferenceReception: '',
   };
 
@@ -33,7 +33,7 @@ export default class AddRefForm extends React.Component {
     this.setState({ telephoneBureau: event.target.value });
   };
   handleChangeCouriel = event => {
-    this.setState({ couriel: event.target.value });
+    this.setState({ email: event.target.value });
   };
   handleChangePreference = event => {
     this.setState({ preferenceReception: event.target.value });
@@ -69,7 +69,7 @@ export default class AddRefForm extends React.Component {
         <Form.Field>
           <label>
             Le titre du référent:
-            <input type="text" name="titre" onChange={this.handleChangetitre} />
+            <input type="text" name="titre" onChange={this.handleChangeTitre} />
           </label>
         </Form.Field>
         <br />

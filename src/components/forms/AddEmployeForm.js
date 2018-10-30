@@ -1,5 +1,6 @@
 import React from 'react';
-import { Form, Button ,Dropdown} from "semantic-ui-react";
+import {Link} from 'react-router-dom'
+import { Form, Button ,Dropdown, Menu} from "semantic-ui-react";
 import axios from 'axios';
 
 export default class AddEmployeForm extends React.Component{
@@ -9,7 +10,9 @@ export default class AddEmployeForm extends React.Component{
         telephone:'',
         motDePasse:'',
         role:'',
-    };
+        render: false,
+            };
+
 
     handleChangeNom = event =>{
         this.setState({nom:event.target.value});
@@ -43,6 +46,15 @@ export default class AddEmployeForm extends React.Component{
             console.log(res);
             console.log(res.data);
         });
+
+        setTimeout(
+            function () { //Start the timer
+            this.setState({
+                render: true
+            }) //After 1 second, set render to true
+        }.bind(this), 1000)
+    
+
     };
 
     render(){
@@ -86,8 +98,10 @@ export default class AddEmployeForm extends React.Component{
                     </select>
                 </Form.Field>
                 <br/>
-                <Button primary>Enregistrer</Button>
-            </Form>
+                < Button bsStyle = "link" > Enregistrer < /Button >
+                < Link to = "employes" >  Voir la liste</Link>
+            < /Form>
+           
         );
     }
 }

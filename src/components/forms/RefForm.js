@@ -26,8 +26,8 @@ export default class RefForm extends React.Component {
             <Table.HeaderCell>Telephone cellulaire</Table.HeaderCell>
             <Table.HeaderCell>Telephone de bureau</Table.HeaderCell>
             <Table.HeaderCell>Fax</Table.HeaderCell>
-            <Table.HeaderCell>Couriel</Table.HeaderCell>
             <Table.HeaderCell>Préférence</Table.HeaderCell>
+            <Table.HeaderCell>Email</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
 
@@ -41,8 +41,8 @@ export default class RefForm extends React.Component {
               <Table.Cell>{referent.telephoneCell}</Table.Cell>
               <Table.Cell>{referent.telephoneBureau}</Table.Cell>
               <Table.Cell>{referent.fax}</Table.Cell>
-              <Table.Cell>{referent.couriel}</Table.Cell>
               <Table.Cell>{referent.preferenceReception}</Table.Cell>
+              <Table.Cell>{referent.email}</Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>

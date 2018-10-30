@@ -78,9 +78,11 @@ app.post('/addEmploye', (req, res) => {
     const values = [nom, prenom, telephone, motDePasse, role];
     db.query("INSERT INTO employe (nom, prenom,telephone,motDePasse,role) VALUES (?,?,?,?,?);" , values, (err,results) => {
         if(err){
+            JSAlert.alert('employe pas ajouté erreur');
             return res.send(err);
         }
         else {
+            JSAlert.alert('employe');
             return res.send('Employe ajouté');
         }
     })
@@ -91,7 +93,21 @@ app.get('/employes', (req, res) => {
         if(err){
             return res.send(err);
         }
+        
         else {
+            return res.send(results);
+        }
+    })
+});
+
+app.get('/all', (req, res) => {
+
+    
+    //code pour afficher table de la base de donnée
+    db.query('SELECT * FROM INFORMATION_SCHEMA.TABLES ', (err, results) => {
+        if (err) {
+            return res.send(err);
+        } else {
             return res.send(results);
         }
     })
@@ -132,7 +148,7 @@ app.post('/addOrgaRef',(req,res)=>{
 
     JSAlert.alert(values);
     db.query(
-      "INSERT INTO Organisme_Referent (nom,noCivique,rue,ville,province,codePostal,telephoneBureau,fax,courriel,siteWeb,etat) VALUES (?,?,?,?,?,?,?,?,?,?,?);",
+      "INSERT INTO organisme_referent (nom,noCivique,rue,ville,province,codePostal,telephoneBureau,fax,curriel,siteWeb,etat) VALUES (?,?,?,?,?,?,?,?,?,?,?);",
       values,
       (err, results) => {
         if (err) {
@@ -158,19 +174,21 @@ app.get('/organismes_referents', (req, res) => {
 });
 /** Requette pour la class Réferent */
 app.post('/addRef', (req, res) => {
-   
-    const { nom, prenom, titre, telephoneCell, telephoneBureau, fax, courriel, preferenceReception  } = req.body.referent;
-    const values = [nom, prenom, titre, telephoneCell, telephoneBureau, fax, courriel, preferenceReception];
+    
+    const { nom,prenom,titre,telephoneCell,telephoneBureau,fax,preferenceReception,email  } = req.body.referent;
+    const values = [nom, prenom, titre, telephoneCell, telephoneBureau, fax, preferenceReception, email];
     JSAlert.alert(values);
     db.query(
-      "INSERT INTO referent  (nom,prenom,titre,telephoneCell,telephoneBureau,fax,courriel,preferenceReception) VALUES (?,?,?,?,?,?,?,?);",
-      values,
-      (err, results) => {
-        if (err) {
-          return res.send(err);
-        } else {
-            
-          return res.send("Référent ajouté");
+        "INSERT INTO referent  (nom,prenom,titre,telephoneCell,telephoneBureau,fax,preferenceReception,email) VALUES (?,?,?,?,?,?,?,?);",
+        values,
+        (err, results) => {
+            if (err) {
+                JSAlert.alert("référent pas ajouté erreur");
+                return res.send(err);
+            } else {
+                JSAlert.alert("référent ajouté");
+                
+                return res.send("Référent ajouté");
         }
       }
     );

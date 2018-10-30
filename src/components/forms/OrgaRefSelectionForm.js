@@ -1,12 +1,24 @@
 import React from 'react';
-import {Table} from 'semantic-ui-react';
+import {Table,Button} from 'semantic-ui-react';
 import axios from 'axios';
+import {
+    Link
+} from 'react-router-dom'
 
 
-export default class OrgaRefForm extends React.Component{
+export default class OrgaRefSelectionForm extends React.Component{
     state ={
         organismes_referents:[],
+        choixOrgRef: '',
     };
+    selectChannel = (e) => {
+        alert(e.target.innerHTML);
+        this.setState({
+                    choixOrgRef:
+            e.target.innerHTML
+        });
+        alert( 'Vous avez choisi' + this.state.choixOrgRef);
+    }
     
     componentDidMount(){
         axios.get('/organismes_referents').then(res => {
@@ -19,6 +31,7 @@ export default class OrgaRefForm extends React.Component{
           <Table celled padded>
               <Table.Header>
               <Table.Row>
+                  <Table.HeaderCell > Choisir < /Table.HeaderCell>
                   <Table.HeaderCell singleLine>Nom</Table.HeaderCell>
                   <Table.HeaderCell>Nom organisme réferent</Table.HeaderCell>
                   <Table.HeaderCell>Numéro Civique</Table.HeaderCell>
@@ -37,6 +50,16 @@ export default class OrgaRefForm extends React.Component{
               <Table.Body>
                     {this.state.organismes_referents.map(organismes_referents =>
                         <Table.Row key={organismes_referents.noOrganismeReferent}>
+                            < Table.Cell >
+                            < Link
+                            to = "addRef"
+                            onClick = {
+                                (e) => this.selectChannel(e)
+                            } >
+                                {
+                                    organismes_referents.nom
+                                } < /Link>
+                            < /Table.Cell>
                             <Table.Cell>{organismes_referents.noOrganismeReferent}</Table.Cell>
                             <Table.Cell>{organismes_referents.nom}</Table.Cell>
                             <Table.Cell>{organismes_referents.noCivique}</Table.Cell>

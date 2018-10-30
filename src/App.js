@@ -5,6 +5,7 @@ import LoginPage from "./components/pages/LoginPage";
 import EmployePage from "./components/pages/EmployePage";
 import AddEmployePage from "./components/pages/AddEmployePage";
 import OrgaRefPage from "./components/pages/OrgaRefPage";
+import OrgaRefSelectionPage from "./components/pages/OrgaRefSelectionPage";
 import AddOrgaRefPage from "./components/pages/AddOrgaRefPage";
 import AddRefPage from "./components/pages/AddRefPage";
 import RefPage from "./components/pages/RefPage";
@@ -25,6 +26,7 @@ const App = () => (
     <Route path="/rechercheReferent" exact component={RechercheReferentPage} />
     <Route path="/Organisme" exact component={OrganismePage} />
     <Route path="/addOrganisme" exact component={AddOrganismePage} />
+    < Route path = "/OrgaRefSelection" exact component = {OrgaRefSelectionPage}/>
   </div>
 );
 
