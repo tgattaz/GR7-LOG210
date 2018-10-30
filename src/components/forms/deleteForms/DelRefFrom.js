@@ -1,12 +1,16 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import {Table} from 'semantic-ui-react';
+import {Table,Button} from 'semantic-ui-react';
 import axios from 'axios';
+import {
+  Route,
+  Redirect
+} from 'react-router';
 
 export default class DelRefForm extends React.Component {
   state = {
     referents: [],
     noReferentEffacer : '',
+    toRef: false,
   };
   selectChannel = (e) => {
     e.preventDefault();
@@ -17,14 +21,16 @@ export default class DelRefForm extends React.Component {
     alert(`Vous avez effacer le referent avec le numero : ${  e.target.innerHTML}`);
 
     const selection = {
-      noReferentEffacer: this.state.noReferentEffacer
+      noReferentEffacer: e.target.innerHTML
     };
     axios.post('/delRef', {
       selection
     }).then(res => {
       console.log(res);
       console.log(res.data);
-    });
+    }).then(() => this.setState(() => ({
+      toRef: true
+    })));
   }
 
   componentDidMount() {
@@ -38,6 +44,9 @@ export default class DelRefForm extends React.Component {
   }
 
   render() {
+    if (this.state.toRef === true) {
+      return <Redirect to = 'Ref' / >
+    }
     return <Table celled padded >
       <Table.Header >
       <Table.Row >
@@ -59,9 +68,13 @@ export default class DelRefForm extends React.Component {
           Table.Row key = {
             referent.noReferent
           } > < Table.Cell > 
-              {< Link to = "Ref" onClick = {(e) => this.selectChannel(e)}> 
-              {referent.noReferent} 
-              </Link>}  
+              { 
+              <Button onClick = {
+                (e) => this.selectChannel(e)
+              } > {
+                referent.noReferent
+              } < /Button>
+                }  
               </Table.Cell>
           <
           Table.Cell > {
