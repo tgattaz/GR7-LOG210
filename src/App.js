@@ -1,17 +1,17 @@
 import React from 'react';
 import { Route } from 'react-router-dom'
-import HomePage from "./components/pages/HomePage";
-import LoginPage from "./components/pages/LoginPage";
-import EmployePage from "./components/pages/EmployePage";
-import AddEmployePage from "./components/pages/AddEmployePage";
-import OrgaRefPage from "./components/pages/OrgaRefPage";
-import OrgaRefSelectionPage from "./components/pages/OrgaRefSelectionPage";
-import AddOrgaRefPage from "./components/pages/AddOrgaRefPage";
-import AddRefPage from "./components/pages/AddRefPage";
-import RefPage from "./components/pages/RefPage";
-import OrganismePage from "./components/pages/OrganismePage";
-import AddOrganismePage from "./components/pages/AddOrganismePage";
-import RechercheReferentPage from "./components/pages/RechercheReferentPage";
+import HomePage from "./components/pages/basicPages/HomePage";
+import LoginPage from "./components/pages/basicPages/LoginPage";
+import EmployePage from "./components/pages/basicPages/EmployePage";
+import AddEmployePage from "./components/pages/addPages/AddEmployePage";
+import OrgaRefPage from "./components/pages/basicPages/OrgaRefPage";
+import OrgaRefSelectionPage from "./components/pages/selectionPages/OrgaRefSelectionPage";
+import AddOrgaRefPage from "./components/pages/addPages/AddOrgaRefPage";
+import AddRefPage from "./components/pages/addPages/AddRefPage";
+import RefPage from "./components/pages/basicPages/RefPage";
+import OrganismePage from "./components/pages/basicPages/OrganismePage";
+import AddOrganismePage from "./components/pages/addPages/AddOrganismePage";
+import RechercheReferentPage from "./components/pages/selectionPages/RechercheReferentPage";
 import DelRefPage from "./components/pages/deletePages/DelRefPage";
 
 const App = () => (

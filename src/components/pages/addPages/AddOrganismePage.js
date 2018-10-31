@@ -1,6 +1,6 @@
 import React from "react";
-import AddOrganismeForm from "../forms/AddOrganismeForm";
-import MenuAllForm from "../forms/MenuAllForm";
+import AddOrganismeForm from "../../forms/addForms/AddOrganismeForm";
+import MenuAllForm from "../../forms/menuForms/MenuAllForm";
 
 class AddOrganismePage extends React.Component{
     //submit = (data) => this.props.login(data).then(() => this.props.history.push("/"));

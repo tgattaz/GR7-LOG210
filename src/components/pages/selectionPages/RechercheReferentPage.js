@@ -1,6 +1,6 @@
 import React from "react";
-import MenuAllForm from "../forms/MenuAllForm";
-import RechercheReferentForm from "../forms/RechercheReferentForm";
+import MenuAllForm from "../../forms/menuForms/MenuAllForm";
+import RechercheReferentForm from "../../forms/selectionForms/RechercheReferentForm";
 
 class RechercheReferentPage extends React.Component {
   //submit = (data) => this.props.login(data).then(() => this.props.history.push("/"));

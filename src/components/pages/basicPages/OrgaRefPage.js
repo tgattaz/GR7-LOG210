@@ -1,8 +1,8 @@
 import React from "react";
-import OrgaRefSelectionForm from "../forms/OrgaRefSelectionForm";
-import MenuAllForm from "../forms/MenuAllForm";
+import OrgaRefForm from "../../forms/basicForms/OrgaRefForm";
+import MenuAllForm from "../../forms/menuForms/MenuAllForm";
 
-class OrgaRefSelectionPage extends React.Component {
+class OrgaRefPage extends React.Component{
     //submit = (data) => this.props.login(data).then(() => this.props.history.push("/"));
 
     render(){
@@ -10,11 +10,10 @@ class OrgaRefSelectionPage extends React.Component {
             <div>
                 <h1>Liste des organismes référents</h1>
                 <MenuAllForm/>
-        < OrgaRefSelectionForm / >
+                <OrgaRefForm/>
             </div>
         );
     }
 }
 
-export default OrgaRefSelectionPage;
-//
+export default OrgaRefPage;

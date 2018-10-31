@@ -1,6 +1,6 @@
 import React from "react";
 import DelRefForm from "../../forms/deleteForms/DelRefFrom.js";
-import MenuAllForm from "../../forms/MenuAllForm";
+import MenuAllForm from "../../forms/menuForms/MenuAllForm";
 
 class DelRefPage extends React.Component {
   // submit = (data) => this.props.login(data).then(() => this.props.history.push("/"));

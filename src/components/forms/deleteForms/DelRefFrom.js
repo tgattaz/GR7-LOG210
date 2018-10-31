@@ -2,7 +2,6 @@ import React from 'react';
 import {Table,Button} from 'semantic-ui-react';
 import axios from 'axios';
 import {
-  Route,
   Redirect
 } from 'react-router';
 

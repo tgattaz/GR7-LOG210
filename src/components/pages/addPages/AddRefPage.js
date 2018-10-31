@@ -1,6 +1,6 @@
 import React from "react";
-import AddRefForm from "../forms/AddRefForm";
-import MenuAllForm from "../forms/MenuAllForm";
+import AddRefForm from "../../forms/addForms/AddRefForm";
+import MenuAllForm from "../../forms/menuForms/MenuAllForm";
 
 class AddRefPage extends React.Component {
   //submit = (data) => this.props.login(data).then(() => this.props.history.push("/"));
