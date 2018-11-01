@@ -42,7 +42,7 @@ export default class OrganismeForm extends React.Component{
                             <Table.Cell>{organismes.ville}</Table.Cell>
                             <Table.Cell>{organismes.province}</Table.Cell>
                             <Table.Cell>{organismes.codePostal}</Table.Cell>
-                            <Table.Cell>{organismes.telephoneBureau}</Table.Cell>
+                            <Table.Cell>{organismes.telephone}</Table.Cell>
                             <Table.Cell>{organismes.fax}</Table.Cell>
                             <Table.Cell>{organismes.courriel}</Table.Cell>
                 </Table.Row>

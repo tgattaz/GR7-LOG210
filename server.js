@@ -320,6 +320,52 @@ app.post('/updateRef', (req, res) => {
         }
     ); 
 });
+
+/** Requette pour la class Organisme */
+app.post('/updateOrganisme', (req, res) => {
+    const {
+        noOrganisme,
+        nom,
+        noCivique,
+        rue,
+        ville,
+        province,
+        codePostal,
+        telephone,
+        fax,
+        courriel
+       
+    } = req.body.organisme;
+    const values = [nom, noCivique, rue, ville, province, codePostal, telephone, fax, courriel];
+    JSAlert.alert(values);
+    //(nom,noCivique,rue,ville,province,codePostal,telephone,fax,courriel) VALUES (?,?,?,?,?,?,?,?,?);",
+    db.query('UPDATE organisme SET ? WHERE ?', [{
+            nom: nom,
+            noCivique: noCivique,
+            rue: rue,
+            ville: ville,
+            province: province,
+            codePostal: codePostal,
+            telephone: telephone,
+            fax: fax,
+            courriel: courriel
+        }, {
+            noOrganisme: noOrganisme
+        }],
+        (err, results) => {
+            if (err) {
+                JSAlert.alert("L'organisme n'a pas été modifier erreur");
+                return res.send(err);
+            } else {
+                JSAlert.alert(" L'organisme modif est :'" +
+                    noOrganisme +
+                    "'");
+                return res.send("L'organisme modif");
+            }
+        }
+    );
+});
+
 app.get('/referents', (req, res) => {
     //code pour afficher table de la base de donnée
     db.query("SELECT * FROM referent", (err, results) => {

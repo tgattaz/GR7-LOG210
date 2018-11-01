@@ -8,7 +8,7 @@ class UpdateOrganismePage extends React.Component {
     render() {
       return ( < div >
         <
-        h1 > selectionner un referent a modifier < /h1 > <
+        h1 > selectionner un organisme a modifier < /h1 > <
         MenuAllForm / >
         <UpdateOrganismeForm / >
 

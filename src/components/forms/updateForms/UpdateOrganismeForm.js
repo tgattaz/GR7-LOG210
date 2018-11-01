@@ -67,9 +67,6 @@ export default class UpdateOrganismeForm extends React.Component {
             (e) => this.siLeChoixEstFaitEnregisterEtChangerDePage(e) } > {
             organismes.noOrganisme
           } < /Button> < /Table.Cell >
-           <Table.Cell>{
-            organismes.noOrganisme
-          } </Table.Cell>
            <Table.Cell > {
             organismes.noOrganisme
           } < /Table.Cell> <
@@ -92,7 +89,7 @@ export default class UpdateOrganismeForm extends React.Component {
             organismes.codePostal
           } < /Table.Cell> <
           Table.Cell > {
-            organismes.telephoneBureau
+            organismes.telephone
           } < /Table.Cell> <
           Table.Cell > {
             organismes.fax

@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 import { Form, Button ,Dropdown, Menu} from "semantic-ui-react";
 import axios from 'axios';
+import EmployeForm from '../basicForms/EmployeForm';
 
 export default class AddEmployeForm extends React.Component{
     state ={
@@ -11,6 +12,7 @@ export default class AddEmployeForm extends React.Component{
         motDePasse:'',
         role:'',
         render: false,
+        switchRefPage : false,
             };
 
 
@@ -53,11 +55,17 @@ export default class AddEmployeForm extends React.Component{
                 render: true
             }) //After 1 second, set render to true
         }.bind(this), 1000)
-    
+        this.setState({
+            switchRefPage : true
+        });
 
     };
 
     render(){
+        //redirection apres l'ajout ou la modification 
+        if (this.state.switchRefPage) {
+            return ( < EmployeForm / > )
+        }
         return(
             <Form onSubmit={this.handleSumit}>
                 <Form.Field>
@@ -98,8 +106,7 @@ export default class AddEmployeForm extends React.Component{
                     </select>
                 </Form.Field>
                 <br/>
-                < Button bsStyle = "link" > Enregistrer < /Button >
-                < Link to = "employes" >  Voir la liste</Link>
+                < Button > Enregistrer < /Button >
             < /Form>
            
         );

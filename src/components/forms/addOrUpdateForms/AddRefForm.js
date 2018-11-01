@@ -1,9 +1,9 @@
-import React, {
-  lazy,
-  Suspense
-} from 'react';
+import React from 'react';
 import { Form, Button, Dropdown } from "semantic-ui-react";
 import axios from 'axios';
+import {
+  Redirect
+} from 'react-router';
 import RefForm from '../basicForms/RefForm';
 
 

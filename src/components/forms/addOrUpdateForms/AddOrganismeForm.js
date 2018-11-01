@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, Button } from "semantic-ui-react";
 import axios from 'axios';
+import OrganismeForm from '../basicForms/OrganismeForm';
 
 export default class AddOrganismeForm extends React.Component{
     state ={
@@ -14,10 +15,16 @@ export default class AddOrganismeForm extends React.Component{
         telephone:'',
         fax:'',
         courriel:'',
+        noRefAModifier: '',
+        pass: false,
+        switchRefPage: false,
     };
 
     handleChangeNom = event =>{
-        this.setState({nom:event.target.value});
+        this.setState({nom:event.target.value,
+         // pour que le message ne s'affiche qu'une fois 
+         pass: true
+        });
     };
     handleChangeNoCivique = event =>{
         this.setState({noCivique:event.target.value});
@@ -47,7 +54,7 @@ export default class AddOrganismeForm extends React.Component{
         event.preventDefault();
 
         const organisme ={
-            //noEmploye: this.state.noEmploye,
+            noOrganisme: this.props.modifierOrga,
             nom:this.state.nom,
             noCivique:this.state.noCivique,
             rue:this.state.rue,
@@ -59,14 +66,47 @@ export default class AddOrganismeForm extends React.Component{
             courriel:this.state.courriel,
         }
 
-        axios.post('/addOrganisme',{ organisme })
+        if (this.props.modifierOrga != null) {
+        axios.post('/updateOrganisme',{ organisme })
         .then(res=>{
             console.log(res);
             console.log(res.data);
-        });
+        })}else{
+            axios.post('/addOrganisme', {
+                    organisme
+                })
+                .then(res => {
+                    console.log(res);
+                    console.log(res.data);
+                })
+        }
+        this.setState({
+            switchRefPage: true
+        })
     };
 
     render(){
+        // variable possèdent le choix fait dans 
+        //UpdateOrganismeForm 
+        var organismeChoisi = this.props.modifierOrga
+
+        var messageAEteAffiche = this.state.pass
+
+
+        //la redirection a cette page a été faite par UpdateOrganismeForm
+        //on peut modifier l'organisme choisi
+        if (organismeChoisi != null && !messageAEteAffiche) {
+            alert(" VOICI UN EXEMPLE DE PROPS DE OrgaRefSelection à AddRefForm ,ON PASSE DES VALEURS ENTRE LES CLASSES :), L'organisme modifié sera :" + this.props.modifierOrga)
+
+        }
+        
+
+        //redirection apres l'ajout ou la modification 
+        if (this.state.switchRefPage) {
+            return ( < OrganismeForm / > )
+        }
+
+
         return(
           <Form onSubmit={this.handleSumit}>
               <Form.Field>
@@ -114,7 +154,7 @@ export default class AddOrganismeForm extends React.Component{
               <Form.Field>
                 <label>
                     Télephone Bureau:
-                    <input type="text" name="telephoneBureau" onChange={this.handleChangeTelephoneBureau}/>
+                    <input type="text" name="telephoneBureau" onChange={this.handleChangeTelephone}/>
                 </label>
               </Form.Field>
               <br/>
