@@ -34,6 +34,11 @@ class MenuAllForm extends React.Component {
                 }
                 name = 'delOrganisme'
                 to = "/delOrganisme" > Retirer un organisme < /Dropdown.Item>
+                 < Dropdown.Item as = {
+                   Link
+                 }
+                 name = 'updateOrganisme'
+                 to = "/updateOrganisme" > Mettre a jours un organisme < /Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
           <Dropdown item text='organismes référents'>
