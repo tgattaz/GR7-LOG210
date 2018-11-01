@@ -256,6 +256,29 @@ app.post('/delRef', (req, res) => {
     );
 });
 /** Requette pour la class Réferent */
+app.post('/delOrganisme', (req, res) => {
+
+
+    const {
+        noOrganisme
+    } = req.body.selection;
+    const value = [noOrganisme];
+    JSAlert.alert(value);
+    db.query("DELETE FROM organisme WHERE noOrganisme = '" + value +
+        "'",
+        (err, results) => {
+            if (err) {
+                JSAlert.alert("L'organisme n'a pas été sup erreur");
+                return res.send(err);
+            } else {
+                JSAlert.alert("organisme sup");
+
+                return res.send("organisme sup");
+            }
+        }
+    );
+});
+/** Requette pour la class Réferent */
 app.post('/updateRef', (req, res) => {
  const {
      noReferent,

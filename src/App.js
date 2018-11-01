@@ -14,6 +14,7 @@ import AddOrganismePage from "./components/pages/addPages/AddOrganismePage";
 import RechercheReferentPage from "./components/pages/selectionPages/RechercheReferentPage";
 import DelRefPage from "./components/pages/deletePages/DelRefPage";
 import UpdateRefPage from "./components/pages/updatePages/UpdateRefPage";
+import DelOrganismePage from "./components/pages/deletePages/DelOrganismePage";
 
 const App = () => (
   <div className="ui container">
@@ -31,6 +32,7 @@ const App = () => (
     < Route path = "/OrgaRefSelection" exact component = {OrgaRefSelectionPage}/>
     < Route path = "/delRef" exact component = {DelRefPage}/>
     < Route path = "/updateRef" exact component = {UpdateRefPage}/>
+    < Route path = "/delOrganisme" exact component = {DelOrganismePage}/>
   </div>
 );
 
