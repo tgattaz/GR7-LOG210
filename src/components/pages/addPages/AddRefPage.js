@@ -1,5 +1,5 @@
 import React from "react";
-import AddRefForm from "../../forms/addForms/AddRefForm";
+import AddRefForm from "../../forms/addOrUpdateForms/AddRefForm";
 import MenuAllForm from "../../forms/menuForms/MenuAllForm";
 
 class AddRefPage extends React.Component {
@@ -7,7 +7,7 @@ class AddRefPage extends React.Component {
 
   render() {
     return <div>
-        <h1>Liste des organismes référents</h1>
+        < h1 > Ajouter ou modifier un organismes référents < /h1>
       <MenuAllForm />
         <AddRefForm />
       </div>;

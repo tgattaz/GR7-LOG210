@@ -1,5 +1,5 @@
 import React from "react";
-import AddOrgaRefForm from "../../forms/addForms/AddOrgaRefForm";
+import AddOrgaRefForm from "../../forms/addOrUpdateForms/AddOrgaRefForm";
 import MenuAllForm from "../../forms/menuForms/MenuAllForm";
 
 class AddOrgaRefPage extends React.Component{
@@ -8,7 +8,7 @@ class AddOrgaRefPage extends React.Component{
     render(){
         return(
             <div>
-                <h2>Ajouter un organisme référent</h2>
+                < h2 > Ajouter ou modifier un organisme référent < /h2>
                 <MenuAllForm/>
                 <br/>
                 <AddOrgaRefForm/>

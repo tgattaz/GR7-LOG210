@@ -8,19 +8,19 @@ import {
 export default class DelRefForm extends React.Component {
   state = {
     referents: [],
-    noReferentEffacer : '',
+    noReferent : '',
     toRef: false,
   };
   selectChannel = (e) => {
     e.preventDefault();
     alert(e.target.innerHTML);
     this.setState({
-      noReferentEffacer: e.target.innerHTML
+      noReferent: e.target.innerHTML
     });
     alert(`Vous avez effacer le referent avec le numero : ${  e.target.innerHTML}`);
 
     const selection = {
-      noReferentEffacer: e.target.innerHTML
+      noReferent: e.target.innerHTML
     };
     axios.post('/delRef', {
       selection

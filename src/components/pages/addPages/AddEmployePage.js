@@ -1,5 +1,5 @@
 import React from "react";
-import AddEmployeForm from "../../forms/addForms/AddEmployeForm";
+import AddEmployeForm from "../../forms/addOrUpdateForms/AddEmployeForm";
 import MenuAllForm from "../../forms/menuForms/MenuAllForm";
 
 class AddEmployePage extends React.Component{
@@ -8,7 +8,7 @@ class AddEmployePage extends React.Component{
     render(){
         return(
             <div>
-                <h2>Ajouter un employé</h2>
+                < h2 > Ajouter ou modifier un employé < /h2>
                 <MenuAllForm/>
                 <br/>
                 <AddEmployeForm/>

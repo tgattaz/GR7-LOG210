@@ -172,6 +172,7 @@ app.get('/organismes_referents', (req, res) => {
         }
     })
 });
+
 /** Requette pour la class Réferent */
 app.post('/addRef', (req, res) => {
 
@@ -206,12 +207,13 @@ app.post('/addRef', (req, res) => {
 /** Requette pour la class Réferent */
 app.post('/delRef', (req, res) => {
     
+   
     const {
-        noReferentEffacer
+        noReferent
     } = req.body.selection;
-    const value = [noReferentEffacer];
+    const value = [noReferent];
     JSAlert.alert(value);
-    db.query("DELETE FROM referent WHERE noReferent = '"+noReferentEffacer
+    db.query("DELETE FROM referent WHERE noReferent = '" + value
             +"'",
         (err, results) => {
             if (err) {
@@ -224,6 +226,48 @@ app.post('/delRef', (req, res) => {
         }
       }
     );
+});
+/** Requette pour la class Réferent */
+app.post('/updateRef', (req, res) => {
+ const {
+     noReferent,
+     nom,
+     prenom,
+     titre,
+     telephoneCell,
+     telephoneBureau,
+     fax,
+     preferenceReception,
+     email
+ } = req.body.referent;
+ const values = [noReferent, nom, prenom, titre, telephoneCell, telephoneBureau, fax, preferenceReception, email];
+ JSAlert.alert(values);
+    //(nom,prenom,titre,telephoneCell,telephoneBureau,fax,preferenceReception,email) VALUES (?,?,?,?,?,?,?,?);",
+     db.query('UPDATE referent SET ? WHERE ?', [{
+                        nom: nom,
+                        prenom: prenom,
+                        titre: titre,
+                        telephoneCell: telephoneCell, 
+                        telephoneBureau: telephoneBureau, 
+                        fax: fax,
+                        preferenceReception: preferenceReception,
+                        email: email
+                                        }, {
+                            noReferent: noReferent
+                                        }],
+        (err, results) => {
+            if (err) {
+                JSAlert.alert("référent n'a pas été modifier erreur");
+                return res.send(err);
+            } else {
+                JSAlert.alert(" référent modif est :'" + 
+                            noReferent
+                         +
+                    "'");
+                return res.send("Référent modif");
+            }
+        }
+    ); 
 });
 app.get('/referents', (req, res) => {
     //code pour afficher table de la base de donnée
