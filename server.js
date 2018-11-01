@@ -112,6 +112,16 @@ app.get('/all', (req, res) => {
         }
     })
 });
+app.get('/referent_organisme_referent', (req, res) => {
+    //code pour afficher table de la base de donnée
+    db.query('SELECT * FROM referent_organisme_referent ', (err, results) => {
+        if (err) {
+            return res.send(err);
+        } else {
+            return res.send(results);
+        }
+    })
+});
 
 /** Requette pour la class Organisme */
 app.post('/addOrganisme', (req, res) => {
@@ -184,7 +194,8 @@ app.post('/addRef', (req, res) => {
         telephoneBureau,
         fax,
         preferenceReception,
-        email
+        email,
+        choixOrgRef,
     } = req.body.referent;
     const values = [nom, prenom, titre, telephoneCell, telephoneBureau, fax, preferenceReception, email];
     JSAlert.alert(values);
@@ -196,12 +207,29 @@ app.post('/addRef', (req, res) => {
                 JSAlert.alert("référent pas ajouté erreur");
                 return res.send(err);
             } else {
-                JSAlert.alert("référent ajouté");
+                console.log(results.insertId);
+                
+                const numerosRefEtOrg = [choixOrgRef,results.insertId,
+                ];
+                JSAlert.alert("référent ajouté " + numerosRefEtOrg);
+                 db.query(
+                    "INSERT INTO referent_organisme_referent  (noOrganismeReferent,noReferent) VALUES (?,?);",
+                    numerosRefEtOrg,
+                    (err, res) => {
+                        if (err) {
+                            JSAlert.alert("le lien entre le référent et l'organisme référent n'a pas été fait");
+                            //return res.send(err);
+                        } else {
+                            JSAlert.alert("le lien entre le référent et l'organisme référent a été fait");
 
-                return res.send("Référent ajouté");
+                            //return res.send("Référent ajouté");
+                        }
+                    }
+                ) 
+                return res.send("Référent ajouté"+results.noReferent);
             }
         }
-    );
+    )
 });
 
 /** Requette pour la class Réferent */

@@ -63,7 +63,8 @@ export default class AddRefForm extends React.Component {
       telephoneCell: this.state.telephoneCell,
       telephoneBureau: this.state.telephoneBureau,
       preferenceReception: this.state.preferenceReception,
-      email: this.state.email
+      email: this.state.email,
+      choixOrgRef: this.props.choixOrgRef,
     };
 
     

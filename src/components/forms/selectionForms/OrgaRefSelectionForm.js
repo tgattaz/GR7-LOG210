@@ -38,7 +38,7 @@ export default class OrgaRefSelectionForm extends React.Component{
             Table.Row >
             <
             Table.HeaderCell > Choisir < /Table.HeaderCell> <
-            Table.HeaderCell singleLine > Nom < /Table.HeaderCell> <
+            Table.HeaderCell singleLine > Numero unique < /Table.HeaderCell> <
             Table.HeaderCell > Nom organisme réferent < /Table.HeaderCell> <
             Table.HeaderCell > Numéro Civique < /Table.HeaderCell> <
             Table.HeaderCell > Rue < /Table.HeaderCell> <
@@ -66,7 +66,7 @@ export default class OrgaRefSelectionForm extends React.Component{
                     onClick = {
                         (e) => this.selectChannel(e)
                     } > {
-                        organismes_referents.nom
+                        organismes_referents.noOrganismeReferent
                     } < /Button> <
                     /Table.Cell> <
                     Table.Cell > {
