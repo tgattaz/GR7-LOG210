@@ -1,16 +1,19 @@
 import React from 'react';
+'use strict';
+import Adapter from 'enzyme-adapter-react-16';
 //import ReactDOM from 'react-dom';
 import RechercheReferentForm from '../components/forms/selectionForms/RechercheReferentForm';
-import Foo from './Foo';
+//import Foo from './Foo';
 
-import {shallow} from 'enzyme'
+import { shallow, render, mount, configure } from 'enzyme';
+configure({ adapter: new Adapter() });
 //import TestUtils from 'react-addons-test-utils';
 
 describe('Recherche Referent Renders without crashing',() => {
 it('Recherche Referent Renders without crashing', () => {
-  const wrapper = shallow( < RechercheReferentForm / > );
+  const wrapper = shallow( < RechercheReferentForm /> );
  // const rechercherState = wrapper.state().rechercher
-  expect(wrapper.find(Foo)).to.have.lengthOf(3);
+  expect(wrapper).toMatchSnapshot();
   //expect(rechercherState).toEqual(0)
   
 })

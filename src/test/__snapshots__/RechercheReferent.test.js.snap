@@ -1,0 +1,1047 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Recherche Referent Renders without crashing Recherche Referent Renders without crashing 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <RechercheReferent />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Form
+          as="form"
+          onSubmit={[Function]}
+        >
+          <h2>
+            Rercherche d'un référent
+          </h2>
+          <FormField>
+            <label>
+              Recherche par nom, prénom, nom d'organisme, titre, numéro de téléphone ou numéro de dossier de famille :
+              <br />
+              <input
+                name="recherche"
+                onChange={[Function]}
+                type="text"
+              />
+            </label>
+          </FormField>
+          <Button
+            as="button"
+            primary={true}
+            role="button"
+          >
+            Rechercher
+          </Button>
+        </Form>,
+        <Table
+          as="table"
+          celled={true}
+          padded={true}
+        >
+          <TableHeader
+            as="thead"
+          >
+            <TableRow
+              as="tr"
+              cellAs="td"
+            >
+              <TableHeaderCell
+                as="th"
+              >
+                Numéro de référent
+              </TableHeaderCell>
+              <TableHeaderCell
+                as="th"
+              >
+                Nom
+              </TableHeaderCell>
+              <TableHeaderCell
+                as="th"
+              >
+                Prénom
+              </TableHeaderCell>
+              <TableHeaderCell
+                as="th"
+              >
+                Titre
+              </TableHeaderCell>
+              <TableHeaderCell
+                as="th"
+              >
+                Téléphone cellulaire
+              </TableHeaderCell>
+              <TableHeaderCell
+                as="th"
+              >
+                Téléphone bureau
+              </TableHeaderCell>
+              <TableHeaderCell
+                as="th"
+              >
+                Fax
+              </TableHeaderCell>
+              <TableHeaderCell
+                as="th"
+              >
+                Préférence réception
+              </TableHeaderCell>
+            </TableRow>
+          </TableHeader>
+          <TableBody
+            as="tbody"
+          />
+        </Table>,
+      ],
+      "className": "rechercheReferent",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "as": "form",
+          "children": Array [
+            <h2>
+              Rercherche d'un référent
+            </h2>,
+            <FormField>
+              <label>
+                Recherche par nom, prénom, nom d'organisme, titre, numéro de téléphone ou numéro de dossier de famille :
+                <br />
+                <input
+                  name="recherche"
+                  onChange={[Function]}
+                  type="text"
+                />
+              </label>
+            </FormField>,
+            <Button
+              as="button"
+              primary={true}
+              role="button"
+            >
+              Rechercher
+            </Button>,
+          ],
+          "onSubmit": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Rercherche d'un référent",
+            },
+            "ref": null,
+            "rendered": "Rercherche d'un référent",
+            "type": "h2",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": <label>
+                Recherche par nom, prénom, nom d'organisme, titre, numéro de téléphone ou numéro de dossier de famille :
+                <br />
+                <input
+                  name="recherche"
+                  onChange={[Function]}
+                  type="text"
+                />
+              </label>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Recherche par nom, prénom, nom d'organisme, titre, numéro de téléphone ou numéro de dossier de famille :",
+                  <br />,
+                  <input
+                    name="recherche"
+                    onChange={[Function]}
+                    type="text"
+                  />,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Recherche par nom, prénom, nom d'organisme, titre, numéro de téléphone ou numéro de dossier de famille :",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": "br",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "name": "recherche",
+                    "onChange": [Function],
+                    "type": "text",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+              ],
+              "type": "label",
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "as": "button",
+              "children": "Rechercher",
+              "primary": true,
+              "role": "button",
+            },
+            "ref": null,
+            "rendered": "Rechercher",
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "as": "table",
+          "celled": true,
+          "children": Array [
+            <TableHeader
+              as="thead"
+            >
+              <TableRow
+                as="tr"
+                cellAs="td"
+              >
+                <TableHeaderCell
+                  as="th"
+                >
+                  Numéro de référent
+                </TableHeaderCell>
+                <TableHeaderCell
+                  as="th"
+                >
+                  Nom
+                </TableHeaderCell>
+                <TableHeaderCell
+                  as="th"
+                >
+                  Prénom
+                </TableHeaderCell>
+                <TableHeaderCell
+                  as="th"
+                >
+                  Titre
+                </TableHeaderCell>
+                <TableHeaderCell
+                  as="th"
+                >
+                  Téléphone cellulaire
+                </TableHeaderCell>
+                <TableHeaderCell
+                  as="th"
+                >
+                  Téléphone bureau
+                </TableHeaderCell>
+                <TableHeaderCell
+                  as="th"
+                >
+                  Fax
+                </TableHeaderCell>
+                <TableHeaderCell
+                  as="th"
+                >
+                  Préférence réception
+                </TableHeaderCell>
+              </TableRow>
+            </TableHeader>,
+            <TableBody
+              as="tbody"
+            />,
+          ],
+          "padded": true,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "as": "thead",
+              "children": <TableRow
+                as="tr"
+                cellAs="td"
+              >
+                <TableHeaderCell
+                  as="th"
+                >
+                  Numéro de référent
+                </TableHeaderCell>
+                <TableHeaderCell
+                  as="th"
+                >
+                  Nom
+                </TableHeaderCell>
+                <TableHeaderCell
+                  as="th"
+                >
+                  Prénom
+                </TableHeaderCell>
+                <TableHeaderCell
+                  as="th"
+                >
+                  Titre
+                </TableHeaderCell>
+                <TableHeaderCell
+                  as="th"
+                >
+                  Téléphone cellulaire
+                </TableHeaderCell>
+                <TableHeaderCell
+                  as="th"
+                >
+                  Téléphone bureau
+                </TableHeaderCell>
+                <TableHeaderCell
+                  as="th"
+                >
+                  Fax
+                </TableHeaderCell>
+                <TableHeaderCell
+                  as="th"
+                >
+                  Préférence réception
+                </TableHeaderCell>
+              </TableRow>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "as": "tr",
+                "cellAs": "td",
+                "children": Array [
+                  <TableHeaderCell
+                    as="th"
+                  >
+                    Numéro de référent
+                  </TableHeaderCell>,
+                  <TableHeaderCell
+                    as="th"
+                  >
+                    Nom
+                  </TableHeaderCell>,
+                  <TableHeaderCell
+                    as="th"
+                  >
+                    Prénom
+                  </TableHeaderCell>,
+                  <TableHeaderCell
+                    as="th"
+                  >
+                    Titre
+                  </TableHeaderCell>,
+                  <TableHeaderCell
+                    as="th"
+                  >
+                    Téléphone cellulaire
+                  </TableHeaderCell>,
+                  <TableHeaderCell
+                    as="th"
+                  >
+                    Téléphone bureau
+                  </TableHeaderCell>,
+                  <TableHeaderCell
+                    as="th"
+                  >
+                    Fax
+                  </TableHeaderCell>,
+                  <TableHeaderCell
+                    as="th"
+                  >
+                    Préférence réception
+                  </TableHeaderCell>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "as": "th",
+                    "children": "Numéro de référent",
+                  },
+                  "ref": null,
+                  "rendered": "Numéro de référent",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "as": "th",
+                    "children": "Nom",
+                  },
+                  "ref": null,
+                  "rendered": "Nom",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "as": "th",
+                    "children": "Prénom",
+                  },
+                  "ref": null,
+                  "rendered": "Prénom",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "as": "th",
+                    "children": "Titre",
+                  },
+                  "ref": null,
+                  "rendered": "Titre",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "as": "th",
+                    "children": "Téléphone cellulaire",
+                  },
+                  "ref": null,
+                  "rendered": "Téléphone cellulaire",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "as": "th",
+                    "children": "Téléphone bureau",
+                  },
+                  "ref": null,
+                  "rendered": "Téléphone bureau",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "as": "th",
+                    "children": "Fax",
+                  },
+                  "ref": null,
+                  "rendered": "Fax",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "as": "th",
+                    "children": "Préférence réception",
+                  },
+                  "ref": null,
+                  "rendered": "Préférence réception",
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "as": "tbody",
+              "children": Array [],
+            },
+            "ref": null,
+            "rendered": Array [],
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Form
+            as="form"
+            onSubmit={[Function]}
+          >
+            <h2>
+              Rercherche d'un référent
+            </h2>
+            <FormField>
+              <label>
+                Recherche par nom, prénom, nom d'organisme, titre, numéro de téléphone ou numéro de dossier de famille :
+                <br />
+                <input
+                  name="recherche"
+                  onChange={[Function]}
+                  type="text"
+                />
+              </label>
+            </FormField>
+            <Button
+              as="button"
+              primary={true}
+              role="button"
+            >
+              Rechercher
+            </Button>
+          </Form>,
+          <Table
+            as="table"
+            celled={true}
+            padded={true}
+          >
+            <TableHeader
+              as="thead"
+            >
+              <TableRow
+                as="tr"
+                cellAs="td"
+              >
+                <TableHeaderCell
+                  as="th"
+                >
+                  Numéro de référent
+                </TableHeaderCell>
+                <TableHeaderCell
+                  as="th"
+                >
+                  Nom
+                </TableHeaderCell>
+                <TableHeaderCell
+                  as="th"
+                >
+                  Prénom
+                </TableHeaderCell>
+                <TableHeaderCell
+                  as="th"
+                >
+                  Titre
+                </TableHeaderCell>
+                <TableHeaderCell
+                  as="th"
+                >
+                  Téléphone cellulaire
+                </TableHeaderCell>
+                <TableHeaderCell
+                  as="th"
+                >
+                  Téléphone bureau
+                </TableHeaderCell>
+                <TableHeaderCell
+                  as="th"
+                >
+                  Fax
+                </TableHeaderCell>
+                <TableHeaderCell
+                  as="th"
+                >
+                  Préférence réception
+                </TableHeaderCell>
+              </TableRow>
+            </TableHeader>
+            <TableBody
+              as="tbody"
+            />
+          </Table>,
+        ],
+        "className": "rechercheReferent",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "as": "form",
+            "children": Array [
+              <h2>
+                Rercherche d'un référent
+              </h2>,
+              <FormField>
+                <label>
+                  Recherche par nom, prénom, nom d'organisme, titre, numéro de téléphone ou numéro de dossier de famille :
+                  <br />
+                  <input
+                    name="recherche"
+                    onChange={[Function]}
+                    type="text"
+                  />
+                </label>
+              </FormField>,
+              <Button
+                as="button"
+                primary={true}
+                role="button"
+              >
+                Rechercher
+              </Button>,
+            ],
+            "onSubmit": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Rercherche d'un référent",
+              },
+              "ref": null,
+              "rendered": "Rercherche d'un référent",
+              "type": "h2",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": <label>
+                  Recherche par nom, prénom, nom d'organisme, titre, numéro de téléphone ou numéro de dossier de famille :
+                  <br />
+                  <input
+                    name="recherche"
+                    onChange={[Function]}
+                    type="text"
+                  />
+                </label>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Recherche par nom, prénom, nom d'organisme, titre, numéro de téléphone ou numéro de dossier de famille :",
+                    <br />,
+                    <input
+                      name="recherche"
+                      onChange={[Function]}
+                      type="text"
+                    />,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Recherche par nom, prénom, nom d'organisme, titre, numéro de téléphone ou numéro de dossier de famille :",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {},
+                    "ref": null,
+                    "rendered": null,
+                    "type": "br",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "name": "recherche",
+                      "onChange": [Function],
+                      "type": "text",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                ],
+                "type": "label",
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "as": "button",
+                "children": "Rechercher",
+                "primary": true,
+                "role": "button",
+              },
+              "ref": null,
+              "rendered": "Rechercher",
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "as": "table",
+            "celled": true,
+            "children": Array [
+              <TableHeader
+                as="thead"
+              >
+                <TableRow
+                  as="tr"
+                  cellAs="td"
+                >
+                  <TableHeaderCell
+                    as="th"
+                  >
+                    Numéro de référent
+                  </TableHeaderCell>
+                  <TableHeaderCell
+                    as="th"
+                  >
+                    Nom
+                  </TableHeaderCell>
+                  <TableHeaderCell
+                    as="th"
+                  >
+                    Prénom
+                  </TableHeaderCell>
+                  <TableHeaderCell
+                    as="th"
+                  >
+                    Titre
+                  </TableHeaderCell>
+                  <TableHeaderCell
+                    as="th"
+                  >
+                    Téléphone cellulaire
+                  </TableHeaderCell>
+                  <TableHeaderCell
+                    as="th"
+                  >
+                    Téléphone bureau
+                  </TableHeaderCell>
+                  <TableHeaderCell
+                    as="th"
+                  >
+                    Fax
+                  </TableHeaderCell>
+                  <TableHeaderCell
+                    as="th"
+                  >
+                    Préférence réception
+                  </TableHeaderCell>
+                </TableRow>
+              </TableHeader>,
+              <TableBody
+                as="tbody"
+              />,
+            ],
+            "padded": true,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "as": "thead",
+                "children": <TableRow
+                  as="tr"
+                  cellAs="td"
+                >
+                  <TableHeaderCell
+                    as="th"
+                  >
+                    Numéro de référent
+                  </TableHeaderCell>
+                  <TableHeaderCell
+                    as="th"
+                  >
+                    Nom
+                  </TableHeaderCell>
+                  <TableHeaderCell
+                    as="th"
+                  >
+                    Prénom
+                  </TableHeaderCell>
+                  <TableHeaderCell
+                    as="th"
+                  >
+                    Titre
+                  </TableHeaderCell>
+                  <TableHeaderCell
+                    as="th"
+                  >
+                    Téléphone cellulaire
+                  </TableHeaderCell>
+                  <TableHeaderCell
+                    as="th"
+                  >
+                    Téléphone bureau
+                  </TableHeaderCell>
+                  <TableHeaderCell
+                    as="th"
+                  >
+                    Fax
+                  </TableHeaderCell>
+                  <TableHeaderCell
+                    as="th"
+                  >
+                    Préférence réception
+                  </TableHeaderCell>
+                </TableRow>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "as": "tr",
+                  "cellAs": "td",
+                  "children": Array [
+                    <TableHeaderCell
+                      as="th"
+                    >
+                      Numéro de référent
+                    </TableHeaderCell>,
+                    <TableHeaderCell
+                      as="th"
+                    >
+                      Nom
+                    </TableHeaderCell>,
+                    <TableHeaderCell
+                      as="th"
+                    >
+                      Prénom
+                    </TableHeaderCell>,
+                    <TableHeaderCell
+                      as="th"
+                    >
+                      Titre
+                    </TableHeaderCell>,
+                    <TableHeaderCell
+                      as="th"
+                    >
+                      Téléphone cellulaire
+                    </TableHeaderCell>,
+                    <TableHeaderCell
+                      as="th"
+                    >
+                      Téléphone bureau
+                    </TableHeaderCell>,
+                    <TableHeaderCell
+                      as="th"
+                    >
+                      Fax
+                    </TableHeaderCell>,
+                    <TableHeaderCell
+                      as="th"
+                    >
+                      Préférence réception
+                    </TableHeaderCell>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "as": "th",
+                      "children": "Numéro de référent",
+                    },
+                    "ref": null,
+                    "rendered": "Numéro de référent",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "as": "th",
+                      "children": "Nom",
+                    },
+                    "ref": null,
+                    "rendered": "Nom",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "as": "th",
+                      "children": "Prénom",
+                    },
+                    "ref": null,
+                    "rendered": "Prénom",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "as": "th",
+                      "children": "Titre",
+                    },
+                    "ref": null,
+                    "rendered": "Titre",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "as": "th",
+                      "children": "Téléphone cellulaire",
+                    },
+                    "ref": null,
+                    "rendered": "Téléphone cellulaire",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "as": "th",
+                      "children": "Téléphone bureau",
+                    },
+                    "ref": null,
+                    "rendered": "Téléphone bureau",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "as": "th",
+                      "children": "Fax",
+                    },
+                    "ref": null,
+                    "rendered": "Fax",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "as": "th",
+                      "children": "Préférence réception",
+                    },
+                    "ref": null,
+                    "rendered": "Préférence réception",
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "as": "tbody",
+                "children": Array [],
+              },
+              "ref": null,
+              "rendered": Array [],
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
