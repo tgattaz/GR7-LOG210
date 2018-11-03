@@ -16,6 +16,7 @@ import DelRefPage from "./components/pages/deletePages/DelRefPage";
 import UpdateRefPage from "./components/pages/updatePages/UpdateRefPage";
 import DelOrganismePage from "./components/pages/deletePages/DelOrganismePage";
 import UpdateOrganismePage from "./components/pages/updatePages/UpdateOrganismePage";
+import UpdateOrganismeRefPage from "./components/pages/updatePages/UpdateOrganismeRefPage";
 import DesactiverOraganismeRefPage from "./components/pages/deletePages/DesactiverOraganismeRefPage";
 
 const App = () => (
@@ -36,6 +37,7 @@ const App = () => (
     < Route path = "/updateRef" exact component = {UpdateRefPage}/>
     < Route path = "/delOrganisme" exact component = {DelOrganismePage}/>
     < Route path = "/updateOrganisme" exact component = {UpdateOrganismePage}/>
+    < Route path = "/updateOrgaRef" exact component = {UpdateOrganismeRefPage}/>
     < Route path = "/desactiverOrgaRef" exact component = {DesactiverOraganismeRefPage}/>
     
   </div>
