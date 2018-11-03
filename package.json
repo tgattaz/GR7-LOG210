@@ -28,7 +28,6 @@
     "@pusher/chatkit": "^0.7.17",
     "aws-sdk": "2.x",
     "axios": "^0.18.0",
-    "babel-cli": "^6.26.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "babel-preset-env": "^1.7.0",
@@ -45,7 +44,6 @@
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
     "express": "^4.16.3",
-    "jest": "^23.6.0",
     "js-alert": "^1.0.4",
     "json": "^9.0.6",
     "jsonwebtoken": "^8.3.0",
@@ -83,30 +81,30 @@
   "devDependencies": {
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
+    "@babel/node": "^7.0.0",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "bili": "^3.1.2",
     "enzyme": "^3.7.0",
-    "enzyme-adapter-react-16": "^1.6.0"
+    "enzyme-adapter-react-16": "^1.6.0",
+    "jest": "^23.4.1",
+    "regenerator-runtime": "^0.12.0"
   },
-  "jest": {
-    "bail": true,
-    "snapshotSerializers": [
-      "<rootDir>/src/test"
-    ],
-    "setupTestFrameworkScriptFile": "<rootDir>/src/test/setup.js",
-    "transform": {
-      "^.+\\.(jsx|js)?$": "<rootDir>/node_modules/babel-jest"
-    },
-    "moduleNameMapper": {
-      "\\.css$": "identity-obj-proxy"
-    },
-    "collectCoverageFrom": [
-      "**src/*.components.{js,jsx}",
-      "!**/node_modules/**"
-    ],
-    "coverageReporters": [
-      "text-summary"
-    ]
-  }
+  "setupTestFrameworkScriptFile": "<rootDir>/src/test/setup.js",
+  "transform": {
+    "^.+\\.(jsx|js)?$": "<rootDir>/node_modules/babel-jest"
+  },
+  "moduleNameMapper": {
+    "\\.css$": "identity-obj-proxy"
+  },
+  "collectCoverageFrom": [
+    "**src/*.components.{js,jsx}",
+    "!**/node_modules/**"
+  ],
+  "coverageReporters": [
+    "text-summary"
+  ]
 }
