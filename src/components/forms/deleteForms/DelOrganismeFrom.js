@@ -1,12 +1,12 @@
 import React from 'react';
-import {
-  Table,Button
-} from 'semantic-ui-react';
 import axios from 'axios';
+  import {
+    Table,Button
+  } from 'semantic-ui-react';
 import {
   Redirect
 } from 'react-router';
-export default class OrganismeForm extends React.Component {
+export default class DelOrganismeForm extends React.Component {
   state = {
     organismes: [],
     noOrganisme: '',
@@ -45,7 +45,7 @@ export default class OrganismeForm extends React.Component {
 
   render() {
     if (this.state.toOrganime === true) {
-      return <Redirect to = 'Organisme' / >
+      return <Redirect to = 'OrgaRef' / >
     }
     return ( <
       Table celled padded >

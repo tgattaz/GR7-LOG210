@@ -147,11 +147,16 @@ export default class AddOrgaRefForm extends React.Component{
                   </label>
                 </Form.Field>
                 <br/>
-                <Form.Field>
-                  <label>
-                      Etat:
-                      <input type="text" name="etat" onChange={this.handleChangeEtat}/>
-                  </label>
+                < Form.Field >
+                    <select 
+                        name = 'etat'
+                        placeholder = "Choisir un etat"
+                        onChange = {this.handleChangeRole}
+                     >
+                        <option selected > Choisir < /option> 
+                        <option value = '1' > Actif < /option> 
+                        <option value = '2' > Inactif < /option> 
+                    </select> 
                 </Form.Field>
                 <br/>
                 <Button primary>Enregistrer</Button>

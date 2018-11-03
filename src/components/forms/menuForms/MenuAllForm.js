@@ -49,6 +49,11 @@ class MenuAllForm extends React.Component {
               <Dropdown.Item as={Link}
                 name='addOrgaRef'
                 to = "/addOrgaRef" > Ajouter ou modifier un organisme référent < /Dropdown.Item>
+                < Dropdown.Item as = {
+                  Link
+                }
+                name = 'desactiverOrgaRef'
+                to = "/desactiverOrgaRef" > Desactiver un organisme un organisme référent < /Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
           <Dropdown item text='Gérer les référents'>

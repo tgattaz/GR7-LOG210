@@ -182,6 +182,29 @@ app.get('/organismes_referents', (req, res) => {
         }
     })
 });
+/** Requette pour la class Réferent */
+app.post('/desactiverOrganismeRef', (req, res) => {
+
+
+    const {
+        noOrganismeReferent
+    } = req.body.selection;
+    const value = [noOrganismeReferent];
+    JSAlert.alert(value);
+    db.query("UPDATE  organisme_referent SET etat = 'inactif' WHERE noOrganismeReferent = '" + value +
+        "'",
+        (err, results) => {
+            if (err) {
+                JSAlert.alert("L'organisme référent n'a pas été  désactivé");
+                return res.send(err);
+            } else {
+                JSAlert.alert("L'organisme référent a été  désactivé");
+
+                return res.send("L'organisme référent a été  désactivé");
+            }
+        }
+    );
+});
 
 /** Requette pour la class Réferent */
 app.post('/addRef', (req, res) => {
