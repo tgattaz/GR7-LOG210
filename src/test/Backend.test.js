@@ -1,8 +1,10 @@
 // On a besoin du serveur et de la requete du module supertest
+//mettre module.exports = server; dans server.js rappel à moi-même
+// faire npm i supertest pour faire fonctionner la variable request
 const server = require('../../server');
 const request = require('supertest');
-//import RechercheReferent from '../services/RechercheReferent';
-//const RechercheReferent = require('../services/RechercheReferent');
+//import RechercheReferent from '../services/RechercheReferent'; il y a un bug quand on import un component no idea how to resolve it yet
+//const RechercheReferent = require('../services/RechercheReferent'); same
 
 
 
@@ -48,6 +50,41 @@ describe('Route par défaut pour afficher les roles existants', () => {
  });
 });
 
+describe('Route par défaut pour afficher les roles existants', () => {
+    test('Get les roles', async () => {
+      const reponse = await request(server).get('/roles');
+      expect(reponse.status).toEqual(200);
+   });
+  });
+
+  describe('Route par défaut pour ajouter un employe', () => {
+    test('Post pour ajouter un employe sans aucun attribut; il devrait y avoir une erreur', async () => {
+      const reponse = await request(server).post('/addEmploye');
+      expect(reponse.status).toEqual(500);
+   });
+  });
+
+  describe('Route par défaut pour ajouter un organisme', () => {
+    test('Post pour ajouter un organisme sans aucun attribut; il devrait y avoir une erreur', async () => {
+      const reponse = await request(server).post('/addOrganisme');
+      expect(reponse.status).toEqual(500);
+   });
+  });
+
+  describe('Route par défaut pour ajouter un organisme referent', () => {
+    test('Post pour ajouter un organisme referent sans aucun attribut; il devrait y avoir une erreur', async () => {
+      const reponse = await request(server).post('/addOrgaRef');
+      expect(reponse.status).toEqual(500);
+   });
+  });
+
+  describe('Route par défaut pour ajouter un referent', () => {
+    test('Post pour ajouter un referent sans aucun attribut; il devrait y avoir une erreur', async () => {
+      const reponse = await request(server).post('/addRef');
+      expect(reponse.status).toEqual(500);
+   });
+  });
+
 /*describe('chercher', () => {
   test('Get ref', async () => {
     const state = {
@@ -65,8 +102,7 @@ describe('Route par défaut pour afficher les roles existants', () => {
 }); */
 
 
-//mettre module.exports = server; dans server.js
-// faire npm i supertest
+
 
 
 
