@@ -152,8 +152,8 @@ app.get('/organismes', (req, res) => {
 
 /** Requette pour la class Organisme Réferent */
 app.post('/addOrgaRef',(req,res)=>{
-    const {nom,noCivique,rue,ville,province,codePostal,telephoneBureau,fax,courriel,siteWeb,etat} = req.body.organisme_referent;
-    const values = [nom,noCivique,rue,ville,province,codePostal,telephoneBureau,fax,courriel,siteWeb,etat];
+    const {nom,noCivique,rue,ville,province,codePostal,telephoneBureau,fax,curriel,siteWeb,etat} = req.body.organisme_referent;
+    const values = [nom,noCivique,rue,ville,province,codePostal,telephoneBureau,fax,curriel,siteWeb,etat];
 
 
     JSAlert.alert(values);

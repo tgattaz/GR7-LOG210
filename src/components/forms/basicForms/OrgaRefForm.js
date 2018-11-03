@@ -19,7 +19,7 @@ export default class OrgaRefForm extends React.Component{
           <Table celled padded>
               <Table.Header>
               <Table.Row>
-                  <Table.HeaderCell singleLine>Nom</Table.HeaderCell>
+                  <Table.HeaderCell singleLine>Numéro Oraganisme</Table.HeaderCell>
                   <Table.HeaderCell>Nom organisme réferent</Table.HeaderCell>
                   <Table.HeaderCell>Numéro Civique</Table.HeaderCell>
                   <Table.HeaderCell>Rue</Table.HeaderCell>

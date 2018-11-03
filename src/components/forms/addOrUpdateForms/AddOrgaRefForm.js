@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, Button } from "semantic-ui-react";
 import axios from 'axios';
+import OrgaRefForm from '../basicForms/OrgaRefForm';
 
 export default class AddOrgaRefForm extends React.Component{
     state ={
@@ -12,9 +13,10 @@ export default class AddOrgaRefForm extends React.Component{
         codePostal:'',
         telephoneBureau:'',
         fax:'',
-        courriel:'',
+        curriel:'',
         siteWeb:'',
         etat:'',
+        switchRefPage: false,
     };
 
     handleChangeNom = event =>{
@@ -42,12 +44,12 @@ export default class AddOrgaRefForm extends React.Component{
         this.setState({fax:event.target.value});
     };
     handleChangeCourriel = event =>{
-        this.setState({courriel:event.target.value});
+        this.setState({curriel:event.target.value});
     };
     handleChangeSiteWeb = event =>{
         this.setState({siteWeb:event.target.value});
     };
-    handleChangeEtat = event =>{
+    handleChangeEtat = event => {
         this.setState({etat:event.target.value});
     };
     handleSumit = event=>{
@@ -63,7 +65,7 @@ export default class AddOrgaRefForm extends React.Component{
             codePostal: this.state.codePostal,
             telephoneBureau: this.state.telephoneBureau,
             fax: this.state.fax,
-            courriel: this.state.courriel,
+            curriel: this.state.curriel,
             siteWeb: this.state.siteWeb,
             etat: this.state.etat,
         }
@@ -72,9 +74,16 @@ export default class AddOrgaRefForm extends React.Component{
           console.log(res);
           console.log(res.data);
         });
+        this.setState({
+            switchRefPage: true
+        })
     };
 
     render(){
+        //redirection apres l'ajout ou la modification 
+        if (this.state.switchRefPage) {
+            return ( < OrgaRefForm / > )
+        }
         return(
             <Form onSubmit={this.handleSumit}>
                 <Form.Field>
@@ -151,11 +160,11 @@ export default class AddOrgaRefForm extends React.Component{
                     <select 
                         name = 'etat'
                         placeholder = "Choisir un etat"
-                        onChange = {this.handleChangeRole}
+                        onChange = {this.handleChangeEtat}
                      >
                         <option selected > Choisir < /option> 
-                        <option value = '1' > Actif < /option> 
-                        <option value = '2' > Inactif < /option> 
+                        <option value = 'actif'> Actif < /option> 
+                        <option value = 'inactif' > Inactif < /option> 
                     </select> 
                 </Form.Field>
                 <br/>
