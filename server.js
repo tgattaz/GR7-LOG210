@@ -349,6 +349,30 @@ app.post('/delRef', (req, res) => {
         }
     );
 });
+
+// Delete un employe
+app.post('/delEmploye', (req, res) => {
+
+
+    const {
+        noEmploye
+    } = req.body.selection;
+    const value = [noEmploye];
+    JSAlert.alert(value);
+    db.query("DELETE FROM employe WHERE noEmploye = '" + value +
+        "'",
+        (err, results) => {
+            if (err) {
+                JSAlert.alert("employe n'a pas été sup erreur");
+                return res.send(err);
+            } else {
+                JSAlert.alert("employe sup");
+
+                return res.send("employe sup");
+            }
+        }
+    );
+});
 /** Requette pour la class Réferent */
 app.post('/delOrganisme', (req, res) => {
 
