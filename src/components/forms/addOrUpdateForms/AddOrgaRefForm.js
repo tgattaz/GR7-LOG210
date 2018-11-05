@@ -139,180 +139,179 @@ export default class AddOrgaRefForm extends React.Component {
 
         //redirection apres l'ajout ou la modification 
         if (this.state.switchRefPage) {
-            return ( < OrgaRefForm / > )
+            return ( < OrgaRefForm /> )
         }
-        return ( <
-            Form onSubmit = {
+        return ( 
+            <Form onSubmit = {
                 this.handleSumit
-            } >
-            <
-            Form.Field >
-            <
-            label >
+            }>
+            
+            <Form.Field>
+            
+            <label>
             Nom de l organisation:
-            <
-            input type = "text"
+            
+            <input type = "text"
             name = "nom"
             onChange = {
                 this.handleChangeNom
             }
-            /> < /
-            label > <
-            /Form.Field> <
-            br / >
-            <
-            Form.Field >
-            <
-            label >
+            /> 
+            </label> 
+            </Form.Field> <
+            br />
+            
+            <Form.Field>
+            
+            <label>
             Numéro Civique:
-            <
-            input type = "text"
+            
+            <input type = "text"
             name = "noCivique"
             onChange = {
                 this.handleChangeNoCivique
             }
-            /> < /
-            label > <
-            /Form.Field> <
-            br / >
-            <
-            Form.Field >
-            <
-            label >
+            /> 
+            </label> 
+            </Form.Field> 
+            <br />
+            
+            <Form.Field>
+            
+            <label>
             Rue:
-            <
-            input type = "text"
+            
+            <input type = "text"
             name = "rue"
             onChange = {
                 this.handleChangeRue
             }
-            /> < /
-            label > <
-            /Form.Field> <
-            br / >
-            <
-            Form.Field >
-            <
-            label >
+            /> 
+            </label> 
+            </Form.Field> 
+            <br />
+            
+            <Form.Field>
+            
+            <label>
             Ville:
-            <
-            input type = "text"
+            
+            <input type = "text"
             name = "ville"
             onChange = {
                 this.handleChangeVille
             }
-            /> < /
-            label > <
-            /Form.Field> <
-            br / >
-            <
-            Form.Field >
-            <
-            label >
+            />
+            </label> 
+            </Form.Field>
+            <br />
+            
+            <Form.Field>
+            
+            <label>
             Province:
-            <
-            input type = "text"
+            
+            <input type = "text"
             name = "province"
             onChange = {
                 this.handleChangeProvince
             }
-            /> < /
-            label > <
-            /Form.Field> <
-            br / >
-            <
-            Form.Field >
-            <
-            label >
+            /> 
+            </label> 
+            </Form.Field> 
+            <br />
+            
+            <Form.Field>
+            
+            <label>
             Code Postal:
-            <
-            input type = "text"
+            
+            <input type = "text"
             name = "codePostal"
             onChange = {
                 this.handleChangeCodePostal
             }
-            /> < /
-            label > <
-            /Form.Field> <
-            br / >
-            <
-            Form.Field >
-            <
-            label >
+            /> 
+            </label> 
+            </Form.Field> 
+            <br />
+            
+            <Form.Field>
+            
+            <label>
             Télephone Bureau:
-            <
-            input type = "text"
+            
+            <input type = "text"
             name = "telephoneBureau"
             onChange = {
                 this.handleChangeTelephoneBureau
             }
-            /> < /
-            label > <
-            /Form.Field> <
-            br / >
-            <
-            Form.Field >
-            <
-            label >
+            /> 
+            </label> 
+            </Form.Field> 
+            <br />
+            
+            <Form.Field>
+            
+            <label>
             Fax:
-            <
-            input type = "text"
+            
+            <input type = "text"
             name = "fax"
             onChange = {
                 this.handleChangeFax
             }
-            /> < /
-            label > <
-            /Form.Field> <
-            br / >
-            <
-            Form.Field >
-            <
-            label >
+            /> 
+            </label> 
+            </Form.Field> 
+            <br />
+            
+            <Form.Field>
+            
+            <label>
             Courriel:
-            <
-            input type = "text"
+            
+            <input type = "text"
             name = "courriel"
             onChange = {
                 this.handleChangeCourriel
             }
-            /> < /
-            label > <
-            /Form.Field> <
-            br / >
-            <
-            Form.Field >
-            <
-            label >
+            />
+            </label> 
+            </Form.Field>
+             <br />
+            
+            <Form.Field>
+            
+            <label>
             Site Internet:
-            <
-            input type = "text"
+            <input type = "text"
             name = "siteWeb"
             onChange = {
                 this.handleChangeSiteWeb
             }
-            /> < /
-            label > <
-            /Form.Field> <
-            br / >
-            <
-            Form.Field >
-            <
-            select name = 'etat'
+            /> 
+        </label> 
+        </Form.Field> 
+        <br />
+            
+        <Form.Field>
+            
+        <select name = 'etat'
             placeholder = "Choisir un etat"
             onChange = {
                 this.handleChangeEtat
-            } >
-            <
-            option selected > Choisir < /option>  <
-            option value = 'actif' > Actif < /option>  <
-            option value = 'inactif' > Inactif < /option>  < /
-            select > <
-            /Form.Field> <
-            br / >
-            <
-            Button primary > Enregistrer < /Button> < /
-            Form >
+            }>
+            
+            <option selected> Choisir </option>  
+            <option value = 'actif'> Actif </option>  
+            <option value = 'inactif'> Inactif </option> 
+            </select> 
+            </Form.Field> 
+            <br />
+            
+            <Button primary> Enregistrer </Button>
+            </Form>
         );
     }
 }

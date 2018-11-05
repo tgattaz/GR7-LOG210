@@ -103,7 +103,7 @@ export default class AddOrganismeForm extends React.Component{
 
         //redirection apres l'ajout ou la modification 
         if (this.state.switchRefPage) {
-            return ( < OrganismeForm / > )
+            return ( < OrganismeForm /> )
         }
 
 

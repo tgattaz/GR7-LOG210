@@ -64,7 +64,7 @@ export default class AddEmployeForm extends React.Component{
     render(){
         //redirection apres l'ajout ou la modification 
         if (this.state.switchRefPage) {
-            return ( < EmployeForm / > )
+            return ( < EmployeForm /> )
         }
         return(
             <Form onSubmit={this.handleSumit}>
@@ -106,8 +106,8 @@ export default class AddEmployeForm extends React.Component{
                     </select>
                 </Form.Field>
                 <br/>
-                < Button > Enregistrer < /Button >
-            < /Form>
+                < Button > Enregistrer </Button >
+            </Form>
            
         );
     }
