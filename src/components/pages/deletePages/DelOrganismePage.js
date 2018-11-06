@@ -8,13 +8,10 @@ class DelOrganismePage extends React.Component {
 
   render() {
     return <div >
-      <
-      h1 > Retirer un referent < /h1> <
-      MenuAllForm / >
-      <
-      DelOrganismeFrom / >
-      <
-      /div>;
+      <h1> Retirer un referent </h1>
+      <MenuAllForm />
+      <DelOrganismeFrom />
+    </div>;
   }
 }
 

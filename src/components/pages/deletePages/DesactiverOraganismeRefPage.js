@@ -7,13 +7,10 @@ class DesactiverOraganismeRefPage extends React.Component {
 
   render() {
     return <div >
-      <
-      h1 > Desactiver un organisme referent < /h1> <
-      MenuAllForm / >
-      <
-      DesactiverOrganismeRefFrom / >
-      <
-      /div>;
+      <h1> Desactiver un organisme referent </h1>
+      <MenuAllForm />
+      <DesactiverOrganismeRefFrom />
+    </div>;
   }
 }
 

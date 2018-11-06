@@ -8,10 +8,10 @@ class UpdateRefPage extends React.Component {
   render() {
     return (<div >
       <h1> selectionner un referent a modifier   </h1 >
-      <MenuAllForm/>
-      < UpdateRefForm/>
-        
-      </div>)
-    }
+      <MenuAllForm />
+      < UpdateRefForm />
+
+    </div>)
+  }
 }
 export default UpdateRefPage;
