@@ -7,7 +7,7 @@ class AddRefPage extends React.Component {
 
   render() {
     return <div>
-        < h1 > Ajouter ou modifier un organismes référents < /h1>
+        < h1 > Ajouter ou modifier un organismes référents </h1>
       <MenuAllForm />
         <AddRefForm />
       </div>;
