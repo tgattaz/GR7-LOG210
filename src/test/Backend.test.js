@@ -3,8 +3,7 @@
 // faire npm i supertest pour faire fonctionner la variable request
 const server = require('../../server');
 const request = require('supertest');
-//import RechercheReferent from '../services/RechercheReferent'; il y a un bug quand on import un component no idea how to resolve it yet
-//const RechercheReferent = require('../services/RechercheReferent'); same
+
 
 
 
