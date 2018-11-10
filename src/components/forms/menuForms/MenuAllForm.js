@@ -19,6 +19,11 @@ class MenuAllForm extends React.Component {
               <Dropdown.Item as={Link}
                 name='addEmploye'
                 to="/addEmploye" > Ajouter ou modifier un employe </Dropdown.Item>
+              <Dropdown.Item as={
+                Link
+              }
+                name='delEmploye'
+                to="/delEmploye" > Virer un employe </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
           <Dropdown item text='organismes'>

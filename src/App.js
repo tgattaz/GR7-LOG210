@@ -18,6 +18,7 @@ import DelOrganismePage from "./components/pages/deletePages/DelOrganismePage";
 import UpdateOrganismePage from "./components/pages/updatePages/UpdateOrganismePage";
 import UpdateOrganismeRefPage from "./components/pages/updatePages/UpdateOrganismeRefPage";
 import DesactiverOraganismeRefPage from "./components/pages/deletePages/DesactiverOraganismeRefPage";
+import DelEmployePage from "./components/pages/deletePages/DelEmployePage";
 
 const App = () => (
   <div className="ui container">
@@ -25,6 +26,7 @@ const App = () => (
     <Route path="/login" exact component={LoginPage} />
     <Route path="/employes" exact component={EmployePage} />
     <Route path="/addEmploye" exact component={AddEmployePage} />
+    < Route path="/delEmploye" exact component={DelEmployePage} />
     <Route path="/OrgaRef" exact component={OrgaRefPage} />
     <Route path="/addOrgaRef" exact component={AddOrgaRefPage} />
     <Route path="/addRef" exact component={AddRefPage} />
@@ -32,14 +34,14 @@ const App = () => (
     <Route path="/rechercheReferent" exact component={RechercheReferentPage} />
     <Route path="/Organisme" exact component={OrganismePage} />
     <Route path="/addOrganisme" exact component={AddOrganismePage} />
-    < Route path = "/OrgaRefSelection" exact component = {OrgaRefSelectionPage}/>
-    < Route path = "/delRef" exact component = {DelRefPage}/>
-    < Route path = "/updateRef" exact component = {UpdateRefPage}/>
-    < Route path = "/delOrganisme" exact component = {DelOrganismePage}/>
-    < Route path = "/updateOrganisme" exact component = {UpdateOrganismePage}/>
-    < Route path = "/updateOrgaRef" exact component = {UpdateOrganismeRefPage}/>
-    < Route path = "/desactiverOrgaRef" exact component = {DesactiverOraganismeRefPage}/>
-    
+    < Route path="/OrgaRefSelection" exact component={OrgaRefSelectionPage} />
+    < Route path="/delRef" exact component={DelRefPage} />
+    < Route path="/updateRef" exact component={UpdateRefPage} />
+    < Route path="/delOrganisme" exact component={DelOrganismePage} />
+    < Route path="/updateOrganisme" exact component={UpdateOrganismePage} />
+    < Route path="/updateOrgaRef" exact component={UpdateOrganismeRefPage} />
+    < Route path="/desactiverOrgaRef" exact component={DesactiverOraganismeRefPage} />
+
   </div>
 );
 
