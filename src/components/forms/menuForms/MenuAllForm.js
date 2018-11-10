@@ -24,6 +24,11 @@ class MenuAllForm extends React.Component {
               }
                 name='delEmploye'
                 to="/delEmploye" > Virer un employe </Dropdown.Item>
+              < Dropdown.Item as={
+                Link
+              }
+                name='updateEmploye'
+                to="/updateEmploye" > Mettre a jour un employe </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
           <Dropdown item text='organismes'>
@@ -43,7 +48,7 @@ class MenuAllForm extends React.Component {
                 Link
               }
                 name='updateOrganisme'
-                to="/updateOrganisme" > Mettre a jours un organisme </Dropdown.Item>
+                to="/updateOrganisme" > Mettre a jour un organisme </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
           <Dropdown item text='organismes référents'>
@@ -73,7 +78,7 @@ class MenuAllForm extends React.Component {
                 to="/OrgaRefSelection" > Choisir un organisme référent pour y ajouter un employe </Dropdown.Item>
               <Dropdown.Item as={Link}
                 name='updateRef'
-                to="/updateRef" > modifier un référent </Dropdown.Item>
+                to="/updateRef" > Modifier un référent </Dropdown.Item>
               < Dropdown.Item as={Link} name='updateRef'
                 to="/delRef" > Retirer le réferent choisi</Dropdown.Item>
               <Dropdown.Item as={Link}
