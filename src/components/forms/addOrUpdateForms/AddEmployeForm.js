@@ -1,16 +1,20 @@
 import React from 'react';
-import { Form, Button ,Dropdown} from "semantic-ui-react";
+import {Link} from 'react-router-dom'
+import { Form, Button ,Dropdown, Menu} from "semantic-ui-react";
 import axios from 'axios';
+import EmployeForm from '../basicForms/EmployeForm';
 
 export default class AddEmployeForm extends React.Component{
     state ={
-        //noEmploye:'',
         nom:'',
         prenom:'',
         telephone:'',
         motDePasse:'',
         role:'',
-    };
+        render: false,
+        switchRefPage : false,
+            };
+
 
     handleChangeNom = event =>{
         this.setState({nom:event.target.value});
@@ -44,9 +48,24 @@ export default class AddEmployeForm extends React.Component{
             console.log(res);
             console.log(res.data);
         });
+
+        setTimeout(
+            function () { //Start the timer
+            this.setState({
+                render: true
+            }) //After 1 second, set render to true
+        }.bind(this), 1000)
+        this.setState({
+            switchRefPage : true
+        });
+
     };
 
     render(){
+        //redirection apres l'ajout ou la modification 
+        if (this.state.switchRefPage) {
+            return ( < EmployeForm /> )
+        }
         return(
             <Form onSubmit={this.handleSumit}>
                 <Form.Field>
@@ -87,8 +106,9 @@ export default class AddEmployeForm extends React.Component{
                     </select>
                 </Form.Field>
                 <br/>
-                <Button primary>Enregistrer</Button>
+                < Button > Enregistrer </Button >
             </Form>
+           
         );
     }
 }

@@ -1,6 +1,6 @@
 import React from "react";
-import OrgaRefForm from "../forms/OrgaRefForm";
-import MenuAllForm from "../forms/MenuAllForm";
+import OrgaRefForm from "../../forms/basicForms/OrgaRefForm";
+import MenuAllForm from "../../forms/menuForms/MenuAllForm";
 
 class OrgaRefPage extends React.Component{
     //submit = (data) => this.props.login(data).then(() => this.props.history.push("/"));

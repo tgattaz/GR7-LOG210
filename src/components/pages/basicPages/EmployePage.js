@@ -1,6 +1,6 @@
 import React from "react";
-import EmployeForm from "../forms/EmployeForm";
-import MenuAllForm from "../forms/MenuAllForm";
+import EmployeForm from "../../forms/basicForms/EmployeForm";
+import MenuAllForm from "../../forms/menuForms/MenuAllForm";
 
 class EmployePage extends React.Component{
     //submit = (data) => this.props.login(data).then(() => this.props.history.push("/"));
