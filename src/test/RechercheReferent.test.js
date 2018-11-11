@@ -14,6 +14,15 @@ it('Recherche Referent Renders without crashing', () => {
 });
 });
 
+describe('Recherche Referent renders an output area',() => {
+  it('Find the specific output area', () => {
+    const editor = shallow( < RechercheReferentForm /> );
+    expect(editor.find('div.rechercheReferent').length).toEqual(1);
+    
+  });
+  });
+
+
 /*const div = document.createElement('div');
   ReactDOM.render( < RechercheReferentPage / > , div);
   ReactDOM.unmountComponentAtNode(div); ;
