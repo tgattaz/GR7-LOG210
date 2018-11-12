@@ -13,39 +13,33 @@ class MenuAllForm extends React.Component {
                 Liste des employes
               </Dropdown.Item>
               <Dropdown.Item as={Link} name="addEmploye" to="/addEmploye">
-                {" "}
-                Ajouter ou modifier un employe{" "}
+                Ajouter ou modifier un employe
               </Dropdown.Item>
               <Dropdown.Item as={Link} name="delEmploye" to="/delEmploye">
-                {" "}
-                Virer un employe{" "}
+                Virer un employe
               </Dropdown.Item>
               <Dropdown.Item as={Link} name="updateEmploye" to="/updateEmploye">
-                {" "}
-                Mettre a jour un employe{" "}
+                Mettre a jour un employe
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
           <Dropdown item text="organismes">
             <Dropdown.Menu>
               <Dropdown.Item as={Link} name="Organisme" to="/Organisme">
-                Liste des organismes{" "}
+                Liste des organismes
               </Dropdown.Item>
               <Dropdown.Item as={Link} name="addOrganisme" to="/addOrganisme">
-                {" "}
-                Ajouter ou modifier un organisme{" "}
+                Ajouter ou modifier un organisme
               </Dropdown.Item>
               <Dropdown.Item as={Link} name="delOrganisme" to="/delOrganisme">
-                {" "}
-                Retirer un organisme{" "}
+                Retirer un organisme
               </Dropdown.Item>
               <Dropdown.Item
                 as={Link}
                 name="updateOrganisme"
                 to="/updateOrganisme"
               >
-                {" "}
-                Mettre a jour un organisme{" "}
+                Mettre a jour un organisme
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
@@ -55,20 +49,17 @@ class MenuAllForm extends React.Component {
                 Liste des organismes référents
               </Dropdown.Item>
               <Dropdown.Item as={Link} name="addOrgaRef" to="/addOrgaRef">
-                {" "}
-                Ajouter un organisme référent{" "}
+                Ajouter un organisme référent
               </Dropdown.Item>
               <Dropdown.Item as={Link} name="updateOrgaRef" to="/updateOrgaRef">
-                {" "}
-                Modifier un organisme référent{" "}
+                Modifier un organisme référent
               </Dropdown.Item>
               <Dropdown.Item
                 as={Link}
                 name="desactiverOrgaRef"
                 to="/desactiverOrgaRef"
               >
-                {" "}
-                Desactiver un organisme un organisme référent{" "}
+                Desactiver un organisme un organisme référent
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
@@ -79,15 +70,12 @@ class MenuAllForm extends React.Component {
                 name="OrgaRefSelection"
                 to="/OrgaRefSelection"
               >
-                {" "}
-                Choisir un organisme référent pour y ajouter un employe{" "}
+                Choisir un organisme référent pour y ajouter un employe
               </Dropdown.Item>
               <Dropdown.Item as={Link} name="updateRef" to="/updateRef">
-                {" "}
-                Modifier un référent{" "}
+                Modifier un référent
               </Dropdown.Item>
               <Dropdown.Item as={Link} name="updateRef" to="/delRef">
-                {" "}
                 Retirer le réferent choisi
               </Dropdown.Item>
               <Dropdown.Item as={Link} name="Ref" to="/Ref">
@@ -104,18 +92,15 @@ class MenuAllForm extends React.Component {
             <Dropdown.Menu>
               <Dropdown.Item
                 as={Link}
-                name="RechercherFamille"
-                to="/RechercherFamille"
+                name="rechercheFamille"
+                to="/rechercheFamille"
               >
-                {" "}
                 Choisir une famille afin d'ajouter une note
               </Dropdown.Item>
               <Dropdown.Item as={Link} name="updateNote" to="/updateNote">
-                {" "}
-                Modifier une note{" "}
+                Modifier une note
               </Dropdown.Item>
               <Dropdown.Item as={Link} name="delNote" to="/delNote">
-                {" "}
                 Retirer la note
               </Dropdown.Item>
               <Dropdown.Item as={Link} name="Note" to="/Note">
