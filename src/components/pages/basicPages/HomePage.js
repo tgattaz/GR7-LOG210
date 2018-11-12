@@ -2,16 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import MenuHomeForm from "../../forms/menuForms/MenuHomeForm";
 import { connect } from "react-redux";
-<<<<<<< HEAD:src/components/pages/HomePage.js
 import * as actions from '../../actions/auth';
 import MenuAllForm from "../forms/MenuAllForm";
 const HomePage = ({isAuthenticated}) => (
-=======
-import * as actions from '../../../actions/auth';
-import { Menu , Dropdown } from 'semantic-ui-react';
-import MenuAllForm from "../../forms/menuForms/MenuAllForm";
-const HomePage = ({isAuthenticated,role,logout}) => (
->>>>>>> 6c564ab3603f321897acdc7f73354a54cdf4d5ff:src/components/pages/basicPages/HomePage.js
     <div>
         <h1>Home Page</h1>
         {!isAuthenticated?
