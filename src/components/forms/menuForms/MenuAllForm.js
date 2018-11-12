@@ -1,16 +1,16 @@
 import React from "react";
 import { Menu, Dropdown } from 'semantic-ui-react';
 import { Link } from "react-router-dom";
-class MenuAllForm extends React.Component {
-
-  render() {
-    return (
-      <div>
-        <Menu secondary>
+import { connect } from "react-redux";
+import * as actions from '../../actions/auth';
+import PropTypes from "prop-types";
+const MenuAllForm =({role,logout})=> (
+        <Menu pointing secondary> 
           <Menu.Item
             as={Link}
             name='home'
             to="/" />
+            {role!==4 &&
           <Dropdown item text='employe'>
             <Dropdown.Menu>
               <Dropdown.Item as={Link}
@@ -19,8 +19,20 @@ class MenuAllForm extends React.Component {
               <Dropdown.Item as={Link}
                 name='addEmploye'
                 to="/addEmploye" > Ajouter ou modifier un employe </Dropdown.Item>
+              <Dropdown.Item as={
+                Link
+              }
+                name='delEmploye'
+                to="/delEmploye" > Virer un employe </Dropdown.Item>
+              < Dropdown.Item as={
+                Link
+              }
+                name='updateEmploye'
+                to="/updateEmploye" > Mettre a jour un employe </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
+            }
+            {role===1 &&
           <Dropdown item text='organismes'>
             <Dropdown.Menu>
               <Dropdown.Item as={Link}
@@ -38,9 +50,10 @@ class MenuAllForm extends React.Component {
                 Link
               }
                 name='updateOrganisme'
-                to="/updateOrganisme" > Mettre a jours un organisme </Dropdown.Item>
+                to="/updateOrganisme" > Mettre a jour un organisme </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
+            }
           <Dropdown item text='organismes référents'>
             <Dropdown.Menu>
               <Dropdown.Item as={Link}
@@ -68,7 +81,7 @@ class MenuAllForm extends React.Component {
                 to="/OrgaRefSelection" > Choisir un organisme référent pour y ajouter un employe </Dropdown.Item>
               <Dropdown.Item as={Link}
                 name='updateRef'
-                to="/updateRef" > modifier un référent </Dropdown.Item>
+                to="/updateRef" > Modifier un référent </Dropdown.Item>
               < Dropdown.Item as={Link} name='updateRef'
                 to="/delRef" > Retirer le réferent choisi</Dropdown.Item>
               <Dropdown.Item as={Link}
@@ -80,9 +93,24 @@ class MenuAllForm extends React.Component {
             as={Link}
             name='rechercheReferent'
             to="/rechercheReferent" />
+            <Menu.Menu position='right'>
+                <Menu.Item
+                as={Link}
+                name='logout'
+                to="/"
+                onClick={()=> logout()}
+                />
+            </Menu.Menu>
         </Menu>
-      </div>
-    );
+   
+);
+MenuAllForm.protoTypes ={
+  logout: PropTypes.func.isRequired,
+  role:PropTypes.number.isRequired
+}
+function mapStateToProps(state){
+  return {
+      role:state.user.role
   }
 }
 /*
@@ -94,4 +122,4 @@ class MenuAllForm extends React.Component {
                   />
                 </Menu.Menu>
 */
-export default MenuAllForm;
+export default connect(mapStateToProps,{logout: actions.logout})(MenuAllForm);

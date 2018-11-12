@@ -249,21 +249,21 @@ app.post('/updateOrganismeReferent', (req, res) => {
     JSAlert.alert(values);
     //(nom,noCivique,rue,ville,province,codePostal,telephone,fax,courriel) VALUES (?,?,?,?,?,?,?,?,?);",
     db.query('UPDATE organisme_referent SET ? WHERE ?', [{
-            nom: nom,
-            noCivique: noCivique,
-            rue: rue,
-            ville: ville,
-            province: province,
-            codePostal: codePostal,
-            telephoneBureau: telephoneBureau,
-            fax: fax,
-            curriel: curriel,
-            siteWeb: siteWeb,
-            etat: etat
+        nom: nom,
+        noCivique: noCivique,
+        rue: rue,
+        ville: ville,
+        province: province,
+        codePostal: codePostal,
+        telephoneBureau: telephoneBureau,
+        fax: fax,
+        curriel: curriel,
+        siteWeb: siteWeb,
+        etat: etat
 
-        }, {
-            noOrganismeReferent: noOrganismeReferent
-        }],
+    }, {
+        noOrganismeReferent: noOrganismeReferent
+    }],
         (err, results) => {
             if (err) {
                 JSAlert.alert("L'organisme référent n'a pas été modifier erreur");
@@ -304,7 +304,7 @@ app.post('/addRef', (req, res) => {
             } else {
                 console.log(results.insertId);
 
-                const numerosRefEtOrg = [choixOrgRef, results.insertId, ];
+                const numerosRefEtOrg = [choixOrgRef, results.insertId,];
                 JSAlert.alert("référent ajouté " + numerosRefEtOrg);
                 db.query(
                     "INSERT INTO referent_organisme_referent  (noOrganismeReferent,noReferent) VALUES (?,?);",
@@ -413,17 +413,17 @@ app.post('/updateRef', (req, res) => {
     JSAlert.alert(values);
     //(nom,prenom,titre,telephoneCell,telephoneBureau,fax,preferenceReception,email) VALUES (?,?,?,?,?,?,?,?);",
     db.query('UPDATE referent SET ? WHERE ?', [{
-            nom: nom,
-            prenom: prenom,
-            titre: titre,
-            telephoneCell: telephoneCell,
-            telephoneBureau: telephoneBureau,
-            fax: fax,
-            preferenceReception: preferenceReception,
-            email: email
-        }, {
-            noReferent: noReferent
-        }],
+        nom: nom,
+        prenom: prenom,
+        titre: titre,
+        telephoneCell: telephoneCell,
+        telephoneBureau: telephoneBureau,
+        fax: fax,
+        preferenceReception: preferenceReception,
+        email: email
+    }, {
+        noReferent: noReferent
+    }],
         (err, results) => {
             if (err) {
                 JSAlert.alert("référent n'a pas été modifier erreur");
@@ -457,18 +457,18 @@ app.post('/updateOrganisme', (req, res) => {
     JSAlert.alert(values);
     //(nom,noCivique,rue,ville,province,codePostal,telephone,fax,courriel) VALUES (?,?,?,?,?,?,?,?,?);",
     db.query('UPDATE organisme SET ? WHERE ?', [{
-            nom: nom,
-            noCivique: noCivique,
-            rue: rue,
-            ville: ville,
-            province: province,
-            codePostal: codePostal,
-            telephone: telephone,
-            fax: fax,
-            courriel: courriel
-        }, {
-            noOrganisme: noOrganisme
-        }],
+        nom: nom,
+        noCivique: noCivique,
+        rue: rue,
+        ville: ville,
+        province: province,
+        codePostal: codePostal,
+        telephone: telephone,
+        fax: fax,
+        courriel: courriel
+    }, {
+        noOrganisme: noOrganisme
+    }],
         (err, results) => {
             if (err) {
                 JSAlert.alert("L'organisme n'a pas été modifier erreur");
@@ -519,6 +519,42 @@ app.post('/recherche_referents', (req, res) => {
                 return res.send(results);
             }
         })
+});
+
+/** Requette pour la class Réferent */
+app.post('/updateEmploye', (req, res) => {
+    const {
+        noEmploye,
+        nom,
+        prenom,
+        telephone,
+        motDePasse,
+        role
+    } = req.body.employe;
+    const values = [noEmploye, nom, prenom, telephone, motDePasse, role];
+    JSAlert.alert(values);
+    //(nom,prenom,titre,telephoneCell,telephoneBureau,fax,preferenceReception,email) VALUES (?,?,?,?,?,?,?,?);",
+    db.query('UPDATE employe SET ? WHERE ?', [{
+        nom: nom,
+        prenom: prenom,
+        telephone: telephone,
+        motDePasse: motDePasse,
+        role: role
+    }, {
+        noEmploye: noEmploye
+    }],
+        (err, results) => {
+            if (err) {
+                JSAlert.alert("employé n'a pas pu être modifier erreur");
+                return res.send(err);
+            } else {
+                JSAlert.alert(" employé modif est :'" +
+                    noEmploye +
+                    "'");
+                return res.send("Employé modif");
+            }
+        }
+    );
 });
 
 app.listen(PORT, err => {

@@ -5,37 +5,37 @@ import {
   Redirect
 } from 'react-router';
 
-export default class DelRefForm extends React.Component {
+export default class DelEmployeForm extends React.Component {
   state = {
-    referents: [],
-    noReferent: '',
-    toRef: false,
+    employes: [],
+    noEmploye: '',
+    toEmp: false,
   };
   selectChannel = (e) => {
     e.preventDefault();
     alert(e.target.innerHTML);
     this.setState({
-      noReferent: e.target.innerHTML
+      noEmploye: e.target.innerHTML
     });
-    alert(`Vous avez effacer le referent avec le numero : ${e.target.innerHTML}`);
+    alert(`Vous avez effacer le employe avec le numero : ${e.target.innerHTML}`);
 
     const selection = {
-      noReferent: e.target.innerHTML
+      noEmploye: e.target.innerHTML
     };
-    axios.post('/delRef', {
+    axios.post('/delEmploye', {
       selection
     }).then(res => {
       console.log(res);
       console.log(res.data);
     }).then(() => this.setState(() => ({
-      toRef: true
+      toEmp: true
     })));
   }
 
   componentDidMount() {
-    axios.get('/referents').then(res => {
+    axios.get('/employes').then(res => {
       this.setState({
-        referents: res.data
+        employes: res.data
       });
     }).catch(e => {
       console.log(e);
@@ -43,66 +43,55 @@ export default class DelRefForm extends React.Component {
   }
 
   render() {
-    if (this.state.toRef === true) {
-      return <Redirect to='Ref' />
+    if (this.state.toEmp === true) {
+      return <Redirect to='employes' />
     }
     return (
       <Table celled padded >
         <Table.Header >
           <Table.Row >
             < Table.HeaderCell > Choisir </Table.HeaderCell>
-            <Table.HeaderCell singleLine> Numéro referent </Table.HeaderCell> <Table.HeaderCell > Nom </Table.HeaderCell>
-            <Table.HeaderCell > Prénom </Table.HeaderCell>
-            <Table.HeaderCell > Titre </Table.HeaderCell>
-            <Table.HeaderCell > Telephone cellulaire </Table.HeaderCell>
-            <Table.HeaderCell > Telephone de bureau </Table.HeaderCell>
-            <Table.HeaderCell > Fax </Table.HeaderCell>
-            <Table.HeaderCell > Préférence </Table.HeaderCell>
-            <Table.HeaderCell > Email </Table.HeaderCell>
+            <Table.HeaderCell singleLine> Numéro employe </Table.HeaderCell>
+            <Table.HeaderCell > Nom </Table.HeaderCell>
+            <Table.HeaderCell > Prenom </Table.HeaderCell>
+            <Table.HeaderCell > Telephone </Table.HeaderCell>
+            <Table.HeaderCell > Mot de passe </Table.HeaderCell>
+            <Table.HeaderCell > Role </Table.HeaderCell>
           </Table.Row>
         </Table.Header>
 
 
         <Table.Body > {
-          this.state.referents.map(referent =>
+          this.state.employes.map(employe =>
             <Table.Row key={
-              referent.noReferent
+              employe.noEmploye
             }>
               <Table.Cell>
                 {
                   <Button onClick={
                     (e) => this.selectChannel(e)
                   }> {
-                      referent.noReferent
+                      employe.noEmploye
                     } </Button>
                 }
               </Table.Cell>
               <Table.Cell > {
-                referent.noReferent
+                employe.noEmploye
               } </Table.Cell>
               <Table.Cell > {
-                referent.nom
+                employe.nom
               } </Table.Cell>
               <Table.Cell > {
-                referent.prenom
+                employe.prenom
               } </Table.Cell>
               <Table.Cell > {
-                referent.titre
+                employe.telephone
               } </Table.Cell>
               <Table.Cell > {
-                referent.telephoneCell
+                employe.motDePasse
               } </Table.Cell>
               <Table.Cell > {
-                referent.telephoneBureau
-              } </Table.Cell>
-              <Table.Cell > {
-                referent.fax
-              } </Table.Cell>
-              <Table.Cell > {
-                referent.preferenceReception
-              } </Table.Cell>
-              <Table.Cell > {
-                referent.email
+                employe.role
               } </Table.Cell>
             </Table.Row>
           )
