@@ -116,7 +116,7 @@ export default class AddNoteForm extends React.Component {
         <br />
         <Form.Field>
           <label>
-            Nom de la personne pour qui cette note est destinée:
+            Nom de la personne concerné:
             <input
               type="text"
               name="nomPersonneConcerne"

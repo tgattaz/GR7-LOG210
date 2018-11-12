@@ -17,10 +17,6 @@ export default class RechercheFamilleForm extends React.Component {
     });
   };
 
-  selectChannel = e => {
-    this.setState({ choixFamille: e.target.innerHTML, toAddNote: true });
-  };
-
   handleSumit = event => {
     event.preventDefault();
 
@@ -50,7 +46,7 @@ export default class RechercheFamilleForm extends React.Component {
   };
 
   render() {
-    if (this.state.toAddRef === true) {
+    if (this.state.toAddNote === true) {
       return <AddNoteForm choixFamille={this.state.choixFamille} />;
     } else {
       return (
@@ -73,6 +69,7 @@ export default class RechercheFamilleForm extends React.Component {
           <Table celled padded>
             <Table.Header>
               <Table.Row>
+                <Table.HeaderCell> choixFamille </Table.HeaderCell>
                 <Table.HeaderCell> Numéro de famille </Table.HeaderCell>
                 <Table.HeaderCell> Nom de la famille </Table.HeaderCell>
               </Table.Row>
@@ -80,6 +77,11 @@ export default class RechercheFamilleForm extends React.Component {
             <Table.Body>
               {this.state.familles_trouves.map(famille => (
                 <Table.Row key={famille.noFamille}>
+                  <Table.Cell>
+                    <Button onClick={e => this.selectChannel(e)}>
+                      {famille.noFamille}
+                    </Button>
+                  </Table.Cell>
                   <Table.Cell> {famille.noFamille} </Table.Cell>
                   <Table.Cell> {famille.nomFamille} </Table.Cell>
                 </Table.Row>

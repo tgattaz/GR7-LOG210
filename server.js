@@ -665,5 +665,68 @@ app.post("/delNote", (req, res) => {
     }
   );
 });
+app.post("/recherche_familles", (req, res) => {
+  const { recherche } = req.body.recherche_famille;
+  const values = [
+    recherche,
+    recherche,
+    recherche,
+    recherche,
+    recherche,
+    recherche,
+    recherche
+  ];
+
+  db.query(
+    "SELECT FAM.* " +
+      "FROM `famille` FAM " +
+      "LEFT JOIN `enfant` ENF ON FAM.noFamille = FAM.noFamille " +
+      "LEFT JOIN `parent` PAR ON PAR.noFamille = FAM.noFamille " +
+      "LEFT JOIN `dossier` DOS ON DOS.noDossierFamille = FAM.noDossierFamille " +
+      "LEFT JOIN `referent_dossier` REF_DOS ON REF_DOS.noDossierFamille = FAM.noDossierFamille " +
+      "LEFT JOIN `referent` REF ON REF.noReferent = REF_DOS.noReferent " +
+      "WHERE ENF.nom LIKE CONCAT('%', ?, '%') OR ENF.prenom LIKE CONCAT('%', ?, '%')" +
+      "OR PAR.nom LIKE CONCAT('%', ?, '%') OR PAR.prenom LIKE CONCAT('%', ?, '%')" +
+      "OR DOS.noDossierFamille = ? " +
+      "OR REF.titre LIKE CONCAT('%', ?, '%') OR REF.telephoneCell LIKE CONCAT('%', ?, '%') ",
+    values,
+    (err, results) => {
+      if (err) {
+        return res.send(err);
+      } else {
+        return res.send(results);
+      }
+    }
+  );
+});
+
+app.post("/addNote", (req, res) => {
+  const {
+    nomIntervenant,
+    noFamilleChoisi,
+    message,
+    nomPersonneConcerne
+  } = req.body.note;
+  const values = [
+    nomIntervenant,
+    noFamilleChoisi,
+    message,
+    nomPersonneConcerne
+  ];
+  JSAlert.alert(values);
+  db.query(
+    "INSERT INTO note  (nomIntervenant,noFamilleChoisi,message,nomPersonneConcerne) VALUES (?,?,?,?);",
+    values,
+    (err, results) => {
+      if (err) {
+        JSAlert.alert("la note pas ajouté erreur");
+        return res.send(err);
+      } else {
+        JSAlert.alert("note ajouté ");
+        return res.send("Référent ajouté");
+      }
+    }
+  );
+});
 
 module.exports = server;
