@@ -3,38 +3,17 @@ import PropTypes from "prop-types";
 import MenuHomeForm from "../forms/MenuHomeForm";
 import { connect } from "react-redux";
 import * as actions from '../../actions/auth';
-import { Menu , Dropdown } from 'semantic-ui-react';
-import { Link } from "react-router-dom";
 import MenuAllForm from "../forms/MenuAllForm";
-const HomePage = ({isAuthenticated,role,logout}) => (
+const HomePage = ({isAuthenticated}) => (
     <div>
         <h1>Home Page</h1>
         {!isAuthenticated?
             <MenuHomeForm/>
               :
               <div>
-                  {role===1?
-                <Menu pointing secondary> 
-                    <MenuAllForm/>
-                        
-                    <Menu.Menu position='right'>
-                        <Menu.Item
-                        name='logout'
-                        onClick={()=> logout()}
-                        />
-                    </Menu.Menu>
-
-                </Menu>
-                :
-                <Menu pointing secondary>
-                    <Menu.Menu position='right'>
-                        <Menu.Item
-                        name='logout'
-                        onClick={()=> logout()}
-                        />
-                    </Menu.Menu>
-                </Menu>
-                }
+                  
+                <MenuAllForm/>
+                  
             </div>
         }
     </div>

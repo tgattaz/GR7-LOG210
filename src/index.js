@@ -15,7 +15,9 @@ import { userLoggedIn } from './actions/auth';
 const store = createStore(rootReducer,composeWithDevTools(applyMiddleware(thunk)));
 
 if(localStorage.loginToken){
-    const user = { token: localStorage.loginToken};
+    const user = { token: localStorage.loginToken,
+        role:localStorage.userRole
+    };
     store.dispatch(userLoggedIn(user));
 }
 ReactDOM.render(

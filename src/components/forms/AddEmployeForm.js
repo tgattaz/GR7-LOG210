@@ -1,6 +1,7 @@
 import React from 'react';
-import { Form, Button ,Dropdown} from "semantic-ui-react";
+import { Form, Button } from "semantic-ui-react";
 import axios from 'axios';
+
 
 export default class AddEmployeForm extends React.Component{
     state ={
@@ -44,7 +45,7 @@ export default class AddEmployeForm extends React.Component{
             console.log(res.data);
         });
     };
-
+    
     render(){
         return(
             <Form onSubmit={this.handleSumit}>
@@ -76,6 +77,7 @@ export default class AddEmployeForm extends React.Component{
                     </label>
                 </Form.Field>
                 <br/>
+                
                 <Form.Field>
                     <select name='role' placeholder="Choisir un role" onChange={this.handleChangeRole}>
                         <option selected>Choisir</option>
