@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import MenuHomeForm from "../../forms/menuForms/MenuHomeForm";
 import { connect } from "react-redux";
-import * as actions from '../../actions/auth';
-import MenuAllForm from "../forms/MenuAllForm";
+import * as actions from '../../../actions/auth';
+import MenuAllForm from "../../forms/menuForms/MenuAllForm";
 const HomePage = ({isAuthenticated}) => (
     <div>
         <h1>Home Page</h1>

@@ -2,7 +2,7 @@ import React from "react";
 import { Menu, Dropdown } from 'semantic-ui-react';
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import * as actions from '../../actions/auth';
+import * as actions from '../../../actions/auth';
 import PropTypes from "prop-types";
 const MenuAllForm =({role,logout})=> (
         <Menu pointing secondary> 
