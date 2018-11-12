@@ -1,5 +1,5 @@
-import React from 'react';
-import { Route } from 'react-router-dom'
+import React from "react";
+import { Route } from "react-router-dom";
 import HomePage from "./components/pages/basicPages/HomePage";
 import LoginPage from "./components/pages/basicPages/LoginPage";
 import EmployePage from "./components/pages/basicPages/EmployePage";
@@ -20,6 +20,11 @@ import UpdateOrganismeRefPage from "./components/pages/updatePages/UpdateOrganis
 import DesactiverOraganismeRefPage from "./components/pages/deletePages/DesactiverOraganismeRefPage";
 import DelEmployePage from "./components/pages/deletePages/DelEmployePage";
 import UpdateEmployePage from "./components/pages/updatePages/UpdateEmployePage";
+import RechercherFamillePage from "./components/pages/selectionPages/RechercherFamillePage";
+import AddNotePage from "./components/pages/addPages/AddNotePage";
+import DelNotePage from "./components/pages/deletePages/DelNotePage";
+import UpdateNotePage from "./components/pages/updatePages/UpdateNotePage";
+import NotePage from "./components/pages/basicPages/NotePage";
 
 const App = () => (
   <div className="ui container">
@@ -27,8 +32,8 @@ const App = () => (
     <Route path="/login" exact component={LoginPage} />
     <Route path="/employes" exact component={EmployePage} />
     <Route path="/addEmploye" exact component={AddEmployePage} />
-    < Route path="/delEmploye" exact component={DelEmployePage} />
-    < Route path="/updateEmploye" exact component={UpdateEmployePage} />
+    <Route path="/delEmploye" exact component={DelEmployePage} />
+    <Route path="/updateEmploye" exact component={UpdateEmployePage} />
     <Route path="/OrgaRef" exact component={OrgaRefPage} />
     <Route path="/addOrgaRef" exact component={AddOrgaRefPage} />
     <Route path="/addRef" exact component={AddRefPage} />
@@ -36,15 +41,23 @@ const App = () => (
     <Route path="/rechercheReferent" exact component={RechercheReferentPage} />
     <Route path="/Organisme" exact component={OrganismePage} />
     <Route path="/addOrganisme" exact component={AddOrganismePage} />
-    < Route path="/OrgaRefSelection" exact component={OrgaRefSelectionPage} />
-    < Route path="/delRef" exact component={DelRefPage} />
-    < Route path="/updateRef" exact component={UpdateRefPage} />
-    < Route path="/delOrganisme" exact component={DelOrganismePage} />
-    < Route path="/updateOrganisme" exact component={UpdateOrganismePage} />
-    < Route path="/updateOrgaRef" exact component={UpdateOrganismeRefPage} />
-    < Route path="/desactiverOrgaRef" exact component={DesactiverOraganismeRefPage} />
-
+    <Route path="/OrgaRefSelection" exact component={OrgaRefSelectionPage} />
+    <Route path="/delRef" exact component={DelRefPage} />
+    <Route path="/updateRef" exact component={UpdateRefPage} />
+    <Route path="/delOrganisme" exact component={DelOrganismePage} />
+    <Route path="/updateOrganisme" exact component={UpdateOrganismePage} />
+    <Route path="/addOrgaRef" exact component={AddOrgaRefPage} />
+    <Route path="/updateOrgaRef" exact component={UpdateOrganismeRefPage} />
+    <Route
+      path="/desactiverOrgaRef"
+      exact
+      component={DesactiverOraganismeRefPage}
+    />
+    <Route path="/rechercheFamille" exact component={RechercherFamillePage} />
+    <Route path="/addNote" exact component={AddNotePage} />
+    <Route path="/delNote" exact component={DelNotePage} />
+    <Route path="/updateNote" exact component={UpdateNotePage} />
+    <Route path="/Note" exact component={NotePage} />
   </div>
 );
-
 export default App;
