@@ -715,7 +715,7 @@ app.post("/addNote", (req, res) => {
   ];
   JSAlert.alert(values);
   db.query(
-    "INSERT INTO note  (nomIntervenant,noFamilleChoisi,message,nomPersonneConcerne) VALUES (?,?,?,?);",
+    "INSERT INTO note  (nomIntervenant,noFamille,message,nomPersonneConcerne) VALUES (?,?,?,?);",
     values,
     (err, results) => {
       if (err) {
