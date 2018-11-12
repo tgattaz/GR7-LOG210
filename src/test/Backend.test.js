@@ -3,6 +3,16 @@
 // faire npm i supertest pour faire fonctionner la variable request
 const server = require('../../server');
 const request = require('supertest');
+import React from 'react';
+import axios from 'axios';
+'use strict';
+import Adapter from 'enzyme-adapter-react-16';
+//import ReactDOM from 'react-dom';
+import RechercheReferentForm from '../components/forms/selectionForms/RechercheReferentForm';
+//import Foo from './Foo';
+
+import { shallow, render, mount, configure } from 'enzyme';
+configure({ adapter: new Adapter() });
 
 
 
@@ -84,21 +94,49 @@ describe('Route par défaut pour afficher les roles existants', () => {
    });
   });
 
-/*describe('chercher', () => {
+  describe('Route par défaut pour afficher les tables de la BD', () => {
+    test('Get les tables', async () => {
+      const reponse = await request(server).get('/all');
+      expect(reponse.status).toEqual(200);
+   });
+  });
+
+  describe('Route par défaut pour afficher les referents liés à des organismes.', () => {
+    test('Get ces referents', async () => {
+      const reponse = await request(server).get('/referent_organisme_referent');
+      expect(reponse.status).toEqual(200);
+   });
+  });
+
+/* describe('chercher', () => {
   test('Get ref', async () => {
-    const state = {
+
+    RechercheReferentForm.state = {
+
       recherche: 'Anthony',
       referents_trouves: []
-  };
+    };
+      
 
   const recherche_referent = {
-    recherche: this.state.recherche
+    recherche: RechercheReferentForm.state.recherche
 }
 
-    const reponse = await request(server).post('/recherche_referents', { recherche_referent });
+axios.post('/recherche_referents', { recherche_referent })
+            .then(res => {
+                this.setState({ referents_trouves: res.data })
+            }).catch(e => {
+                console.log(e);
+            });
+    const reponse = await request(server).post('/recherche_referents', { recherche_referent })
+    .then(res => {
+      RechercheReferentForm.setState({ referents_trouves: res.data })
+    }).catch(e => {
+        console.log(e);
+    });
     expect(reponse.status).toEqual(200);
  });
-}); */
+});  */
 
 
 

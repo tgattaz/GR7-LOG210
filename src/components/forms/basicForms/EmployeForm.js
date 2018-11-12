@@ -19,7 +19,7 @@ export default class EmployeForm extends React.Component{
             <Table celled padded>
                 <Table.Header>
                 <Table.Row>
-                    <Table.HeaderCell singleLine>Numéro Employe</Table.HeaderCell>
+                    <Table.HeaderCell singleLine>#</Table.HeaderCell>
                     <Table.HeaderCell>Nom</Table.HeaderCell>
                     <Table.HeaderCell>Prenom</Table.HeaderCell>
                     <Table.HeaderCell>Télephone</Table.HeaderCell>

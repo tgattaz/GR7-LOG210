@@ -19,7 +19,7 @@ export default class RefForm extends React.Component {
     return <Table celled padded>
         <Table.Header>
           <Table.Row>
-            <Table.HeaderCell singleLine>Numéro referent</Table.HeaderCell>
+            <Table.HeaderCell singleLine>#</Table.HeaderCell>
             <Table.HeaderCell>Nom</Table.HeaderCell>
             <Table.HeaderCell>Prénom</Table.HeaderCell>
             <Table.HeaderCell>Titre</Table.HeaderCell>

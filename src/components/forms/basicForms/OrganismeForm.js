@@ -19,8 +19,8 @@ export default class OrganismeForm extends React.Component{
           <Table celled padded>
               <Table.Header>
               <Table.Row>
-                  <Table.HeaderCell singleLine>Nom</Table.HeaderCell>
-                  <Table.HeaderCell>Nom organisme</Table.HeaderCell>
+                  <Table.HeaderCell singleLine>#</Table.HeaderCell>
+                  <Table.HeaderCell>Nom</Table.HeaderCell>
                   <Table.HeaderCell>Numéro Civique</Table.HeaderCell>
                   <Table.HeaderCell>Rue</Table.HeaderCell>
                   <Table.HeaderCell>Ville</Table.HeaderCell>
