@@ -20,6 +20,7 @@ const db = require('./BD/database');
 
 import dotenv from "dotenv";
 import auth from "./routes/auth";
+import get from "./routes/get";
 const normalizePort = port => parseInt(port, 10);
 const PORT = normalizePort(process.env.PORT || 8000);
 
@@ -62,6 +63,7 @@ app.post('/login', function (req, res) {
 
 app.use('/api/auth', auth);
 
+app.use('/api/get', get);
 app.get('/roles', (req, res) => {
     //code pour afficher table de la base de donnée
     db.query('SELECT * FROM catalogue_role', (err, results) => {

@@ -2,7 +2,7 @@ import React from "react";
 import { Menu, Dropdown } from 'semantic-ui-react';
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import * as actions from '../../actions/auth';
+import * as actions from '../../../actions/auth';
 import PropTypes from "prop-types";
 const MenuAllForm =({role,logout})=> (
         <Menu pointing secondary> 
@@ -19,20 +19,16 @@ const MenuAllForm =({role,logout})=> (
               <Dropdown.Item as={Link}
                 name='addEmploye'
                 to="/addEmploye" > Ajouter ou modifier un employe </Dropdown.Item>
-              <Dropdown.Item as={
-                Link
-              }
+              <Dropdown.Item as={Link}
                 name='delEmploye'
                 to="/delEmploye" > Virer un employe </Dropdown.Item>
-              < Dropdown.Item as={
-                Link
-              }
+              < Dropdown.Item as={Link}
                 name='updateEmploye'
                 to="/updateEmploye" > Mettre a jour un employe </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
             }
-            {role===1 &&
+            {role==1 &&
           <Dropdown item text='organismes'>
             <Dropdown.Menu>
               <Dropdown.Item as={Link}
@@ -41,14 +37,10 @@ const MenuAllForm =({role,logout})=> (
               <Dropdown.Item as={Link}
                 name='addOrganisme'
                 to="/addOrganisme" > Ajouter ou modifier un organisme </Dropdown.Item>
-              < Dropdown.Item as={
-                Link
-              }
+              < Dropdown.Item as={Link}
                 name='delOrganisme'
                 to="/delOrganisme" > Retirer un organisme </Dropdown.Item>
-              < Dropdown.Item as={
-                Link
-              }
+              < Dropdown.Item as={Link}
                 name='updateOrganisme'
                 to="/updateOrganisme" > Mettre a jour un organisme </Dropdown.Item>
             </Dropdown.Menu>
@@ -62,14 +54,10 @@ const MenuAllForm =({role,logout})=> (
               <Dropdown.Item as={Link}
                 name='addOrgaRef'
                 to="/addOrgaRef" > Ajouter un organisme référent </Dropdown.Item>
-              < Dropdown.Item as={
-                Link
-              }
+              < Dropdown.Item as={Link}
                 name='updateOrgaRef'
                 to="/updateOrgaRef" > Modifier un organisme référent </Dropdown.Item>
-              < Dropdown.Item as={
-                Link
-              }
+              < Dropdown.Item as={Link}
                 name='desactiverOrgaRef'
                 to="/desactiverOrgaRef" > Desactiver un organisme un organisme référent </Dropdown.Item>
             </Dropdown.Menu>
