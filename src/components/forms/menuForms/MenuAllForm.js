@@ -96,7 +96,6 @@ const MenuAllForm = ({ role, logout }) => (
         </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
-    name='rechercheReferent' to="/rechercheReferent" />
     <Menu.Menu position="right">
       <Menu.Item as={Link} name="logout" to="/" onClick={() => logout()} />
     </Menu.Menu>
