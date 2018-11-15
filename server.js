@@ -633,7 +633,7 @@ app.listen(PORT, err => {
 });
 
 /*
-POUR LES NOTES 
+POUR LES NOTES
 */
 app.get("/notes", (req, res) => {
   //code pour afficher table de la base de donnée
