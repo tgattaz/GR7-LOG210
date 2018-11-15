@@ -70,10 +70,10 @@ app.get("/roles", (req, res) => {
 });
 /** Requette pour la class employe */
 app.post("/addEmploye", (req, res) => {
-  const { nom, prenom, telephone, motDePasse, role } = req.body.employe;
-  const values = [nom, prenom, telephone, motDePasse, role];
+  const { nom, prenom, noCivique, rue, ville, province, codePostal, cellulaire, maison, bureau, courriel, formation, dateformation, motDePasse, role } = req.body.employe;
+  const values = [nom, prenom, noCivique, rue, ville, codePostal, province, cellulaire, maison, bureau, courriel, motDePasse, role];
   db.query(
-    "INSERT INTO employe (nom, prenom,telephone,motDePasse,role) VALUES (?,?,?,?,?);",
+    "INSERT INTO employe (nom, prenom, noCivique, rue, ville, codePostal, province, telCellulaire, telMaison, telBurreau, courriel, motDePasse, role) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?);",
     values,
     (err, results) => {
       if (err) {
@@ -81,8 +81,15 @@ app.post("/addEmploye", (req, res) => {
         return res.send(err);
       } else {
         JSAlert.alert("employe");
+        db.query("SELECT noEmploye FROM employe WHERE nom=''", (err, results) =>  {
+        if (err) {
+            return res.send(err);
+          } else {
+
+          }
         return res.send("Employe ajouté");
       }
+     }
     }
   );
 });

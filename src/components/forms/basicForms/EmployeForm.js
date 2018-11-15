@@ -22,7 +22,7 @@ export default class EmployeForm extends React.Component{
                     <Table.HeaderCell singleLine>#</Table.HeaderCell>
                     <Table.HeaderCell>Nom</Table.HeaderCell>
                     <Table.HeaderCell>Prenom</Table.HeaderCell>
-                    <Table.HeaderCell>Télephone</Table.HeaderCell>
+                    <Table.HeaderCell>Courriel</Table.HeaderCell>
                     <Table.HeaderCell>Mot de passe</Table.HeaderCell>
                     <Table.HeaderCell>Role</Table.HeaderCell>
                 </Table.Row>
@@ -34,7 +34,7 @@ export default class EmployeForm extends React.Component{
                     <Table.Cell>{employe.noEmploye}</Table.Cell>
                     <Table.Cell>{employe.nom}</Table.Cell>
                     <Table.Cell>{employe.prenom}</Table.Cell>
-                    <Table.Cell>{employe.telephone}</Table.Cell>
+                    <Table.Cell>{employe.courriel}</Table.Cell>
                     <Table.Cell>{employe.motDePasse}</Table.Cell>
                     <Table.Cell>{employe.role}</Table.Cell>
                 </Table.Row>

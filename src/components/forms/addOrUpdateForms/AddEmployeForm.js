@@ -276,7 +276,7 @@ export default class AddEmployeForm extends React.Component {
                 <br />
                 <Form.Field>
                     <select name='role' placeholder="Choisir un role" onChange={this.handleChangeRole}>
-                        <option selected>Choisir un rôle</option>
+                        <option>Choisir un rôle</option>
                         <option value='1'>Directeur</option>
                         <option value='2'>Coordonnateur</option>
                         <option value='3'>Adjoint-Coordennateur</option>
