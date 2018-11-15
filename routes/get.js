@@ -14,16 +14,21 @@ router.post('/',(req,res)=>{
         }
         if(results.length>0){
             switch(info.type){
-                case 'pointService':
-                res.json({organisme: {
-                    noOrganisme: results[0].noOrganisme,
-                    nom: results[0].nom
+                case 'pointDeService':
+                    res.json({organisme: {
+                        noOrganisme: results[0].noOrganisme,
+                        nom: results[0].nom
+                            }
                         }
-                    }
-                );
+                    );
                 break;
-                case 'employe':
-                
+                case 'addEmploye':
+                    res.json({organisme: {
+                        noOrganisme: results[0].noOrganisme,
+                        nom: results[0].nom
+                            }
+                        }
+                    );
                 break;
                 case 'modif': 
 

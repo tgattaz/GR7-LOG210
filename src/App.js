@@ -20,6 +20,7 @@ import UpdateOrganismeRefPage from "./components/pages/updatePages/UpdateOrganis
 import DesactiverOraganismeRefPage from "./components/pages/deletePages/DesactiverOraganismeRefPage";
 import DelEmployePage from "./components/pages/deletePages/DelEmployePage";
 import UpdateEmployePage from "./components/pages/updatePages/UpdateEmployePage";
+import PointDeServicePage from "./components/pages/basicPages/PointDeServicePage";
 
 const App = () => (
   <div className="ui container">
@@ -43,7 +44,8 @@ const App = () => (
     < Route path="/updateOrganisme" exact component={UpdateOrganismePage} />
     < Route path="/updateOrgaRef" exact component={UpdateOrganismeRefPage} />
     < Route path="/desactiverOrgaRef" exact component={DesactiverOraganismeRefPage} />
-
+    < Route path="/pointDeService" exact component={PointDeServicePage} />
+    
   </div>
 );
 

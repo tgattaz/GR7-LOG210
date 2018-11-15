@@ -5,7 +5,7 @@ import MenuAllForm from "../../forms/menuForms/MenuAllForm";
 import OrganismeForm from "../../forms/basicForms/OrganismeForm";
 import { getOrga } from "../../../actions/selectOrganisme";
 class OrgaPage extends React.Component{
-    submit = (data) => this.props.getOrga(data).then(() => this.props.history.push("/"));
+    submit = (data) => this.props.getOrga(data).then(() => this.props.history.push("/"+data.type));
 
     render(){
         return(

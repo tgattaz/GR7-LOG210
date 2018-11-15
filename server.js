@@ -64,6 +64,10 @@ app.post('/login', function (req, res) {
 app.use('/api/auth', auth);
 
 app.use('/api/get', get);
+
+app.get('/pointsDeService',(req,res)=>{
+    
+});
 app.get('/roles', (req, res) => {
     //code pour afficher table de la base de donnée
     db.query('SELECT * FROM catalogue_role', (err, results) => {

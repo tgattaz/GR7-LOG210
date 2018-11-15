@@ -10,7 +10,7 @@ const MenuAllForm =({role,logout})=> (
             as={Link}
             name='home'
             to="/" />
-            {role!==4 &&
+            {role!=='4' &&
           <Dropdown item text='employe'>
             <Dropdown.Menu>
               <Dropdown.Item as={Link}
@@ -28,7 +28,7 @@ const MenuAllForm =({role,logout})=> (
             </Dropdown.Menu>
           </Dropdown>
             }
-            {role==1 &&
+            {role==='1' &&
           <Dropdown item text='organismes'>
             <Dropdown.Menu>
               <Dropdown.Item as={Link}

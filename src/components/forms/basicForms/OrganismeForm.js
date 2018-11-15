@@ -38,7 +38,6 @@ export default class OrganismeForm extends React.Component{
 
     render(){
         const { errors } = this.state;
-        var i =0;
         return(
             <div>{errors.id && 
                 <Message negative>
@@ -65,7 +64,7 @@ export default class OrganismeForm extends React.Component{
                             <Table.Cell>{organisme.fax}</Table.Cell>
                             <Table.Cell>{organisme.courriel}</Table.Cell>
                             <Table.Cell>
-                                <Form key={i++} onSubmit={this.onSubmit}>
+                                <Form onSubmit={this.onSubmit}>
                                     {errors.global && <Message negative>
                                     <Message.Header>Erreur</Message.Header>
                                     <p>{errors.global}</p>
@@ -74,12 +73,12 @@ export default class OrganismeForm extends React.Component{
                                     <Form.Group widths='equal'>
                                         <Form.Field error={!!errors.id} control='select' onChange={this.setIdOrga}>
                                             <option>Choisir..</option>
-                                            <option value={organisme.noOrganisme+' pointService'}>Ajouter un point de service</option>
-                                            <option value={organisme.noOrganisme+' employe'}>Ajouter un employe</option>
+                                            <option value={organisme.noOrganisme+' pointDeService'}>Ajouter un point de service</option>
+                                            <option value={organisme.noOrganisme+' addEmploye'}>Ajouter un employe</option>
                                             <option value={organisme.noOrganisme+' modif'}>Modifier</option>
                                             <option value={organisme.noOrganisme+' sup'}>Supprimer</option>
                                         </Form.Field>
-                                        <Button key={i++} size='mini' compact primary>Valider</Button>
+                                        <Button size='mini' compact primary>Valider</Button>
                                     </Form.Group>
                                 </Form>  
                             </Table.Cell>
