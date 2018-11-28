@@ -96,6 +96,32 @@ const MenuAllForm = ({ role, logout }) => (
         </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
+    <Dropdown item text="Gérer les notes">
+      <Dropdown.Menu>
+        <Dropdown.Item as={Link} name="rechercheFamille" to="/rechercheFamille">
+          Choisir une famille afin d'ajouter une note
+        </Dropdown.Item>
+        <Dropdown.Item as={Link} name="updateNote" to="/updateNote">
+          Modifier une note
+        </Dropdown.Item>
+        <Dropdown.Item as={Link} name="delNote" to="/delNote">
+          Retirer la note
+        </Dropdown.Item>
+        <Dropdown.Item as={Link} name="Note" to="/Note">
+          Liste des notes
+        </Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+    <Dropdown item text="Gérer les services">
+      <Dropdown.Menu>
+        <Dropdown.Item as={Link} name="PointServiceSelection" to="/PointServiceSelection">
+          Choisir un point de service afin pour y ajouter un service
+        </Dropdown.Item>
+        <Dropdown.Item as={Link} name="service" to="/service">
+          Liste des services disponibles
+        </Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
     <Menu.Menu position="right">
       <Menu.Item as={Link} name="logout" to="/" onClick={() => logout()} />
     </Menu.Menu>

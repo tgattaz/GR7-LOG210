@@ -25,6 +25,9 @@ import AddNotePage from "./components/pages/addPages/AddNotePage";
 import DelNotePage from "./components/pages/deletePages/DelNotePage";
 import UpdateNotePage from "./components/pages/updatePages/UpdateNotePage";
 import NotePage from "./components/pages/basicPages/NotePage";
+import PointServiceSelectionPage from "./components/pages/selectionPages/PointServiceSelectionPage";
+import AddServicePage from "./components/pages/addPages/AddServicePage";
+import ServicePage from "./components/pages/basicPages/ServicePage";
 
 const App = () => (
   <div className="ui container">
@@ -48,16 +51,16 @@ const App = () => (
     <Route path="/updateOrganisme" exact component={UpdateOrganismePage} />
     <Route path="/addOrgaRef" exact component={AddOrgaRefPage} />
     <Route path="/updateOrgaRef" exact component={UpdateOrganismeRefPage} />
-    <Route
-      path="/desactiverOrgaRef"
-      exact
-      component={DesactiverOraganismeRefPage}
-    />
+    <Route path="/desactiverOrgaRef" exact component={DesactiverOraganismeRefPage}/>
     <Route path="/rechercheFamille" exact component={RechercherFamillePage} />
     <Route path="/addNote" exact component={AddNotePage} />
     <Route path="/delNote" exact component={DelNotePage} />
     <Route path="/updateNote" exact component={UpdateNotePage} />
     <Route path="/Note" exact component={NotePage} />
+    <Route path="/addService" exact component={AddServicePage} />
+    <Route path="/Service" exact component={ServicePage} />
+    <Route path="/PointServiceSelection" exact component={PointServiceSelectionPage} />
+    
   </div>
 );
 export default App;
