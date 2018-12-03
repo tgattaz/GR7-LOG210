@@ -10,6 +10,8 @@ import AddOrganismeForm from '../components/forms/addOrUpdateForms/AddOrganismeF
 import AddRefForm from '../components/forms/addOrUpdateForms/AddRefForm';
 import EmployeForm from '../components/forms/basicForms/EmployeForm';
 import OrganismeForm from '../components/forms/basicForms/OrganismeForm';
+import NoteForm from '../components/forms/basicForms/NoteForm';
+import LoginForm from '../components/forms/basicForms/LoginForm';
 import RefForm from '../components/forms/basicForms/RefForm';
 configure({ adapter: new Adapter() });
 
@@ -39,7 +41,15 @@ describe('Orga Ref Renders without crashing', () => {
 describe('Add Employe Form renders right number of input areas', () => {
   it('Find the inputs ', () => {
     const editor = shallow(< AddEmployeForm />);
-    expect(editor.find('input').length).toEqual(4);
+    expect(editor.find('input').length).toEqual(14);
+
+  });
+});
+
+describe('Add Employe Form renders right number of form tag', () => {
+  it('Find the form ', () => {
+    const editor = shallow(< AddEmployeForm />);
+    expect(editor.find('Form').length).toEqual(1);
 
   });
 });
@@ -90,6 +100,22 @@ describe('Organisme Form renders an output area', () => {
 
   });
 });
+describe('Note Form renders an output area', () => {
+  it('Find the output area ', () => {
+    const editor = shallow(< NoteForm />);
+    expect(editor.find('Table').length).toEqual(1);
+
+  });
+});
+
+describe('Login Form renders an output area', () => {
+  it('Find the output area ', () => {
+    const editor = shallow(< LoginForm />);
+    expect(editor.find('Table').length).toEqual(0);
+
+  });
+});
+
 describe('Ref Form renders an output area', () => {
   it('Find the output area ', () => {
     const editor = shallow(< RefForm />);
@@ -97,6 +123,9 @@ describe('Ref Form renders an output area', () => {
 
   });
 });
+
+
+
 
 
 /*const div = document.createElement('div');
