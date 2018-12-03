@@ -23,34 +23,53 @@ export default class AddDemandeServiceForm extends React.Component {
 
     handleSubmit = event => {
         event.preventDefault();
-
-        var dateDemande = this.state.date_demande;
-        var texteDateDemande = dateDemande.getFullYear() + '-' + (parseInt(dateDemande.getMonth()) + 1) + '-' + dateDemande.getDay();
-
-        //TODO: fix l'authentification et l'obtention de l'employé connecté en ce moment
-        this.setState({ employe_debute_demande: /*localStorage.userId*/51 });
-        const demandeService = {
-            date_demande: texteDateDemande,
-            frequence: this.state.frequence,
-            parent_assume_frais: this.state.parent_assume_frais,
-            telephone: this.state.telephone,
-            employe_debute_demande: this.state.employe_debute_demande,
-            parent_visiteur: this.state.parent_visiteur,
-            horaire_dispo_parent_visiteur: this.state.horaire_dispo_parent_visiteur,
-            parent_gardien: this.state.parent_gardien,
-            horaire_dispo_parent_gardien: this.state.horaire_dispo_parent_gardien,
-            motif: this.state.motif,
-            documents_recus: this.state.documents_recus,
-            documents_a_suivre: this.state.documents_a_suivre,
-        }
-
-        axios.post('/addDemandeService', {
-            demandeService
-        })
-            .then(res => {
-                console.log(res);
-                console.log(res.data);
+        
+        var id_demande_service_props = this.props.choix_demande_service;
+        if (id_demande_service_props !== undefined) {
+            const demandeService = {
+                id_demande_service: id_demande_service_props,
+                parent_visiteur: this.state.parent_visiteur,
+                horaire_dispo_parent_visiteur: this.state.horaire_dispo_parent_visiteur,
+                parent_gardien: this.state.parent_gardien,
+                horaire_dispo_parent_gardien: this.state.horaire_dispo_parent_gardien,
+            }
+            axios.post('/updateDemandeService', {
+                demandeService
             })
+                .then(res => {
+                    console.log(res);
+                    console.log(res.data);
+                })
+        }
+        else {
+            var dateDemande = this.state.date_demande;
+            var texteDateDemande = dateDemande.getFullYear() + '-' + (parseInt(dateDemande.getMonth()) + 1) + '-' + dateDemande.getDay();
+    
+            //TODO: fix l'authentification et l'obtention de l'employé connecté en ce moment
+            this.setState({ employe_debute_demande: localStorage.userId });
+
+            const demandeService = {
+                date_demande: texteDateDemande,
+                frequence: this.state.frequence,
+                parent_assume_frais: this.state.parent_assume_frais,
+                telephone: this.state.telephone,
+                employe_debute_demande: this.state.employe_debute_demande,
+                parent_visiteur: this.state.parent_visiteur,
+                horaire_dispo_parent_visiteur: this.state.horaire_dispo_parent_visiteur,
+                parent_gardien: this.state.parent_gardien,
+                horaire_dispo_parent_gardien: this.state.horaire_dispo_parent_gardien,
+                motif: this.state.motif,
+                documents_recus: this.state.documents_recus,
+                documents_a_suivre: this.state.documents_a_suivre,
+            }
+            axios.post('/addDemandeService', {
+                demandeService
+            })
+                .then(res => {
+                    console.log(res);
+                    console.log(res.data);
+                })
+        }
     };
 
     handleChangeFrequence = event => {
@@ -108,6 +127,20 @@ export default class AddDemandeServiceForm extends React.Component {
             
             axios.post("/demande_service_par_id", { demande_service })
                 .then(res => {
+                    this.setState({
+                        date_demande:res.data[0].date_demande, 
+                        documents_a_suivre:res.data[0].documents_a_suivre, 
+                        documents_recus:res.data[0].documents_recus, 
+                        employe_debute_demande:res.data[0].fk_employe_debute_demande, 
+                        parent_assume_frais:res.data[0].fk_parent_assume_frais, 
+                        parent_gardien:res.data[0].fk_parent_gardien, 
+                        parent_visiteur:res.data[0].fk_parent_visiteur, 
+                        frequence:res.data[0].frequence, 
+                        horaire_dispo_parent_gardien:res.data[0].horaire_dispo_parent_gardien, 
+                        horaire_dispo_parent_visiteur:res.data[0].horaire_dispo_parent_visiteur,  
+                        motif:res.data[0].motif_demande, 
+                        telephone:res.data[0].telephone, 
+                    });
                     console.log(res.data);
                 })
                 .catch(e => {
@@ -117,16 +150,19 @@ export default class AddDemandeServiceForm extends React.Component {
     }
 
     render() {
+
+        var isUpdateInsteadOfAdd = this.props.choix_demande_service !== undefined;
+
         return (
             <Form onSubmit={this.handleSubmit}>
-                <Form.Field>
+                <Form.Field disabled={isUpdateInsteadOfAdd}>
                     <label>
                         Fréquence:
                         <input type="text" name="frequence" onChange={this.handleChangeFrequence} />
                     </label>
                 </Form.Field>
 
-                <Form.Field>
+                <Form.Field disabled={isUpdateInsteadOfAdd}>
                     <label>
                         Parent assumant les frais:
                         <Dropdown
@@ -136,7 +172,7 @@ export default class AddDemandeServiceForm extends React.Component {
                     </label>
                 </Form.Field>
 
-                <Form.Field>
+                <Form.Field disabled={isUpdateInsteadOfAdd}>
                     <label>
                         Téléphone:
                         <input type="text" name="telephone" onChange={this.handleChangeTelephone} />
@@ -179,28 +215,28 @@ export default class AddDemandeServiceForm extends React.Component {
                     </label>
                 </Form.Field>
 
-                <Form.Field>
+                <Form.Field disabled={isUpdateInsteadOfAdd}>
                     <label>
                         Motif de la demande:
                         <input type="text" name="motif" onChange={this.handleChangeMotif} />
                     </label>
                 </Form.Field>
 
-                <Form.Field>
+                <Form.Field disabled={isUpdateInsteadOfAdd}>
                     <label>
                         Documents recus:
                         <input type="text" name="documents_recus" onChange={this.handleChangeDocumentRecus} />
                     </label>
                 </Form.Field>
 
-                <Form.Field>
+                <Form.Field disabled={isUpdateInsteadOfAdd}>
                     <label>
                         Documents à suivre:
                         <input type="text" name="documents_a_suivre" onChange={this.handleChangeDocumentASuivre} />
                     </label>
                 </Form.Field>
 
-                <Button>Créer la demande de service</Button>
+                <Button>{isUpdateInsteadOfAdd?"Mettre à jour les informations du parent":"Créer la demande de service"}</Button>
             </Form>
         );
     }
