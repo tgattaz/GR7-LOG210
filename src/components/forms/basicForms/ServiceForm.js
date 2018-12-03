@@ -58,13 +58,15 @@ export default class ServiceForm extends React.Component {
 
   render() {
     let ModifierService
+    
     if(this.state.modifierService)
         {
-          ModifierService =  <AddServiceForm noServiceAModifier={this.state.noService} onChangeValue={this.handleChangeValue}/>      
+          let modifierService = this.state.noService
+          ModifierService =  <div><h2>numero : {modifierService}</h2> <AddServiceForm noServiceAModifier={this.state.noService} onChangeValue={this.handleChangeValue}/> </div>      
         }
     return (
       <div>
-        <h2>Modifier service</h2>
+        <h2>Modifier service </h2>
          {ModifierService}
         
         
@@ -93,10 +95,10 @@ export default class ServiceForm extends React.Component {
               <Table.Cell>
                 {
                   <div>
-                     <Button value={service.noService} onClick={e => this.delService(e)}>
+                     <Button color="red" value={service.noService} onClick={e => this.delService(e)}>
                   <i class="eraser icon"></i>
                   </Button>
-                   <Button value={service.noService} onClick={e => this.UpdateService(e)}>
+                   <Button color="green" value={service.noService} onClick={e => this.UpdateService(e)}>
                    <i class="edit icon"></i>
                    </Button>
                   </div>

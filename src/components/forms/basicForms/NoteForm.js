@@ -1,7 +1,7 @@
 import React from "react";
 import { Table } from "semantic-ui-react";
 import axios from "axios";
-
+import Moment from 'moment';
 export default class NoteForm extends React.Component {
   state = {
     notes: []
@@ -40,7 +40,9 @@ export default class NoteForm extends React.Component {
               <Table.Cell>{note.noFamille}</Table.Cell>
               <Table.Cell>{note.message}</Table.Cell>
               <Table.Cell>{note.nomPersonneConcerne}</Table.Cell>
-              <Table.Cell>{note.date}</Table.Cell>
+              <Table.Cell>{Moment.locale('en'),
+              Moment(note.date).format('LLLL')
+              }</Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>
