@@ -10,6 +10,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import rootReducer from "./rootReducer"
 import { userLoggedIn } from './actions/auth';
+import organisme from './reducers/organisme';
 // react router tuto ici 
 
 const store = createStore(rootReducer,composeWithDevTools(applyMiddleware(thunk)));

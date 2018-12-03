@@ -29,6 +29,8 @@ import NotePage from "./components/pages/basicPages/NotePage";
 import PointServiceSelectionPage from "./components/pages/selectionPages/PointServiceSelectionPage";
 import AddServicePage from "./components/pages/addPages/AddServicePage";
 import ServicePage from "./components/pages/basicPages/ServicePage";
+import PointDeServicePage from "./components/pages/basicPages/PointDeServicePage";
+import AddPointDeServicePage from "./components/pages/addPages/AddPointDeServicePage";
 
 const App = () => (
   <div className="ui container">
@@ -62,6 +64,8 @@ const App = () => (
     <Route path="/addService" exact component={AddServicePage} />
     <Route path="/Service" exact component={ServicePage} />
     <Route path="/PointServiceSelection" exact component={PointServiceSelectionPage} />
+    <Route path="/pointDeService" exact component={PointDeServicePage} />
+    <Route path="/addPointDeService" exact component={AddPointDeServicePage} />
 
   </div>
 );
