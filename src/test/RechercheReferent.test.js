@@ -16,62 +16,8 @@ import OrganismeForm from '../components/forms/basicForms/OrganismeForm';
 import RefForm from '../components/forms/basicForms/RefForm';
 import NoteForm from '../components/forms/basicForms/NoteForm';
 import ServiceForm from '../components/forms/basicForms/ServiceForm';
-import DelEmployeForm from '../components/forms/deleteForms/DelEmployeForm';
-import DelNoteForm from '../components/forms/deleteForms/DelNoteForm';
-import DelOrganismeFrom from '../components/forms/deleteForms/DelOrganismeFrom';
-import AddEmployePage from '../components/pages/addPages/AddEmployePage';
-import AddNotePage from '../components/pages/addPages/AddNotePage';
-import AddOrgaRefPage from '../components/pages/addPages/AddOrgaRefPage';
-import AddOrganismePage from '../components/pages/addPages/AddOrganismePage';
-import AddRefPage from '../components/pages/addPages/AddRefPage';
-import AddServicePage from '../components/pages/addPages/AddServicePage';
-import addEmployeOrgaPage from '../components/pages/addPages/addEmployeOrgaPage';
-
 configure({ adapter: new Adapter() });
 
-
-/**
- * Pages
- */
-describe('AddEmployePage ne crash pas', () => {
-  it('AddEmployePage affiche sans chash', () => {
-    shallow(<AddEmployePage />);
-  });
-  });
-  describe('AddNotePage ne crash pas', () => {
-    it('AddNotePage affiche sans chash', () => {
-      shallow(<AddNotePage />);
-    });
-    });
-    describe('AddOrgaRefPage ne crash pas', () => {
-      it('AddOrgaRefPage affiche sans chash', () => {
-        shallow(<AddOrgaRefPage />);
-      });
-      });
-      describe('AddOrganismePage ne crash pas', () => {
-        it('AddOrganismePage affiche sans chash', () => {
-          shallow(<AddOrganismePage />);
-        });
-        });
-        describe('AddRefPage ne crash pas', () => {
-          it('AddRefPage affiche sans chash', () => {
-            shallow(<AddRefPage />);
-          });
-          });
-          describe('AddServicePage ne crash pas', () => {
-            it('AddServicePage affiche sans chash', () => {
-              shallow(<AddServicePage />);
-            });
-            });
-            describe('addEmployeOrgaPage ne crash pas', () => {
-              it('addEmployeOrgaPage affiche sans chash', () => {
-                shallow(<addEmployeOrgaPage />);
-              });
-              });
-   
-
-
-  
 
 describe('Recherche Referent Renders without crashing', () => {
   it('Recherche Referent Renders without crashing', () => {
@@ -120,22 +66,28 @@ describe('Add Employe Form renders the button with his text', () => {
 /*
 AddEmployeOrgaForm
 */
-describe('Add Employe organisme le tableau fonctionne', () => {
+describe('Add Employe organisme Form renders right number of input areas', () => {
   it('Find the inputs ', () => {
     const editor = shallow(< AddEmployeOrgaForm />);
-    expect(editor.find('Table').length).toEqual(1);
+    expect(editor.find('input').length).toEqual(14);
 
   });
 });
-describe('Add Employe organisme ne doit pas avoir de bouton', () => {
+
+describe('Add Employe organisme Form renders a button', () => {
   it('Find the only button ', () => {
     const editor = shallow(< AddEmployeOrgaForm />);
-    expect(editor.find('Button').length).toEqual(0);
+    expect(editor.find('Button').length).toEqual(1);
 
   });
 });
+describe('Add Employe organisme Form renders the button with his text', () => {
+  it('Find the text button and show that it can fail with wrong text value ', () => {
+    const editor = shallow(< AddEmployeOrgaForm />);
+    expect(editor.find('Button').text()).not.toEqual('Fail');
 
-
+  });
+});
 
 /**
  * AddNoteForm
@@ -143,7 +95,7 @@ describe('Add Employe organisme ne doit pas avoir de bouton', () => {
 describe('Add note Form renders right number of input areas', () => {
   it('Find the inputs ', () => {
     const editor = shallow(< AddNoteForm />);
-    expect(editor.find('input').length).toEqual(3);
+    expect(editor.find('input').length).toEqual(14);
 
   });
 });
@@ -168,7 +120,7 @@ describe('Add not Form renders the button with his text', () => {
 describe('Add note Form renders right number of input areas', () => {
   it('Find the inputs ', () => {
     const editor = shallow(< AddNoteForm />);
-    expect(editor.find('input').length).toEqual(3);
+    expect(editor.find('input').length).toEqual(14);
 
   });
 });
@@ -194,6 +146,7 @@ describe('Add Organisme Form renders  input areas', () => {
 
   });
 });
+
 
 
 describe('Add Ref Form renders an input areas', () => {
@@ -249,34 +202,6 @@ describe('Add Service Form renders  input areas', () => {
 
   });
 });
-describe('DelEmployeForm ne crash pas', () => {
-it('DelEmployeForm affiche sans chash', () => {
-  shallow(<DelEmployeForm />);
-});
-});
-
-describe('DelNoteForm ne crash pas', () => {
-  it('DelEmployeForm affiche sans chash', () => {
-    shallow(<DelEmployeForm />);
-  });
-  });
-
-
-describe('DelNoteForm doit avoir un bouton', () => {
-  it('Find the only button ', () => {
-    const editor = shallow(< DelNoteForm />);
-    expect(editor.find('Button').length).toEqual(0);
-
-  });
-});
-describe('DelOrganismeFrom doit avoir un bouton', () => {
-  it('Find the only button ', () => {
-    const editor = shallow(< DelOrganismeFrom />);
-    expect(editor.find('Button').length).toEqual(0);
-
-  });
-});
-
 
 
 /*const div = document.createElement('div');
