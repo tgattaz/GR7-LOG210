@@ -102,10 +102,13 @@ export default class AddDemandeServiceForm extends React.Component {
         });
 
         if (this.props.choix_demande_service !== undefined) {
-            axios.post("/demande_service_par_id", { id_demande_service: this.props.choix_demande_service })
+            const demande_service = {
+                id_demande_service: this.props.choix_demande_service
+            }
+            
+            axios.post("/demande_service_par_id", { demande_service })
                 .then(res => {
                     console.log(res.data);
-                    alert("allo");
                 })
                 .catch(e => {
                     console.log(e);

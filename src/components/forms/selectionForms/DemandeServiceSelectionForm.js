@@ -1,6 +1,5 @@
 import React from 'react';
 import { Table, Button } from 'semantic-ui-react';
-import UpdateDemandeServiceForm from "../addOrUpdateForms/UpdateDemandeServiceForm";
 import axios from 'axios';
 import AddDemandeServiceForm from '../addOrUpdateForms/AddDemandeServiceForm';
 
@@ -32,20 +31,20 @@ export default class DemandeServiceSelectionForm extends React.Component {
         } else {
             return (<Table celled padded>
                 <Table.Header>
-                    <Table.Row>
-                        <Table.HeaderCell> Choisir (Numero unique) </Table.HeaderCell>
-                        <Table.HeaderCell> Date demande </Table.HeaderCell>
-                        <Table.HeaderCell> Fréquence </Table.HeaderCell>
-                        <Table.HeaderCell> Téléphone </Table.HeaderCell>
-                        <Table.HeaderCell> Motif demande </Table.HeaderCell>
-                        <Table.HeaderCell> Parent visiteur </Table.HeaderCell>
-                        <Table.HeaderCell> Parent gardien </Table.HeaderCell>
+                    <Table.Row className="header_row">
+                        <Table.HeaderCell className="header"> Choisir (Numero unique) </Table.HeaderCell>
+                        <Table.HeaderCell className="header"> Date demande </Table.HeaderCell>
+                        <Table.HeaderCell className="header"> Fréquence </Table.HeaderCell>
+                        <Table.HeaderCell className="header"> Téléphone </Table.HeaderCell>
+                        <Table.HeaderCell className="header"> Motif demande </Table.HeaderCell>
+                        <Table.HeaderCell className="header"> Parent visiteur </Table.HeaderCell>
+                        <Table.HeaderCell className="header"> Parent gardien </Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
 
-                < Table.Body> {
+                <Table.Body> {
                     this.state.demandes_service.map(demande_service =>
-                        <Table.Row key={demande_service.id_demande_service}>
+                        <Table.Row key={demande_service.id_demande_service} className="row">
                             <Table.Cell>
                                 <Button
                                     onClick={(e) => this.selectChannel(demande_service.id_demande_service)}>
@@ -62,8 +61,7 @@ export default class DemandeServiceSelectionForm extends React.Component {
                             <Table.Cell> {demande_service.nom_parent_gardien} </Table.Cell>
                         </Table.Row>)
                 }
-                </Table.Body>
-            </Table>);
+                </Table.Body></Table>);
         }
 
     }
