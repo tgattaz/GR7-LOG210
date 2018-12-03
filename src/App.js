@@ -66,6 +66,10 @@ const App = () => (
     <Route path="/addService" exact component={AddServicePage} />
     <Route path="/Service" exact component={ServicePage} />
     <Route path="/PointServiceSelection" exact component={PointServiceSelectionPage} />
+    <Route path="/addPointDeServicePage" exact component={AddPointDeServicePage} />
+    <Route path="/pointDeServicePage" exact component={PointDeServicePage} />
+    <Route path="/DemandeServiceSelectionPage" exact component={DemandeServiceSelectionPage} />
+    <Route path="/AddDemandeServicePage" exact component={AddDemandeServicePage} />
 
   </div>
 );
