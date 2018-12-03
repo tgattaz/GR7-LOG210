@@ -2,6 +2,7 @@ import React from 'react';
 import { Table, Button } from 'semantic-ui-react';
 import UpdateDemandeServiceForm from "../addOrUpdateForms/UpdateDemandeServiceForm";
 import axios from 'axios';
+import AddDemandeServiceForm from '../addOrUpdateForms/AddDemandeServiceForm';
 
 export default class DemandeServiceSelectionForm extends React.Component {
     state = {
@@ -25,7 +26,7 @@ export default class DemandeServiceSelectionForm extends React.Component {
     render() {
         if (this.state.doit_ajouter_demande_service === true) {
             return (
-                <UpdateDemandeServiceForm choix_demande_service={this.state.choix_demande_service} />
+                <AddDemandeServiceForm choix_demande_service={this.state.choix_demande_service} />
             )
 
         } else {

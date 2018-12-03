@@ -10,9 +10,6 @@ export default class UpdateDemandeServiceForm extends React.Component {
         horaire_dispo_parent_visiteur: '',
         parent_gardien: 0,
         horaire_dispo_parent_gardien: '',
-        motif: '',
-        documents_recus: '',
-        documents_a_suivre: '',
         parents: [],
         choix_demande_service: 0,
     };
@@ -36,8 +33,6 @@ export default class UpdateDemandeServiceForm extends React.Component {
             parent_gardien: this.state.parent_gardien,
             horaire_dispo_parent_gardien: this.state.horaire_dispo_parent_gardien,
             motif: this.state.motif,
-            documents_recus: this.state.documents_recus,
-            documents_a_suivre: this.state.documents_a_suivre,
         }
 
         axios.post('/addDemandeService', {
@@ -49,15 +44,6 @@ export default class UpdateDemandeServiceForm extends React.Component {
             })
     };
 
-    handleChangeFrequence = event => {
-        this.setState({ frequence: event.target.value });
-    };
-    handleChangeParentAssumeFrais = (event, { value }) => {
-        this.setState({ parent_assume_frais: value });
-    };
-    handleChangeTelephone = event => {
-        this.setState({ telephone: event.target.value });
-    };
     handleChangeParentVisiteur = (event, { value }) => {
         this.setState({ parent_visiteur: value });
     };
@@ -69,15 +55,6 @@ export default class UpdateDemandeServiceForm extends React.Component {
     };
     handleChangeHoraireDispoParentGardien = event => {
         this.setState({ horaire_dispo_parent_gardien: event.target.value });
-    };
-    handleChangeMotif = event => {
-        this.setState({ motif: event.target.value });
-    };
-    handleChangeDocumentRecus = event => {
-        this.setState({ documents_recus: event.target.value });
-    };
-    handleChangeDocumentASuivre = event => {
-        this.setState({ documents_a_suivre: event.target.value });
     };
 
     componentDidMount() {
@@ -96,35 +73,18 @@ export default class UpdateDemandeServiceForm extends React.Component {
 
             this.setState({ parents: parentsFormattes });
         });
+
+        this.setState({ choix_demande_service: this.props.choix_demande_service });
+        axios.post("/demande_service_par_id", { id_demande_service: this.state.choix_demande_service })
+            .then(res => {
+                console.log(res);
+                console.log(res.data);
+            });
     }
 
     render() {
         return (
             <Form onSubmit={this.handleSubmit}>
-                <Form.Field>
-                    <label>
-                        Fréquence:
-                        <input type="text" name="frequence" onChange={this.handleChangeFrequence} />
-                    </label>
-                </Form.Field>
-
-                <Form.Field>
-                    <label>
-                        Parent assumant les frais:
-                        <Dropdown
-                            placeholder='Sélectionnez un parent...' fluid selection
-                            options={this.state.parents}
-                            onChange={this.handleChangeParentAssumeFrais} />
-                    </label>
-                </Form.Field>
-
-                <Form.Field>
-                    <label>
-                        Téléphone:
-                        <input type="text" name="telephone" onChange={this.handleChangeTelephone} />
-                    </label>
-                </Form.Field>
-
                 <Form.Field>
                     <label>
                         Parent visiteur:
@@ -165,20 +125,6 @@ export default class UpdateDemandeServiceForm extends React.Component {
                     <label>
                         Motif de la demande:
                         <input type="text" name="motif" onChange={this.handleChangeMotif} />
-                    </label>
-                </Form.Field>
-
-                <Form.Field>
-                    <label>
-                        Documents recus:
-                        <input type="text" name="documents_recus" onChange={this.handleChangeDocumentRecus} />
-                    </label>
-                </Form.Field>
-
-                <Form.Field>
-                    <label>
-                        Documents à suivre:
-                        <input type="text" name="documents_a_suivre" onChange={this.handleChangeDocumentASuivre} />
                     </label>
                 </Form.Field>
 

@@ -19,7 +19,6 @@ export default class AddDemandeServiceForm extends React.Component {
         documents_recus: '',
         documents_a_suivre: '',
         parents: [],
-        choix_demande_service: 0,
     };
 
     handleSubmit = event => {
@@ -101,6 +100,17 @@ export default class AddDemandeServiceForm extends React.Component {
 
             this.setState({ parents: parentsFormattes });
         });
+
+        if (this.props.choix_demande_service !== undefined) {
+            axios.post("/demande_service_par_id", { id_demande_service: this.props.choix_demande_service })
+                .then(res => {
+                    console.log(res.data);
+                    alert("allo");
+                })
+                .catch(e => {
+                    console.log(e);
+                });
+        }
     }
 
     render() {
