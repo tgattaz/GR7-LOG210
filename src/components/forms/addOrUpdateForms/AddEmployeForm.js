@@ -81,8 +81,6 @@ export default class AddEmployeForm extends React.Component {
         event.preventDefault();
 
         const employe = {
-
-
             noEmploye: this.props.modifierEmp,
             nom: this.state.nom,
             prenom: this.state.prenom,
@@ -99,6 +97,7 @@ export default class AddEmployeForm extends React.Component {
             dateformation: this.state.dateformation,
             motDePasse: this.state.motDePasse,
             role: this.state.role,
+            choixOrg: this.props.choixOrg,
         }
 
         /* axios.post('/addEmploye',{ employe })
@@ -143,11 +142,17 @@ export default class AddEmployeForm extends React.Component {
 
         // variable possèdent le choix fait dans
         //UpdateOrganismeForm
+        var orga = this.props.choixOrg
         var employeChoisi = this.props.modifierEmp
-
         var messageAEteAffiche = this.state.pass
 
 
+        //la redirection a cette page a été faite par OrgaRefSelection
+        //on peut lier le reférent a sont organisme referent
+        if (orga != null && !messageAEteAffiche) {
+          alert(" VOICI UN EXEMPLE DE PROPS DE AddEmployeOrgaForm à AddEmployeForm ,ON PASSE DES VALEURS ENTRE LES CLASSES :), L'orga choisi pour add cette employé est :" + this.props.choixOrg)
+
+        }
         //la redirection a cette page a été faite par UpdateOrganismeForm
         //on peut modifier l'organisme choisi
         if (employeChoisi != null && !messageAEteAffiche) {

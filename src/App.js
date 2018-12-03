@@ -11,6 +11,7 @@ import AddRefPage from "./components/pages/addPages/AddRefPage";
 import RefPage from "./components/pages/basicPages/RefPage";
 import OrganismePage from "./components/pages/basicPages/OrganismePage";
 import AddOrganismePage from "./components/pages/addPages/AddOrganismePage";
+import AddEmployeOrgaPage from "./components/pages/addPages/addEmployeOrgaPage";
 import RechercheReferentPage from "./components/pages/selectionPages/RechercheReferentPage";
 import DelRefPage from "./components/pages/deletePages/DelRefPage";
 import UpdateRefPage from "./components/pages/updatePages/UpdateRefPage";
@@ -44,6 +45,7 @@ const App = () => (
     <Route path="/rechercheReferent" exact component={RechercheReferentPage} />
     <Route path="/Organisme" exact component={OrganismePage} />
     <Route path="/addOrganisme" exact component={AddOrganismePage} />
+    <Route path="/addEmployeOrga" exact component={AddEmployeOrgaPage} />
     <Route path="/OrgaRefSelection" exact component={OrgaRefSelectionPage} />
     <Route path="/delRef" exact component={DelRefPage} />
     <Route path="/updateRef" exact component={UpdateRefPage} />
@@ -60,7 +62,7 @@ const App = () => (
     <Route path="/addService" exact component={AddServicePage} />
     <Route path="/Service" exact component={ServicePage} />
     <Route path="/PointServiceSelection" exact component={PointServiceSelectionPage} />
-    
+
   </div>
 );
 export default App;

@@ -34,6 +34,9 @@ const MenuAllForm = ({ role, logout }) => (
           <Dropdown.Item as={Link} name="addOrganisme" to="/addOrganisme">
             Ajouter ou modifier un organisme
           </Dropdown.Item>
+          <Dropdown.Item as={Link} name="addEmployeOrga" to="/addEmployeOrga">
+            Ajouter employe dans un organisme
+          </Dropdown.Item>
           <Dropdown.Item as={Link} name="delOrganisme" to="/delOrganisme">
             Retirer un organisme
           </Dropdown.Item>
