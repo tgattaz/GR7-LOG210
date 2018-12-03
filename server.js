@@ -21,6 +21,7 @@ const db = require('./BD/database');
 import dotenv from "dotenv";
 import auth from "./routes/auth";
 import get from "./routes/get";
+import insertPointDeService from "./routes/insertPointDeService";
 const normalizePort = port => parseInt(port, 10);
 const PORT = normalizePort(process.env.PORT || 8000);
 
@@ -65,8 +66,18 @@ app.use('/api/auth', auth);
 
 app.use('/api/get', get);
 
+app.use('/api/insertPointDeService',insertPointDeService);
+
 app.get('/pointsDeService',(req,res)=>{
-    
+    const {params}=req.query;
+    console.log(req.query.id);
+    db.query('SELECT * FROM point_de_service WHERE noOrganisme=?',[req.query.id], (err, results) => {
+        if (err) {
+            return res.send(err);
+        } else {
+         res.send(results);
+        }
+    })
 });
 app.get('/roles', (req, res) => {
     //code pour afficher table de la base de donnée

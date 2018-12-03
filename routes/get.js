@@ -1,5 +1,4 @@
 import express from "express";
-import jwt from 'jsonwebtoken';
 var db = require('../BD/database');
 const router = express.Router();
 
