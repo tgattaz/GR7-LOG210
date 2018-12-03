@@ -7,10 +7,13 @@ import OrgaRefSelectionForm from '../components/forms/selectionForms/OrgaRefSele
 import { shallow, render, mount, configure } from 'enzyme';
 import AddEmployeForm from '../components/forms/addOrUpdateForms/AddEmployeForm';
 import AddOrganismeForm from '../components/forms/addOrUpdateForms/AddOrganismeForm';
+import AddServiceForm from '../components/forms/addOrUpdateForms/AddServiceForm';
 import AddRefForm from '../components/forms/addOrUpdateForms/AddRefForm';
 import EmployeForm from '../components/forms/basicForms/EmployeForm';
 import OrganismeForm from '../components/forms/basicForms/OrganismeForm';
 import RefForm from '../components/forms/basicForms/RefForm';
+import NoteForm from '../components/forms/basicForms/NoteForm';
+import ServiceForm from '../components/forms/basicForms/ServiceForm';
 configure({ adapter: new Adapter() });
 
 
@@ -39,7 +42,7 @@ describe('Orga Ref Renders without crashing', () => {
 describe('Add Employe Form renders right number of input areas', () => {
   it('Find the inputs ', () => {
     const editor = shallow(< AddEmployeForm />);
-    expect(editor.find('input').length).toEqual(4);
+    expect(editor.find('input').length).toEqual(14);
 
   });
 });
@@ -94,6 +97,30 @@ describe('Ref Form renders an output area', () => {
   it('Find the output area ', () => {
     const editor = shallow(< RefForm />);
     expect(editor.find('Table').length).toEqual(1);
+
+  });
+});
+
+describe('Note Form renders an output area', () => {
+  it('Find the output area ', () => {
+    const editor = shallow(< NoteForm />);
+    expect(editor.find('Table').length).toEqual(1);
+
+  });
+});
+
+describe('Service Form renders an output area', () => {
+  it('Find the output area ', () => {
+    const editor = shallow(< ServiceForm />);
+    expect(editor.find('Table').length).toEqual(1);
+
+  });
+});
+
+describe('Add Service Form renders  input areas', () => {
+  it('Find the inputs', () => {
+    const editor = shallow(<AddServiceForm />);
+    expect(editor.find('input').length).toEqual(4);
 
   });
 });
