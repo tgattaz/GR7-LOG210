@@ -36,8 +36,9 @@ export default class AddServiceForm extends React.Component{
         event.preventDefault();
 
         const service ={
-            nomService:this.state.data.nomService,
             noPointDeService: this.props.choixPointService,
+            noService : this.props.noServiceAModifier,
+            nomService:this.state.data.nomService,
             tarificationParent:this.state.data.tarificationParent,
             tarificationSubventionnee:this.state.data.tarificationSubventionnee,
             tarificationCiss:this.state.data.tarificationCiss,
@@ -49,16 +50,18 @@ export default class AddServiceForm extends React.Component{
         .then(res=>{
             console.log(res);
             console.log(res.data);
-        })}else{
+        }).then(
+            this.props.onChangeValue
+        )}else{
             axios.post('/addService', {service})
                 .then(res => {
                     console.log(res);
                     console.log(res.data);
-                })
+                }).then(this.setState(
+                    {switchServicePage:true}
+                ))
         }
-        this.setState({
-            switchServicePage: true
-        })
+        
     };
 
     render(){
