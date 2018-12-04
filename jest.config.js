@@ -9,7 +9,8 @@ module.exports = {
     '^@/(.*)$': '<rootDir>/src/$1'
   },
  //il faut igiorer certain(s) module(e)
-  transformIgnorePatterns: ['<rootDir>/node_modules']
+  transformIgnorePatterns: ['<rootDir>/node_modules'],
+  coveragePathIgnorePatterns: ['<rootDir>/src/api.js']
 };
 /* snapshotSerializers: ['jest-serializer-vue'],
   testMatch: [
