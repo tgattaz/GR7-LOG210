@@ -29,10 +29,6 @@ import NotePage from "./components/pages/basicPages/NotePage";
 import PointServiceSelectionPage from "./components/pages/selectionPages/PointServiceSelectionPage";
 import AddServicePage from "./components/pages/addPages/AddServicePage";
 import ServicePage from "./components/pages/basicPages/ServicePage";
-import PointDeServicePage from "./components/pages/basicPages/PointDeServicePage";
-import AddPointDeServicePage from "./components/pages/addPages/AddPointDeServicePage";
-import AddDemandeServicePage from "./components/pages/addPages/AddDemandeServicePage";
-import DemandeServiceSelectionPage from "./components/pages/selectionPages/DemandeServiceSelectionPage";
 
 const App = () => (
   <div className="ui container">

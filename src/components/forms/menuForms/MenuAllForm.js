@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 const MenuAllForm = ({ role, logout }) => (
   <Menu pointing secondary>
     <Menu.Item as={Link} name="home" to="/" />
-    {role !== '4' && (
+    {role !== 4 && (
       <Dropdown item text="employe">
         <Dropdown.Menu>
           <Dropdown.Item as={Link} name="employe" to="/employes">
@@ -25,7 +25,7 @@ const MenuAllForm = ({ role, logout }) => (
         </Dropdown.Menu>
       </Dropdown>
     )}
-    {role === '1' && (
+    {role === 1 && (
       <Dropdown item text="organismes">
         <Dropdown.Menu>
           <Dropdown.Item as={Link} name="Organisme" to="/Organisme">

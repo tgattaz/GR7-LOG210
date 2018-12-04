@@ -1,92 +1,54 @@
 import React from 'react';
-import PropTypes from "prop-types";
-import { Table, Message, Form, Button } from 'semantic-ui-react';
+import { Table } from 'semantic-ui-react';
 import axios from 'axios';
-import InlineError from "../../messages/InlineError";
+
 export default class OrganismeForm extends React.Component{
     state ={
         organismes:[],
-        info:{
-            id:"",
-            type:""
-        },
-        errors:{}
     };
 
     componentDidMount(){
         axios.get('/organismes').then(res => {
+            console.log(res);
             this.setState({organismes:res.data});
         });
     }
-    setIdOrga = event =>{
-        var tab=event.target.value.split(' ');
-        this.setState({info:{id: tab[0],type:tab[1]}});
-
-    }
-    onSubmit = ()=>{
-        const errors = this.validate(this.state.info);
-        this.setState({ errors });
-        if(Object.keys(errors).length===0){
-        this.props.submit(this.state.info).catch(err => ({errors:err.response.info.errors}));
-        }
-    }
-    validate = (info)=> {
-        const errors={};
-        if(!info.id) errors.id = "Aucune Option n'a été choisie";
-        return errors;
-    }
 
     render(){
-        const { errors } = this.state;
         return(
-            <div>{errors.id && 
-                <Message negative>
-                <Message.Header><InlineError text={errors.id}/></Message.Header>
-                </Message>}
           <Table celled padded>
               <Table.Header>
               <Table.Row>
-                  <Table.HeaderCell singleLine>Nom</Table.HeaderCell>
-                  <Table.HeaderCell>Nom organisme</Table.HeaderCell>
+                  <Table.HeaderCell singleLine>#</Table.HeaderCell>
+                  <Table.HeaderCell>Nom</Table.HeaderCell>
+                  <Table.HeaderCell>Numéro Civique</Table.HeaderCell>
+                  <Table.HeaderCell>Rue</Table.HeaderCell>
+                  <Table.HeaderCell>Ville</Table.HeaderCell>
+                  <Table.HeaderCell>Province</Table.HeaderCell>
+                  <Table.HeaderCell>Code Postal</Table.HeaderCell>
                   <Table.HeaderCell>Télephone Bureau</Table.HeaderCell>
                   <Table.HeaderCell>Fax</Table.HeaderCell>
                   <Table.HeaderCell>Courriel</Table.HeaderCell>
-                  <Table.HeaderCell>Options</Table.HeaderCell>
               </Table.Row>
               </Table.Header>
 
               <Table.Body>
-                    {this.state.organismes.map(organisme =>
-                        <Table.Row key={organisme.noOrganisme}>
-                            <Table.Cell>{organisme.noOrganisme}</Table.Cell>
-                            <Table.Cell>{organisme.nom}</Table.Cell>
-                            <Table.Cell>{organisme.telephone}</Table.Cell>
-                            <Table.Cell>{organisme.fax}</Table.Cell>
-                            <Table.Cell>{organisme.courriel}</Table.Cell>
-                            <Table.Cell>
-                                <Form onSubmit={this.onSubmit}>
-                                    {errors.global && <Message negative>
-                                    <Message.Header>Erreur</Message.Header>
-                                    <p>{errors.global}</p>
-                                    </Message>}
-                                    
-                                    <Form.Group widths='equal'>
-                                        <Form.Field error={!!errors.id} control='select' onChange={this.setIdOrga}>
-                                            <option>Choisir..</option>
-                                            <option value={organisme.noOrganisme+' pointDeService'}>Ajouter un point de service</option>
-                                        </Form.Field>
-                                        <Button size='mini' compact primary>Valider</Button>
-                                    </Form.Group>
-                                </Form>  
-                            </Table.Cell>
-                        </Table.Row>
-                    )}
+                    {this.state.organismes.map(organismes =>
+                        <Table.Row key={organismes.noOrganisme}>
+                            <Table.Cell>{organismes.noOrganisme}</Table.Cell>
+                            <Table.Cell>{organismes.nom}</Table.Cell>
+                            <Table.Cell>{organismes.noCivique}</Table.Cell>
+                            <Table.Cell>{organismes.rue}</Table.Cell>
+                            <Table.Cell>{organismes.ville}</Table.Cell>
+                            <Table.Cell>{organismes.province}</Table.Cell>
+                            <Table.Cell>{organismes.codePostal}</Table.Cell>
+                            <Table.Cell>{organismes.telephone}</Table.Cell>
+                            <Table.Cell>{organismes.fax}</Table.Cell>
+                            <Table.Cell>{organismes.courriel}</Table.Cell>
+                </Table.Row>
+                )}
                 </Table.Body>
             </Table>
-            </div>
         )
     }
-}
-OrganismeForm.propTypes = {
-    submit: PropTypes.func.isRequired
 }
