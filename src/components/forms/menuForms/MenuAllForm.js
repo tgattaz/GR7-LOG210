@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 const MenuAllForm = ({ role, logout }) => (
   <Menu pointing secondary>
     <Menu.Item as={Link} name="home" to="/" />
-    {role !== 4 && (
+    {role !== '4' && (
       <Dropdown item text="employe">
         <Dropdown.Menu>
           <Dropdown.Item as={Link} name="employe" to="/employes">
@@ -25,7 +25,7 @@ const MenuAllForm = ({ role, logout }) => (
         </Dropdown.Menu>
       </Dropdown>
     )}
-    {role === 1 && (
+    {role === '1' && (
       <Dropdown item text="organismes">
         <Dropdown.Menu>
           <Dropdown.Item as={Link} name="Organisme" to="/Organisme">
@@ -104,6 +104,7 @@ const MenuAllForm = ({ role, logout }) => (
         <Dropdown.Item as={Link} name="service" to="/service">
           Liste des services disponibles
         </Dropdown.Item>
+<<<<<<< HEAD
       </Dropdown.Menu>
     </Dropdown>
     <Dropdown item text="Gérer les demandes de service">
@@ -114,8 +115,21 @@ const MenuAllForm = ({ role, logout }) => (
         <Dropdown.Item as={Link} name="DemandeServiceSelection" to="/DemandeServiceSelection">
           Choisir une demande de service pour compléter l'information du second parent
         </Dropdown.Item>
+=======
+        <Dropdown item simple text="Gérer les demandes de service" direction='left'>
+          <Dropdown.Menu>
+            <Dropdown.Item as={Link} name="AddDemandeService" to="/AddDemandeService">
+              Créer une demande de service
+            </Dropdown.Item>
+            <Dropdown.Item as={Link} name="DemandeServiceSelection" to="/DemandeServiceSelection">
+              Choisir une demande de service pour compléter l'information du second parent
+            </Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+>>>>>>> master
       </Dropdown.Menu>
     </Dropdown>
+    
     <Menu.Menu position="right">
       <Menu.Item as={Link} name="logout" to="/" onClick={() => logout()} />
     </Menu.Menu>

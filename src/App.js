@@ -28,6 +28,11 @@ import NotePage from "./components/pages/basicPages/NotePage";
 import PointServiceSelectionPage from "./components/pages/selectionPages/PointServiceSelectionPage";
 import AddServicePage from "./components/pages/addPages/AddServicePage";
 import ServicePage from "./components/pages/basicPages/ServicePage";
+<<<<<<< HEAD
+=======
+import PointDeServicePage from "./components/pages/basicPages/PointDeServicePage";
+import AddPointDeServicePage from "./components/pages/addPages/AddPointDeServicePage";
+>>>>>>> master
 import AddDemandeServicePage from "./components/pages/addPages/AddDemandeServicePage";
 import DemandeServiceSelectionPage from "./components/pages/selectionPages/DemandeServiceSelectionPage";
 
@@ -62,8 +67,15 @@ const App = () => (
     <Route path="/addService" exact component={AddServicePage} />
     <Route path="/Service" exact component={ServicePage} />
     <Route path="/PointServiceSelection" exact component={PointServiceSelectionPage} />
+<<<<<<< HEAD
     <Route path="/AddDemandeService" exact component={AddDemandeServicePage} />
     <Route path="/DemandeServiceSelection" exact component={DemandeServiceSelectionPage} />
+=======
+    <Route path="/addPointDeService" exact component={AddPointDeServicePage} />
+    <Route path="/pointDeService" exact component={PointDeServicePage} />
+    <Route path="/DemandeServiceSelection" exact component={DemandeServiceSelectionPage} />
+    <Route path="/AddDemandeService" exact component={AddDemandeServicePage} />
+>>>>>>> master
     
   </div>
 );

@@ -7,6 +7,10 @@ import OrgaRefSelectionForm from '../components/forms/selectionForms/OrgaRefSele
 import { shallow, render, mount, configure } from 'enzyme';
 import AddEmployeForm from '../components/forms/addOrUpdateForms/AddEmployeForm';
 import AddOrganismeForm from '../components/forms/addOrUpdateForms/AddOrganismeForm';
+<<<<<<< HEAD
+=======
+import AddServiceForm from '../components/forms/addOrUpdateForms/AddServiceForm';
+>>>>>>> master
 import AddRefForm from '../components/forms/addOrUpdateForms/AddRefForm';
 import EmployeForm from '../components/forms/basicForms/EmployeForm';
 import OrganismeForm from '../components/forms/basicForms/OrganismeForm';

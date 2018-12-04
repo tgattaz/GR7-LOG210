@@ -32,7 +32,6 @@ class LoginForm extends React.Component{
 
     validate = (data) => {
         const errors = {};
-        console.log();
         if(Validator.isEmpty(data.prenom)) errors.prenom = "Utilisateur invalide";
         if(!data.password) errors.password = "Can't be blank";
         return errors;
