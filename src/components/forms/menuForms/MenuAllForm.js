@@ -104,7 +104,6 @@ const MenuAllForm = ({ role, logout }) => (
         <Dropdown.Item as={Link} name="service" to="/service">
           Liste des services disponibles
         </Dropdown.Item>
-<<<<<<< HEAD
       </Dropdown.Menu>
     </Dropdown>
     <Dropdown item text="Gérer les demandes de service">
@@ -115,18 +114,6 @@ const MenuAllForm = ({ role, logout }) => (
         <Dropdown.Item as={Link} name="DemandeServiceSelection" to="/DemandeServiceSelection">
           Choisir une demande de service pour compléter l'information du second parent
         </Dropdown.Item>
-=======
-        <Dropdown item simple text="Gérer les demandes de service" direction='left'>
-          <Dropdown.Menu>
-            <Dropdown.Item as={Link} name="AddDemandeService" to="/AddDemandeService">
-              Créer une demande de service
-            </Dropdown.Item>
-            <Dropdown.Item as={Link} name="DemandeServiceSelection" to="/DemandeServiceSelection">
-              Choisir une demande de service pour compléter l'information du second parent
-            </Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
->>>>>>> master
       </Dropdown.Menu>
     </Dropdown>
     
