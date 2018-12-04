@@ -6,16 +6,11 @@ import RechercheReferentForm from '../components/forms/selectionForms/RechercheR
 import OrgaRefSelectionForm from '../components/forms/selectionForms/OrgaRefSelectionForm';
 import { shallow, render, mount, configure } from 'enzyme';
 import AddEmployeForm from '../components/forms/addOrUpdateForms/AddEmployeForm';
-import AddEmployeOrgaForm from '../components/forms/addOrUpdateForms/AddEmployeOrgaForm';
 import AddOrganismeForm from '../components/forms/addOrUpdateForms/AddOrganismeForm';
-import AddNoteForm from '../components/forms/addOrUpdateForms/AddNoteForm';
-import AddServiceForm from '../components/forms/addOrUpdateForms/AddServiceForm';
 import AddRefForm from '../components/forms/addOrUpdateForms/AddRefForm';
 import EmployeForm from '../components/forms/basicForms/EmployeForm';
 import OrganismeForm from '../components/forms/basicForms/OrganismeForm';
 import RefForm from '../components/forms/basicForms/RefForm';
-import NoteForm from '../components/forms/basicForms/NoteForm';
-import ServiceForm from '../components/forms/basicForms/ServiceForm';
 configure({ adapter: new Adapter() });
 
 
@@ -44,7 +39,7 @@ describe('Orga Ref Renders without crashing', () => {
 describe('Add Employe Form renders right number of input areas', () => {
   it('Find the inputs ', () => {
     const editor = shallow(< AddEmployeForm />);
-    expect(editor.find('input').length).toEqual(14);
+    expect(editor.find('input').length).toEqual(4);
 
   });
 });
@@ -56,6 +51,7 @@ describe('Add Employe Form renders a button', () => {
 
   });
 });
+
 describe('Add Employe Form renders the button with his text', () => {
   it('Find the text button and show that it can fail with wrong text value ', () => {
     const editor = shallow(< AddEmployeForm />);
@@ -63,82 +59,7 @@ describe('Add Employe Form renders the button with his text', () => {
 
   });
 });
-/*
-AddEmployeOrgaForm
-*/
-describe('Add Employe organisme Form renders right number of input areas', () => {
-  it('Find the inputs ', () => {
-    const editor = shallow(< AddEmployeOrgaForm />);
-    expect(editor.find('input').length).toEqual(14);
 
-  });
-});
-
-describe('Add Employe organisme Form renders a button', () => {
-  it('Find the only button ', () => {
-    const editor = shallow(< AddEmployeOrgaForm />);
-    expect(editor.find('Button').length).toEqual(1);
-
-  });
-});
-describe('Add Employe organisme Form renders the button with his text', () => {
-  it('Find the text button and show that it can fail with wrong text value ', () => {
-    const editor = shallow(< AddEmployeOrgaForm />);
-    expect(editor.find('Button').text()).not.toEqual('Fail');
-
-  });
-});
-
-/**
- * AddNoteForm
- */
-describe('Add note Form renders right number of input areas', () => {
-  it('Find the inputs ', () => {
-    const editor = shallow(< AddNoteForm />);
-    expect(editor.find('input').length).toEqual(14);
-
-  });
-});
-
-describe('Add note Form renders a button', () => {
-  it('Find the only button ', () => {
-    const editor = shallow(< AddNoteForm />);
-    expect(editor.find('Button').length).toEqual(1);
-
-  });
-});
-describe('Add not Form renders the button with his text', () => {
-  it('Find the text button and show that it can fail with wrong text value ', () => {
-    const editor = shallow(< AddNoteForm />);
-    expect(editor.find('Button').text()).not.toEqual('Fail');
-
-  });
-});
-/**
- * AddNoteForm
- */
-describe('Add note Form renders right number of input areas', () => {
-  it('Find the inputs ', () => {
-    const editor = shallow(< AddNoteForm />);
-    expect(editor.find('input').length).toEqual(14);
-
-  });
-});
-
-describe('Add note Form renders a button', () => {
-  it('Find the only button ', () => {
-    const editor = shallow(< AddNoteForm />);
-    expect(editor.find('Button').length).toEqual(1);
-
-  });
-});
-describe('Add not Form renders the button with his text', () => {
-  it('Find the text button and show that it can fail with wrong text value ', () => {
-    const editor = shallow(< AddNoteForm />);
-    expect(editor.find('Button').text()).not.toEqual('Fail');
-
-  });
-});
 describe('Add Organisme Form renders  input areas', () => {
   it('Find the inputs', () => {
     const editor = shallow(<AddOrganismeForm />);
@@ -146,8 +67,6 @@ describe('Add Organisme Form renders  input areas', () => {
 
   });
 });
-
-
 
 describe('Add Ref Form renders an input areas', () => {
   it('Find the inputs ', () => {
@@ -175,30 +94,6 @@ describe('Ref Form renders an output area', () => {
   it('Find the output area ', () => {
     const editor = shallow(< RefForm />);
     expect(editor.find('Table').length).toEqual(1);
-
-  });
-});
-
-describe('Note Form renders an output area', () => {
-  it('Find the output area ', () => {
-    const editor = shallow(< NoteForm />);
-    expect(editor.find('Table').length).toEqual(1);
-
-  });
-});
-
-describe('Service Form renders an output area', () => {
-  it('Find the output area ', () => {
-    const editor = shallow(< ServiceForm />);
-    expect(editor.find('Table').length).toEqual(1);
-
-  });
-});
-
-describe('Add Service Form renders  input areas', () => {
-  it('Find the inputs', () => {
-    const editor = shallow(<AddServiceForm />);
-    expect(editor.find('input').length).toEqual(4);
 
   });
 });

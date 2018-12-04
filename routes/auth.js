@@ -15,6 +15,7 @@ router.post('/',(req,res)=>{
             res.json({user: {
                         prenom:credentials.prenom,
                         role: results[0].role,
+                        noEmploye: results[0].noEmploye, 
                         token:jwt.sign({
                             prenom:credentials.prenom
                         },process.env.JWT_SECRET)

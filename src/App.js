@@ -11,7 +11,6 @@ import AddRefPage from "./components/pages/addPages/AddRefPage";
 import RefPage from "./components/pages/basicPages/RefPage";
 import OrganismePage from "./components/pages/basicPages/OrganismePage";
 import AddOrganismePage from "./components/pages/addPages/AddOrganismePage";
-import AddEmployeOrgaPage from "./components/pages/addPages/addEmployeOrgaPage";
 import RechercheReferentPage from "./components/pages/selectionPages/RechercheReferentPage";
 import DelRefPage from "./components/pages/deletePages/DelRefPage";
 import UpdateRefPage from "./components/pages/updatePages/UpdateRefPage";
@@ -31,8 +30,6 @@ import AddServicePage from "./components/pages/addPages/AddServicePage";
 import ServicePage from "./components/pages/basicPages/ServicePage";
 import AddDemandeServicePage from "./components/pages/addPages/AddDemandeServicePage";
 import DemandeServiceSelectionPage from "./components/pages/selectionPages/DemandeServiceSelectionPage";
-import PointDeServicePage from "./components/pages/basicPages/PointDeServicePage";
-import AddPointDeServicePage from "./components/pages/addPages/AddPointDeServicePage";
 
 const App = () => (
   <div className="ui container">
@@ -49,7 +46,6 @@ const App = () => (
     <Route path="/rechercheReferent" exact component={RechercheReferentPage} />
     <Route path="/Organisme" exact component={OrganismePage} />
     <Route path="/addOrganisme" exact component={AddOrganismePage} />
-    <Route path="/addEmployeOrga" exact component={AddEmployeOrgaPage} />
     <Route path="/OrgaRefSelection" exact component={OrgaRefSelectionPage} />
     <Route path="/delRef" exact component={DelRefPage} />
     <Route path="/updateRef" exact component={UpdateRefPage} />
@@ -66,7 +62,9 @@ const App = () => (
     <Route path="/addService" exact component={AddServicePage} />
     <Route path="/Service" exact component={ServicePage} />
     <Route path="/PointServiceSelection" exact component={PointServiceSelectionPage} />
-
+    <Route path="/AddDemandeService" exact component={AddDemandeServicePage} />
+    <Route path="/DemandeServiceSelection" exact component={DemandeServiceSelectionPage} />
+    
   </div>
 );
 export default App;
