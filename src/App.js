@@ -29,10 +29,10 @@ import NotePage from "./components/pages/basicPages/NotePage";
 import PointServiceSelectionPage from "./components/pages/selectionPages/PointServiceSelectionPage";
 import AddServicePage from "./components/pages/addPages/AddServicePage";
 import ServicePage from "./components/pages/basicPages/ServicePage";
-import AddDemandeServicePage from "./components/pages/addPages/AddDemandeServicePage";
-import DemandeServiceSelectionPage from "./components/pages/selectionPages/DemandeServiceSelectionPage";
 import PointDeServicePage from "./components/pages/basicPages/PointDeServicePage";
 import AddPointDeServicePage from "./components/pages/addPages/AddPointDeServicePage";
+import AddDemandeServicePage from "./components/pages/addPages/AddDemandeServicePage";
+import DemandeServiceSelectionPage from "./components/pages/selectionPages/DemandeServiceSelectionPage";
 
 const App = () => (
   <div className="ui container">
@@ -65,13 +65,12 @@ const App = () => (
     <Route path="/Note" exact component={NotePage} />
     <Route path="/addService" exact component={AddServicePage} />
     <Route path="/Service" exact component={ServicePage} />
-    <Route path="/AddDemandeServicePage" exact component={AddDemandeServicePage} />
     <Route path="/PointServiceSelection" exact component={PointServiceSelectionPage} />
-    <Route path="/DemandeServiceSelectionPage" exact component={DemandeServiceSelectionPage} />
-    <Route path="/PointDeServicePage" exact component={PointDeServicePage} />
-    <Route path="/AddPointDeServicePage" exact component={AddPointDeServicePage} /> 
-   
-
+    <Route path="/addPointDeService" exact component={AddPointDeServicePage} />
+    <Route path="/pointDeService" exact component={PointDeServicePage} />
+    <Route path="/DemandeServiceSelection" exact component={DemandeServiceSelectionPage} />
+    <Route path="/AddDemandeService" exact component={AddDemandeServicePage} />
+    
   </div>
 );
 export default App;
