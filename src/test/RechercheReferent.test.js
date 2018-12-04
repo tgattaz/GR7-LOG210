@@ -64,6 +64,8 @@ import PointServiceSelectionForm from "../components/forms/selectionForms/PointS
 import AddServiceForm from "../components/forms/addOrUpdateForms/AddServiceForm";
 import ServiceForm from "../components/forms/basicForms/ServiceForm";
 import UpdateServiceForm from "../components/forms/updateForms/UpdateServiceForm";
+import MenuAllForm from '../components/forms/menuForms/MenuAllForm';
+import MenuHomeForm from '../components/forms/menuForms/MenuHomeForm';
 
 /**
  * Pages
@@ -72,37 +74,37 @@ describe('AddEmployePage ne crash pas', () => {
   it('AddEmployePage affiche sans chash', () => {
     shallow(<AddEmployePage />);
   });
+});
+describe('AddNotePage ne crash pas', () => {
+  it('AddNotePage affiche sans chash', () => {
+    shallow(<AddNotePage />);
   });
-  describe('AddNotePage ne crash pas', () => {
-    it('AddNotePage affiche sans chash', () => {
-      shallow(<AddNotePage />);
-    });
-    });
-    describe('AddOrgaRefPage ne crash pas', () => {
-      it('AddOrgaRefPage affiche sans chash', () => {
-        shallow(<AddOrgaRefPage />);
-      });
-      });
-      describe('AddOrganismePage ne crash pas', () => {
-        it('AddOrganismePage affiche sans chash', () => {
-          shallow(<AddOrganismePage />);
-        });
-        });
-        describe('AddRefPage ne crash pas', () => {
-          it('AddRefPage affiche sans chash', () => {
-            shallow(<AddRefPage />);
-          });
-          });
-          describe('AddServicePage ne crash pas', () => {
-            it('AddServicePage affiche sans chash', () => {
-              shallow(<AddServicePage />);
-            });
-            });
-            describe('addEmployeOrgaPage ne crash pas', () => {
-              it('addEmployeOrgaPage affiche sans chash', () => {
-                shallow(<addEmployeOrgaPage />);
-              });
-              });
+});
+describe('AddOrgaRefPage ne crash pas', () => {
+  it('AddOrgaRefPage affiche sans chash', () => {
+    shallow(<AddOrgaRefPage />);
+  });
+});
+describe('AddOrganismePage ne crash pas', () => {
+  it('AddOrganismePage affiche sans chash', () => {
+    shallow(<AddOrganismePage />);
+  });
+});
+describe('AddRefPage ne crash pas', () => {
+  it('AddRefPage affiche sans chash', () => {
+    shallow(<AddRefPage />);
+  });
+});
+describe('AddServicePage ne crash pas', () => {
+  it('AddServicePage affiche sans chash', () => {
+    shallow(<AddServicePage />);
+  });
+});
+describe('addEmployeOrgaPage ne crash pas', () => {
+  it('addEmployeOrgaPage affiche sans chash', () => {
+    shallow(<addEmployeOrgaPage />);
+  });
+});
 
 
 
@@ -286,12 +288,12 @@ describe('Add Service Form renders  input areas', () => {
 });
 
 
-  describe('DelNoteForm doit avoir un bouton', () => {
-    it('Find the only button ', () => {
-      const editor = shallow(< DelNoteForm />);
-      expect(editor.find('Button').length).toEqual(0);
-    });
+describe('DelNoteForm doit avoir un bouton', () => {
+  it('Find the only button ', () => {
+    const editor = shallow(< DelNoteForm />);
+    expect(editor.find('Button').length).toEqual(0);
   });
+});
 
 describe('DelOrganismeFrom doit avoir un bouton', () => {
   it('Find the only button ', () => {
@@ -318,199 +320,199 @@ it('Recherche rerent trouve', () => {
 
 describe('AddEmployeForm ne crash pas', () => {
   it('AddEmployeForm affiche sans chash', () => {
-  const wrapper = shallow(<AddEmployeForm />);
-  expect(wrapper).toMatchSnapshot();
+    const wrapper = shallow(<AddEmployeForm />);
+    expect(wrapper).toMatchSnapshot();
   });
-  });
+});
 
 describe('AddEmployeOrgaForm ne crash pas', () => {
   it('AddEmployeOrgaForm affiche sans chash', () => {
-  const wrapper = shallow(<AddEmployeOrgaForm />);
-  expect(wrapper).toMatchSnapshot();
+    const wrapper = shallow(<AddEmployeOrgaForm />);
+    expect(wrapper).toMatchSnapshot();
   });
-  });
+});
 
 describe('AddNoteForm ne crash pas', () => {
   it('AddNoteForm affiche sans chash', () => {
-  const wrapper = shallow(<AddNoteForm />);
-  expect(wrapper).toMatchSnapshot();
+    const wrapper = shallow(<AddNoteForm />);
+    expect(wrapper).toMatchSnapshot();
   });
-  });
+});
 
 describe('AddOrganismeForm ne crash pas', () => {
   it('AddOrganismeForm affiche sans chash', () => {
-  const wrapper = shallow(<AddOrganismeForm />);
-  expect(wrapper).toMatchSnapshot();
+    const wrapper = shallow(<AddOrganismeForm />);
+    expect(wrapper).toMatchSnapshot();
   });
-  });
+});
 
 describe('AddOrgaRefForm ne crash pas', () => {
   it('AddOrgaRefForm affiche sans chash', () => {
-  const wrapper = shallow(<AddOrgaRefForm />);
-  expect(wrapper).toMatchSnapshot();
+    const wrapper = shallow(<AddOrgaRefForm />);
+    expect(wrapper).toMatchSnapshot();
   });
-  });
+});
 
 describe('AddRefForm ne crash pas', () => {
   it('AddRefForm affiche sans chash', () => {
-  const wrapper = shallow(<AddRefForm />);
-  expect(wrapper).toMatchSnapshot();
+    const wrapper = shallow(<AddRefForm />);
+    expect(wrapper).toMatchSnapshot();
   });
-  });
+});
 
 describe('AddServiceForm ne crash pas', () => {
   it('AddServiceForm affiche sans chash', () => {
-  const wrapper = shallow(<AddServiceForm />);
-  expect(wrapper).toMatchSnapshot();
+    const wrapper = shallow(<AddServiceForm />);
+    expect(wrapper).toMatchSnapshot();
   });
-  });
+});
 
 describe('EmployeForm ne crash pas', () => {
   it('EmployeForm affiche sans chash', () => {
-  const wrapper = shallow(<EmployeForm />);
-  expect(wrapper).toMatchSnapshot();
+    const wrapper = shallow(<EmployeForm />);
+    expect(wrapper).toMatchSnapshot();
   });
-  });
+});
 
 describe('LoginForm ne crash pas', () => {
   it('LoginForm affiche sans chash', () => {
-  const wrapper = shallow(<LoginForm />);
-  expect(wrapper).toMatchSnapshot();
+    const wrapper = shallow(<LoginForm />);
+    expect(wrapper).toMatchSnapshot();
   });
-  });
+});
 
 describe('NoteForm ne crash pas', () => {
   it('NoteForm affiche sans chash', () => {
-  const wrapper = shallow(<NoteForm />);
-  expect(wrapper).toMatchSnapshot();
+    const wrapper = shallow(<NoteForm />);
+    expect(wrapper).toMatchSnapshot();
   });
-  });
+});
 
 describe('OrganismeForm ne crash pas', () => {
   it('OrganismeForm affiche sans chash', () => {
-  const wrapper = shallow(<OrganismeForm />);
-  expect(wrapper).toMatchSnapshot();
+    const wrapper = shallow(<OrganismeForm />);
+    expect(wrapper).toMatchSnapshot();
   });
-  });
+});
 
 describe('OrgaRefForm ne crash pas', () => {
   it('OrgaRefForm affiche sans chash', () => {
-  const wrapper = shallow(<OrgaRefForm />);
-  expect(wrapper).toMatchSnapshot();
+    const wrapper = shallow(<OrgaRefForm />);
+    expect(wrapper).toMatchSnapshot();
   });
-  });
+});
 
 describe('RefForm ne crash pas', () => {
   it('RefForm affiche sans chash', () => {
-  const wrapper = shallow(<RefForm />);
-  expect(wrapper).toMatchSnapshot();
+    const wrapper = shallow(<RefForm />);
+    expect(wrapper).toMatchSnapshot();
   });
-  });
+});
 
 describe('ServiceForm ne crash pas', () => {
   it('ServiceForm affiche sans chash', () => {
-  const wrapper = shallow(<ServiceForm />);
-  expect(wrapper).toMatchSnapshot();
+    const wrapper = shallow(<ServiceForm />);
+    expect(wrapper).toMatchSnapshot();
   });
-  });
+});
 
 describe('DelEmployeForm ne crash pas', () => {
   it('DelEmployeForm affiche sans chash', () => {
-  const wrapper = shallow(<DelEmployeForm />);
-  expect(wrapper).toMatchSnapshot();
+    const wrapper = shallow(<DelEmployeForm />);
+    expect(wrapper).toMatchSnapshot();
   });
-  });
+});
 
 describe('DelNoteForm ne crash pas', () => {
   it('DelNoteForm affiche sans chash', () => {
-  const wrapper = shallow(<DelNoteForm />);
-  expect(wrapper).toMatchSnapshot();
+    const wrapper = shallow(<DelNoteForm />);
+    expect(wrapper).toMatchSnapshot();
   });
-  });
+});
 
 describe('DelOrganismeForm ne crash pas', () => {
   it('DelOrganismeForm affiche sans chash', () => {
-  const wrapper = shallow(<DelOrganismeForm />);
-  expect(wrapper).toMatchSnapshot();
+    const wrapper = shallow(<DelOrganismeForm />);
+    expect(wrapper).toMatchSnapshot();
   });
-  });
+});
 
 describe('DelRefForm ne crash pas', () => {
   it('DelRefForm affiche sans chash', () => {
-  const wrapper = shallow(<DelRefForm />);
-  expect(wrapper).toMatchSnapshot();
+    const wrapper = shallow(<DelRefForm />);
+    expect(wrapper).toMatchSnapshot();
   });
-  });
+});
 
 describe('DesactiverOrganismeRefForm ne crash pas', () => {
   it('DesactiverOrganismeRefForm affiche sans chash', () => {
-  const wrapper = shallow(<DesactiverOrganismeRefForm />);
-  expect(wrapper).toMatchSnapshot();
+    const wrapper = shallow(<DesactiverOrganismeRefForm />);
+    expect(wrapper).toMatchSnapshot();
   });
-  });
+});
 
 describe('PointServiceSelectionForm ne crash pas', () => {
   it('PointServiceSelectionForm affiche sans chash', () => {
-  const wrapper = shallow(<PointServiceSelectionForm />);
-  expect(wrapper).toMatchSnapshot();
+    const wrapper = shallow(<PointServiceSelectionForm />);
+    expect(wrapper).toMatchSnapshot();
   });
-  });
+});
 
 describe('RechercheReferentForm ne crash pas', () => {
   it('RechercheReferentForm affiche sans chash', () => {
-  const wrapper = shallow(<RechercheReferentForm />);
-  expect(wrapper).toMatchSnapshot();
+    const wrapper = shallow(<RechercheReferentForm />);
+    expect(wrapper).toMatchSnapshot();
   });
-  });
+});
 
 describe('RechercherFamilleForm ne crash pas', () => {
   it('RechercherFamilleForm affiche sans chash', () => {
-  const wrapper = shallow(<RechercherFamilleForm />);
-  expect(wrapper).toMatchSnapshot();
+    const wrapper = shallow(<RechercherFamilleForm />);
+    expect(wrapper).toMatchSnapshot();
   });
-  });
+});
 
 describe('UpdateEmployeForm ne crash pas', () => {
   it('UpdateEmployeForm affiche sans chash', () => {
-  const wrapper = shallow(<UpdateEmployeForm />);
-  expect(wrapper).toMatchSnapshot();
+    const wrapper = shallow(<UpdateEmployeForm />);
+    expect(wrapper).toMatchSnapshot();
   });
-  });
+});
 
 describe('UpdateNoteForm ne crash pas', () => {
   it('UpdateNoteForm affiche sans chash', () => {
-  const wrapper = shallow(<UpdateNoteForm />);
-  expect(wrapper).toMatchSnapshot();
+    const wrapper = shallow(<UpdateNoteForm />);
+    expect(wrapper).toMatchSnapshot();
   });
-  });
+});
 
 describe('UpdateOrganismeForm ne crash pas', () => {
   it('UpdateOrganismeForm affiche sans chash', () => {
-  const wrapper = shallow(<UpdateOrganismeForm />);
-  expect(wrapper).toMatchSnapshot();
+    const wrapper = shallow(<UpdateOrganismeForm />);
+    expect(wrapper).toMatchSnapshot();
   });
-  });
+});
 
 describe('UpdateOrganismeRefForm ne crash pas', () => {
   it('UpdateOrganismeRefForm affiche sans chash', () => {
-  const wrapper = shallow(<UpdateOrganismeRefForm />);
-  expect(wrapper).toMatchSnapshot();
+    const wrapper = shallow(<UpdateOrganismeRefForm />);
+    expect(wrapper).toMatchSnapshot();
   });
-  });
+});
 
 describe('UpdateRefForm ne crash pas', () => {
   it('UpdateRefForm affiche sans chash', () => {
-  const wrapper = shallow(<UpdateRefForm />);
-  expect(wrapper).toMatchSnapshot();
+    const wrapper = shallow(<UpdateRefForm />);
+    expect(wrapper).toMatchSnapshot();
   });
-  });
+});
 
 describe('UpdateServiceForm ne crash pas', () => {
   it('UpdateServiceForm affiche sans chash', () => {
-  const wrapper = shallow(<UpdateServiceForm />);
-  expect(wrapper).toMatchSnapshot();
+    const wrapper = shallow(<UpdateServiceForm />);
+    expect(wrapper).toMatchSnapshot();
   });
-  });
+});
 
 /*----------------------------------------------------------------------*/
 
@@ -518,166 +520,174 @@ describe('EmployePage ne crash pas', () => {
   it('EmployePage affiche sans chash', () => {
     shallow(<EmployePage />);
   });
-  });
+});
 
 describe('AddEmployePage ne crash pas', () => {
   it('AddEmployePage affiche sans chash', () => {
     shallow(<AddEmployePage />);
   });
-  });
+});
 
 describe('OrgaRefPage ne crash pas', () => {
   it('OrgaRefPage affiche sans chash', () => {
     shallow(<OrgaRefPage />);
   });
-  });
+});
 
 describe('OrgaRefSelectionPage ne crash pas', () => {
   it('OrgaRefSelectionPage affiche sans chash', () => {
     shallow(<OrgaRefSelectionPage />);
   });
-  });
+});
 
 describe('AddOrgaRefPage ne crash pas', () => {
   it('AddOrgaRefPage affiche sans chash', () => {
     shallow(<AddOrgaRefPage />);
   });
-  });
+});
 
 describe('AddRefPage ne crash pas', () => {
   it('AddRefPage affiche sans chash', () => {
     shallow(<AddRefPage />);
   });
-  });
+});
 
 describe('RefPage ne crash pas', () => {
   it('RefPage affiche sans chash', () => {
     shallow(<RefPage />);
   });
-  });
+});
 
 describe('OrganismePage ne crash pas', () => {
   it('OrganismePage affiche sans chash', () => {
     shallow(<OrganismePage />);
   });
-  });
+});
 
 describe('AddOrganismePage ne crash pas', () => {
   it('AddOrganismePage affiche sans chash', () => {
     shallow(<AddOrganismePage />);
   });
-  });
+});
 
 describe('AddEmployeOrgaPage ne crash pas', () => {
   it('AddEmployeOrgaPage affiche sans chash', () => {
     shallow(<AddEmployeOrgaPage />);
   });
-  });
+});
 
 describe('RechercheReferentPage ne crash pas', () => {
   it('RechercheReferentPage affiche sans chash', () => {
     shallow(<RechercheReferentPage />);
   });
-  });
+});
 
 describe('DelRefPage ne crash pas', () => {
   it('DelRefPage affiche sans chash', () => {
     shallow(<DelRefPage />);
   });
-  });
+});
 
 describe('UpdateRefPage ne crash pas', () => {
   it('UpdateRefPage affiche sans chash', () => {
     shallow(<UpdateRefPage />);
   });
-  });
+});
 
 describe('AddEmployePage ne crash pas', () => {
   it('AddEmployePage affiche sans chash', () => {
     shallow(<AddEmployePage />);
   });
-  });
+});
 
 describe('DelOrganismePage ne crash pas', () => {
   it('DelOrganismePage affiche sans chash', () => {
     shallow(<DelOrganismePage />);
   });
-  });
+});
 
 describe('UpdateOrganismePage ne crash pas', () => {
   it('UpdateOrganismePage affiche sans chash', () => {
     shallow(<UpdateOrganismePage />);
   });
-  });
+});
 
 describe('UpdateOrganismeRefPage ne crash pas', () => {
   it('UpdateOrganismeRefPage affiche sans chash', () => {
     shallow(<UpdateOrganismeRefPage />);
   });
-  });
+});
 
 describe('DesactiverOraganismeRefPage ne crash pas', () => {
   it('DesactiverOraganismeRefPage affiche sans chash', () => {
     shallow(<DesactiverOraganismeRefPage />);
   });
-  });
+});
 
 describe('DelEmployePage ne crash pas', () => {
   it('DelEmployePage affiche sans chash', () => {
     shallow(<DelEmployePage />);
   });
-  });
+});
 
 describe('UpdateEmployePage ne crash pas', () => {
   it('UpdateEmployePage affiche sans chash', () => {
     shallow(<UpdateEmployePage />);
   });
-  });
+});
 
 describe('RechercherFamillePage ne crash pas', () => {
   it('RechercherFamillePage affiche sans chash', () => {
     shallow(<RechercherFamillePage />);
   });
-  });
+});
 
 describe('AddNotePage ne crash pas', () => {
   it('AddNotePage affiche sans chash', () => {
     shallow(<AddNotePage />);
   });
+});
+
+describe('DelNotePage ne crash pas', () => {
+  it('DelNotePage affiche sans chash', () => {
+    shallow(<DelNotePage />);
   });
+});
 
-  describe('DelNotePage ne crash pas', () => {
-    it('DelNotePage affiche sans chash', () => {
-      shallow(<DelNotePage />);
-    });
-    });
+describe('UpdateNotePage ne crash pas', () => {
+  it('UpdateNotePage affiche sans chash', () => {
+    shallow(<UpdateNotePage />);
+  });
+});
 
-  describe('UpdateNotePage ne crash pas', () => {
-    it('UpdateNotePage affiche sans chash', () => {
-      shallow(<UpdateNotePage />);
-    });
-    });
+describe('NotePage ne crash pas', () => {
+  it('NotePage affiche sans chash', () => {
+    shallow(<NotePage />);
+  });
+});
 
-  describe('NotePage ne crash pas', () => {
-    it('NotePage affiche sans chash', () => {
-      shallow(<NotePage />);
-    });
-    });
+describe('PointServiceSelectionPage ne crash pas', () => {
+  it('PointServiceSelectionPage affiche sans chash', () => {
+    shallow(<PointServiceSelectionPage />);
+  });
+});
 
-  describe('PointServiceSelectionPage ne crash pas', () => {
-    it('PointServiceSelectionPage affiche sans chash', () => {
-      shallow(<PointServiceSelectionPage />);
-    });
-    });
+describe('AddServicePage ne crash pas', () => {
+  it('AddServicePage affiche sans chash', () => {
+    shallow(<AddServicePage />);
+  });
+});
 
-  describe('AddServicePage ne crash pas', () => {
-    it('AddServicePage affiche sans chash', () => {
-      shallow(<AddServicePage />);
-    });
-    });
+describe('ServicePage ne crash pas', () => {
+  it('ServicePage affiche sans chash', () => {
+    shallow(<ServicePage />);
+  });
+});
 
-  describe('ServicePage ne crash pas', () => {
-    it('ServicePage affiche sans chash', () => {
-      shallow(<ServicePage />);
-    });
-    });
+describe('MenuHomeForm ne crash pas', () => {
+  it('MenuHomeForm affiche sans chash', () => {
+    shallow(<MenuHomeForm />);
+  });
+});
+
+
