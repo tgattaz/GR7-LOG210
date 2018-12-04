@@ -65,7 +65,12 @@ const App = () => (
     <Route path="/Note" exact component={NotePage} />
     <Route path="/addService" exact component={AddServicePage} />
     <Route path="/Service" exact component={ServicePage} />
+    <Route path="/AddDemandeServicePage" exact component={AddDemandeServicePage} />
     <Route path="/PointServiceSelection" exact component={PointServiceSelectionPage} />
+    <Route path="/DemandeServiceSelectionPage" exact component={DemandeServiceSelectionPage} />
+    <Route path="/PointDeServicePage" exact component={PointDeServicePage} />
+    <Route path="/AddPointDeServicePage" exact component={AddPointDeServicePage} /> 
+   
 
   </div>
 );

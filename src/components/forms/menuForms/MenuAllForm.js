@@ -109,7 +109,10 @@ const MenuAllForm = ({ role, logout }) => (
         <Dropdown.Item as={Link} name="service" to="/service">
           Liste des services disponibles
         </Dropdown.Item>
-        <Dropdown item simple text="Gérer les demandes de service" direction='left'>
+        
+      </Dropdown.Menu>
+    </Dropdown>
+    <Dropdown item simple text="Gérer les demandes de service" direction='left'>
         <Dropdown.Menu>
           <Dropdown.Item as={Link} name="AddDemandeService" to="/AddDemandeService">
             Créer une demande de service
@@ -119,8 +122,6 @@ const MenuAllForm = ({ role, logout }) => (
           </Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
-      </Dropdown.Menu>
-    </Dropdown>
     <Menu.Menu position="right">
       <Menu.Item as={Link} name="logout" to="/" onClick={() => logout()} />
     </Menu.Menu>
